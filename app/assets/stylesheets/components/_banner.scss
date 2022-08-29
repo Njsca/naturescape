@@ -1,0 +1,33 @@
+.banner{
+	height: 100vh;
+	background: linear-gradient(135deg,
+						rgba(0, 0, 0, 0.8) 0%,
+						rgba(0, 0, 0, 0.3) 50%);
+	background-image: url("landing_page.jpg");
+	background-size: cover;
+  background-position: bottom;
+	color: white;
+	font-size: big;
+	font-weight: bolder;
+	text-align: center;
+	display: flex;
+	align-items: center;
+  justify-content: flex-start;
+  padding-left: 5rem;
+}
+
+.banner h1 {
+	color: white;
+	font-size: 50px;
+	font-weight: bold;
+	text-shadow: black;
+}
+
+.banner p {
+	color: white;
+	font-size: 20px;
+	font-weight: lighter;
+	opacity: 0.8;
+	/*opacity to add some contrast between H1 and paragraph of text*/
+	margin-bottom: 20px;
+}
