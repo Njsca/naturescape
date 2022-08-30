@@ -1,0 +1,21 @@
+.map-wrapper{
+  display: grid;
+  height: 80vh;
+  grid-template-columns: 35% 65%;
+  margin: 3rem;
+  border-radius: 20px;
+  border: 1px solid red;
+}
+
+.map-filters{
+  padding: 1rem;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}

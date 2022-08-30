@@ -92,7 +92,7 @@ hike5 = Hike.new(
   The 21 meter high tower was built from old Douglas fir trunks that were cut in the Todtnauer city forest.
   From the viewing platform at a height of 15 meters,
   you can enjoy a magnificent panoramic view of 23 Black Forest peaks.",
-  location: "Todtnau, Lörrach, Freiburg District, Baden-Württemberg, Germany",
+  location: "Todtnau, Germany",
   date: DateTime.new(2022, 9, 11),
   user_id: user1.id
 )
@@ -106,7 +106,7 @@ hike6 = Hike.new(
   Raitenbucher Höhe, Fischbach, the Kohlplatz, Schluchsee, the Stutz woods,
   or Aha and the steep serpentine path.
   The blue rhombus of the Schwarzwaldvereinweg from Lenzkirch to the Feldberg leads over the picture stone.",
-  location: "Schluchsee, Hochschwarzwald, Breisgau-Hochschwarzwald, Freiburg District, Baden-Württemberg, Germany
+  location: "Schluchsee, Germany
   ",
   date: DateTime.new(2022, 9, 4),
   user_id: user2.id
@@ -119,7 +119,7 @@ hike7 = Hike.new(
   cone towers the ruin Hohenkrähen above Schlatt.
   The way up is actually quite narrow and meanders right up the cliff face up to the castle ruin.
   For the rocky ascent you will be rewarded with a fantastic view and an exciting castle ruin.",
-  location: "Hilzingen, Constance, Freiburg District, Baden-Württemberg, Germany",
+  location: "Hilzingen, Germany",
   date: DateTime.new(2022, 9, 10),
   user_id: user3.id
 )
