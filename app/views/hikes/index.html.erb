@@ -1,8 +1,12 @@
-<div class="container">
-  <h1>All Hikes</h1>
-  <% @hikes.each do |hike| %>
-    <div><p><%= hike.title %></p></div>
-    <div><p><%= hike.location %></p></div>
-    <div><p><%= hike.user.first_name %></p></div>
-  <% end %>
+<div class="container" data-controller="map">
+  <div class="map-container"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['pk.eyJ1IjoibmlzY2EiLCJhIjoiY2w3ZzJibncxMDBlbDNuc2F6amI0OW9ydSJ9.WeTeH7_fAuc_mZaW-1jXrg'] %>">
+    <h1>All Hikes</h1>
+    <% @hikes.each do |hike| %>
+      <div><p><%= hike.title %></p></div>
+      <div><p><%= hike.location %></p></div>
+      <div><p><%= hike.user.first_name %></p></div>
+    <% end %>
+  </div>
 </div>
