@@ -1,8 +1,9 @@
 <div class="container">
   <h1>All Hikes</h1>
-  <% @hikes.each do |hike| %>
-    <div><p><%= hike.title %></p></div>
-    <div><p><%= hike.location %></p></div>
-    <div><p><%= hike.user.first_name %></p></div>
-  <% end %>
+  <ul>
+    <% @hikes.each do |hike| %>
+      <li><h3><%= link_to hike.title, hike_path(hike) %></h3></li>
+      <li><p>Location: <%= hike.location %> | User: <%= hike.user.first_name %></p></li>
+    <% end %>
+  </ul>
 </div>

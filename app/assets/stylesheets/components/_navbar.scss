@@ -1,6 +1,11 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: white;
+}
+
+.nav-search {
+  flex-grow: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
