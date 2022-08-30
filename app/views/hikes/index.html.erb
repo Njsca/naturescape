@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>All Hikes</h1>
+  <% @hikes.each do |hike| %>
+    <div><p><%= hike.title %></p></div>
+    <div><p><%= hike.location %></p></div>
+    <div><p><%= hike.user.first_name %></p></div>
+  <% end %>
+</div>
