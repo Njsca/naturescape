@@ -1,6 +1,11 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: white;
+}
+
+.nav-search {
+  flex-grow: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +14,31 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+// hamburger menu
+
+.navbar-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  margin: 0 10px 0 auto;
+  height: 3.0rem;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: $dark-green;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 15px;
+}
+
+.fa-bars {
+  font-size: 22px;
+  margin-left: 3px;
+  padding-left: 3px;
 }
