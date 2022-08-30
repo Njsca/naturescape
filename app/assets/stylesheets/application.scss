@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// This is just to override the default grey colour on every page
+body{
+  background-color: white;
+}
