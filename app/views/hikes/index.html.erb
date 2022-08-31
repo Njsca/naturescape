@@ -3,9 +3,34 @@
   <h6>Hi. I am supposed to contain the filters to help you find the perfect hike, but I am not ready yet. Please come back in a couple of days.</h6>
   </div>
 
-    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+    <div id="map" class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" >
-
+    <pre id="result" class="d-none" data-map-target="result"></pre>
     </div>
 
 </div>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibmlzY2EiLCJhIjoiY2w3ZzJibncxMDBlbDNuc2F6amI0OW9ydSJ9.WeTeH7_fAuc_mZaW-1jXrg';
+  const geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  types: 'country,region,place,postcode,locality,neighborhood'
+  });
+
+  geocoder.addTo('#geocoder');
+
+  // Get the geocoder results container.
+  const results = document.getElementById('result');
+
+  // Add geocoder result to container.
+  geocoder.on('result', (e) => {
+    results.innerText = JSON.stringify(e.result["place_name_en-GB"], null, 2);
+  });
+
+  // Clear results container when search is cleared.
+  geocoder.on('clear', () => {
+  results.innerText = '';
+  });
+</script>
