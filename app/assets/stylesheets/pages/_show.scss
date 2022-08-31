@@ -1,0 +1,51 @@
+.container {
+  background-color: white;
+  max-width: 1400px;
+  height: 100vh;
+}
+
+.show-info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1rem;
+  background-color: white;
+}
+
+.show-left {
+  padding: 10px;
+}
+
+
+.show-title {
+  text-align: center;
+  border: 5px white;
+}
+
+.show-location {
+  text-align: center;
+}
+
+.show-tags {
+  text-align: center;
+}
+
+.show-description {
+  text-align: center;
+}
+
+.show-button {
+
+}
+
+.show-right {
+  outline: 5px black;
+}
+
+.show-map {
+  padding: 150px;
+  outline: 25px black;
+}
+
+.show-images {
+  padding: 150px;
+}
