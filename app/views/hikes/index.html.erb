@@ -3,7 +3,7 @@
   <h6>Hi. I am supposed to contain the filters to help you find the perfect hike, but I am not ready yet. Please come back in a couple of days.</h6>
   </div>
 
-    <div class="container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+    <div class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" >
       <h1>All Hikes</h1>
       <% @hikes.each do |hike| %>
