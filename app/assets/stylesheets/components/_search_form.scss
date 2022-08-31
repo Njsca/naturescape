@@ -1,3 +1,7 @@
+.form-control {
+  width: 100%;
+}
+
 .search-form-control {
   position: relative;
   opacity: 0.8;
@@ -15,6 +19,7 @@
   height: 3.0rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid $dark-green;
+  border-radius: 15px;
 }
 
 .search-form-control .form-control:focus {
