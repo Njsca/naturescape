@@ -4,45 +4,56 @@
 
       <!-- Hike Title info goes below -->
       <div class="show-title">
-        <h3>show title</h3>
-        <!-- <h3><%= @hike.title %></h3> -->
+        <p><%= @hike.title %></p>
       </div>
 
       <!-- location and dates goes below -->
       <div class="d-flex">
         <div class="show-location">
-          <h3>show location</h3>
-          <!-- <p><%= @hike.location %></p> -->
+          <i class="fa-solid fa-location-dot"></i>
+          <br>
+          <%= @hike.location %></p>
         </div>
 
         <div class="show-dates">
-          <h3>show dates</h3>
-          <!-- <p><%= @hike.date %></p> -->
+          <i class="fa-solid fa-calendar-days"></i>
+          <br>
+          <%= @hike.date %></p>
         </div>
       </div>
 
       <!-- row of tags goes below -->
       <div class="d-flex">
         <div class="show-tags">
-          <h3>show tags</h3>
+          <i class="fa-solid fa-dog"></i>
+          <i class="fa-solid fa-child"></i>
+          <i class="fa-solid fa-mountains"></i>
         </div>
       </div>
 
       <!-- hike description text and button goes below -->
       <div class="show-description">
-        <h3>show description</h3>
-        <!-- <p><%= @hike.description %></p> -->
+        <%= @hike.description %></p>
       </div>
-      <div class="show-button">
-        <h3>show button</h3>
+
+      <div class="show-button-container">
+        <div class="show-button">
+          <p>request to join</p>
+        </div>
       </div>
+
     </div>
 
     <!-- Map info goes below -->
-    <div class="show-right">
-      <div class="show-map">
-        <h3>show map</h3>
+    <div>
+      <div class="show-right">
+        <div class="show-map"
+          data-controller="map"
+          data-map-marker-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
+
 
       <!-- image files go below -->
       <div class="show-images">
