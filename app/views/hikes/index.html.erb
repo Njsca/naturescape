@@ -1,6 +1,7 @@
 <div class="map-wrapper">
   <div class="map-filters">
-  <h6>Hi. I am supposed to contain the filters to help you find the perfect hike, but I am not ready yet. Please come back in a couple of days.</h6>
+  <h4>Find your perfect hike</h4>
+      <%= render "shared/filters-form" %>
   </div>
 
     <div id="map" class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
