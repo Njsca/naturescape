@@ -7,7 +7,7 @@ export default class extends Controller {
     apiKey: String,
     markers: Array
   }
-  
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -18,31 +18,38 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxglgl.accessToken, mapboxgl: mapboxgl}))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl}))
   }
 
-    #addMarkersToMap() {
-      this.markersValue.forEach((marker) => {
-        const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+    // #addMarkersToMap() {
+    //   this.markersValue.forEach((marker) => {
+    //     const popup = new mapboxgl.Popup().setHTML(marker.info_window) // Add this
+    //     new mapboxgl.Marker()
+    //       .setLngLat([ marker.lng, marker.lat ])
+    //       .setPopup(popup) // Add this
+    //       .addTo(this.map)
+    //   });
+    //   // this.markersValue.forEach((marker) => {
+    //   //   const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
-        const customMarker = document.createElement("div")
-        customMarker.className = "marker"
-        customMarker.style.backgroundImage = `url('${marker.image_url}')`
-        customMarker.style.backgroundSize = "contain"
-        customMarker.style.backgroundRepeat = "no-repeat"
-        customMarker.style.width = "25px"
-        customMarker.style.height = "50px"
+    //   //   const customMarker = document.createElement("div")
+    //   //   customMarker.className = "marker"
+    //   //   customMarker.style.backgroundImage = `url('${marker.image_url}')`
+    //   //   customMarker.style.backgroundSize = "contain"
+    //   //   customMarker.style.backgroundRepeat = "no-repeat"
+    //   //   customMarker.style.width = "25px"
+    //   //   customMarker.style.height = "50px"
 
-        new mapboxgl.Marker(customMarker)
-          .setLngLat([marker.lng, marker.lat])
-          .setPopup(popup)
-          .addTo(this.map)
-      })
-    }
+    //   //   new mapboxgl.Marker(customMarker)
+    //   //     .setLngLat([marker.lng, marker.lat])
+    //   //     .setPopup(popup)
+    //   //     .addTo(this.map)
+    //   // })
+    // }
 
-    #fitMapToMarkers() {
-      const bounds = new mapboxgl.LngLatBounds()
-      this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-      this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-    }
+    // #fitMapToMarkers() {
+    //   const bounds = new mapboxgl.LngLatBounds()
+    //   this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    //   this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    // }
 }
