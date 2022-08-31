@@ -2,50 +2,111 @@
   background-color: white;
   max-width: 1400px;
   height: 100vh;
+  padding-top: 4vh;
 }
 
 .show-info {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 1rem;
   background-color: white;
 }
 
 .show-left {
-  padding: 10px;
+  margin: 5vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid lightgray;
 }
 
 
 .show-title {
+  text-transform: uppercase;
+  text-transform: bold;
   text-align: center;
-  border: 5px white;
+  font-size: larger;
+  border-bottom: 1px solid lightgray;
+  height: 8vh;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  color: grey;
+  padding: 16px;
 }
 
 .show-location {
   text-align: center;
+  border-right: 1px solid lightgray;
+  width: 50%;
+  height: 8vh;
+  color: grey;
+  padding: 8px;
+}
+
+.show-dates {
+  text-align: center;
+  justify-content: center;
+  width: 50%;
+  height: 8vh;
+  color: grey;
+  padding: 8px;
 }
 
 .show-tags {
   text-align: center;
+  border-top: 1px solid lightgray;
+  width: 100%;
+  height: 8vh;
+  color: grey;
 }
 
 .show-description {
   text-align: center;
+  border-top: 1px solid lightgray;
+  height: 40vh;
+  font-size: small;
+  padding: 5vh;
+  text-align: left;
+  color: grey;
 }
 
-.show-button {
-
+.show-button-contaner {
+  text-align: center;
+  border: 1px solid lightgray;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: 20vh;
 }
 
-.show-right {
-  outline: 5px black;
+.show-right{
+  margin: 20px;
 }
 
 .show-map {
-  padding: 150px;
-  outline: 25px black;
+  height: 40vh;
+  color: black;
+  // background-color: lightgray;
+  text-align: center;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .show-images {
-  padding: 150px;
+  height: 40vh;
+  background-color: lightblue;
+  text-align: center;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+p {
+  margin: 0px;
+}
+
+.fa-dog {
+  size: 100px;
 }
