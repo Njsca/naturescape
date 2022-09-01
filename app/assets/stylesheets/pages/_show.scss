@@ -20,6 +20,8 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid lightgray;
+  height: fit-content;
+  overflow-y: scroll;
 }
 
 
@@ -37,6 +39,7 @@
 }
 
 .show-location {
+  height: fit-content;
   text-align: center;
   border-right: 1px solid lightgray;
   width: 50%;
@@ -81,7 +84,13 @@
 }
 
 .show-right{
-  margin: 20px;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: fit-content;
+  overflow-y: scroll;
 }
 
 .show-map {
@@ -96,17 +105,11 @@
 
 .show-images {
   height: 40vh;
-  background-color: lightblue;
   text-align: center;
   margin: 20px;
   border-radius: 25px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-p {
-  margin: 0px;
-}
-
-.fa-dog {
-  size: 100px;
+  background-image: url("dorothea-oldani-ANG04nEhp3U-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
