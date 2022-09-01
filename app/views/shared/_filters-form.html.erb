@@ -45,16 +45,19 @@
   <br>
 
   <p>Length</p>
-  <input type="range" min="1" max="40" value="20" class="slider" id="range">
+  <div class="slider">
+    <input type="range" min="1" max="40" value="20" class="slider" id="range" oninput="rangeValue.innerText = this.value + ' km'">
+    <p id="rangeValue"></p>
+  </div>
   <br>
 
   <p>Terrain type</p>
   <div class="filter-category">
-    <input type="radio" class="terrain-radio-btn" id="flat" name="difficulty" value="flat">
+    <input type="radio" class="terrain-radio-btn" id="flat" name="terrain-type" value="flat">
     <label for="flat"><i class="fa-solid fa-minus"></i></label>
-    <input type="radio" class="terrain-radio-btn" id="hills" name="difficulty" value="hills">
+    <input type="radio" class="terrain-radio-btn" id="hills" name="terrain-type" value="hills">
     <label for="hills"><i class="fa-solid fa-mound"></i></label>
-    <input type="radio" class="terrain-radio-btn" id="mountains" name="difficulty" value="mountains">
+    <input type="radio" class="terrain-radio-btn" id="mountains" name="terrain-type" value="mountains">
     <label for="mountains"><i class="fa-solid fa-mountain" title="moutains"></i></label>
   </div>
   <br>
@@ -68,7 +71,6 @@
 
 <script>
 function endDateFieldVisibility() {
-  console.log("hella")
   if (document.getElementById("multiple-days").checked) {
       //display block/none -- not working either
       document.getElementById("end-date-field").style.visibility = "visible"
