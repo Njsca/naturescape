@@ -1,32 +1,9 @@
-.hike-card {
-  overflow: hidden;
-  width: 380px;
-  position: relative;
-  box-shadow: 0 2px 7px #dfdfdf;
-  margin: 50px auto;
-  background: #fafafa;
-  border-radius: 50%;
-}
 
-.hike-card > img {
-  height: 200px;
-  width: 100%;
+.card-img-top {
   object-fit: cover;
+  max-height: 50%;
 }
 
-.hike-details h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  font-family: $headers-font;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.hike-details p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  font-family: $headers-font;
-  font-size: 15px;
+.hike-icons {
+  padding: 2px 10px 0 8px;
 }

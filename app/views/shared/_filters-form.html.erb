@@ -1,0 +1,48 @@
+<form class="filters-form">
+  <p>Duration</p>
+  <input type="radio" id="1-day" name="duration" value="multiple-days">
+  <label for="1-day">1 day</label><br>
+  <input type="radio" id="multiple-days" name="duration" value="multiple-days">
+  <label for="multiple-days">multiple days</label>
+  <br>
+  <br>
+  <p>Date(s)</p>
+  <input type="date" id="start-date" name="start-date">
+  <%# TODO: make this appear only when you select "multiple days" above %>
+  to
+  <input type="date" id="end-date" name="end-date">
+  <br>
+  <br>
+  <p>Extra buddies</p>
+  <input type="checkbox" id="dog" name="extra-buddies" value="dog">
+  <label for="dog"> dog friendly</label><br>
+  <input type="checkbox" id="child" name="extra-buddies" value="child">
+  <label for="child"> kid friendly</label><br>
+  <br>
+  <br>
+  <p>Difficulty</p>
+  <input type="radio" id="beginner" name="difficulty" value="beginner">
+  <label for="beginner">beginner</label><br>
+  <input type="radio" id="intermediate" name="difficulty" value="intermediate">
+  <label for="intermediate">intermediate</label>
+  <input type="radio" id="expert" name="difficulty" value="expert">
+  <label for="expert">expert</label>
+  <br>
+  <br>
+  <p>Length</p>
+  <input type="range" min="1" max="40" value="20" class="slider" id="myRange">
+  <br>
+  <br>
+  <p>Terrain type</p>
+  <input type="radio" id="flat" name="difficulty" value="flat">
+  <label for="flat">flat</label><br>
+  <input type="radio" id="hills" name="difficulty" value="hills">
+  <label for="hills">hills</label>
+  <input type="radio" id="mountains" name="difficulty" value="mountains">
+  <label for="mountains">mountains</label>
+  <br>
+  <br>
+  <p>Languages</p>
+  <input type="checkbox" id="english" name="languages" value="english">
+  <label for="english"> english-speaking</label><br>
+</form>

@@ -1,10 +1,15 @@
- <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group">
-      <div>
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Enter a location..."/>
+
+  <%# <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+    <div class="search-form-control form-group"
+    data-controller="address-autocomplete"
+    data-address_autocomplete_api_key_value="  ENV['MAPBOX_API_KEY']  ">
+        <input data = "address-autocomplete" class="form-control string required" type="address" name="search[query]" id="search_query" placeholder="Enter a location..."/>
         <button name="button" type="submit" class="btn btn-flat">
           <i class="fas fa-search magnifing-glass"></i>
         </button>
-      </div>
     </div>
-  </form>
+  </form> %>
+<div id="geocoder"></div>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+

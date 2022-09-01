@@ -5,16 +5,44 @@ Hike.destroy_all
 
 puts "creating users..."
 
-user1 = User.new(first_name: "Anja", last_name: "Anja", email: "anja@email.com", password: "password", location: "Switzerland")
+user1 = User.new(
+  first_name: "Anja",
+  last_name: "Anja",
+  nickname: "AnjaK",
+  email: "anja@email.com",
+  password: "password",
+  location: "Switzerland"
+)
 user1.save!
 
-user2 = User.new(first_name: "Joeri", last_name: "Joeri", email: "joeri@email.com", password: "password", location: "Netherlands")
+user2 = User.new(
+  first_name: "Joeri",
+  last_name: "Joeri",
+  nickname: "JoeriV",
+  email: "joeri@email.com",
+  password: "password",
+  location: "Netherlands"
+)
 user2.save!
 
-user3 = User.new(first_name: "Paul", last_name: "Paul", email: "paul@email.com", password: "password", location: "England")
+user3 = User.new(
+  first_name: "Paul",
+  last_name: "Paul",
+  nickname: "PaulG",
+  email: "paul@email.com",
+  password: "password",
+  location: "England"
+)
 user3.save!
 
-user4 = User.new(first_name: "Denis", last_name: "Denis", email: "denis@email.com", password: "password", location: "Italy")
+user4 = User.new(
+  first_name: "Denis",
+  last_name: "Denis",
+  nickname: "DenisC",
+  email: "denis@email.com",
+  password: "password",
+  location: "Italy"
+)
 user4.save!
 
 puts "users created!"
