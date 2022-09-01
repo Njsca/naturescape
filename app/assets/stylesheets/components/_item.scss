@@ -1,59 +1,71 @@
 .item-card {
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 380px;
   position: relative;
+  width: 300px;
+  height: 300px;
   box-shadow: 0 2px 7px #000000;
-  margin: 50px auto;
-  background: #fafafa;
-  border-radius: 50%;
+  border-radius: 15px;
+  padding: 0px;
+  margin: 20px;
 }
 
-.item-card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+.item-details {
+  padding: 10px;
 }
 
-.item-details h2 a {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.item-details h2 {
   font-family: $headers-font;
-  font-weight: bold;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.item-details h3 {
+  font-family: $headers-font;
+  font-family: $headers-font;
+  font-weight: lighter;
+  color: gray;
+  font-size: 14px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .item-details p {
-  font-size: 12px;
-  margin: 0;
   font-family: $headers-font;
+  font-size: 16px;
+  padding-top: 2px;
+  padding-left: 10px;
+  margin-bottom: 6px;
 }
 
 
 .tick-container{
   box-sizing: border-box;
-  padding:25px;
-  text-align:center;
+  padding-right: 6px;
+  padding-top: 20px;
+  text-align: right;
 }
-
 
 /* Checkmark style starts */
 
-
 .check-box {
-  height: $checkbox-height;
-  width: $checkbox-height;
+  height: 2px;
+  width: 2px;
   background-color: transparent;
-  border: $checkbox-height * .1 solid $magenta;
+  border: 0.5px solid $magenta;
   border-radius: 5px;
   position: relative;
-  display: inline-block;
+  // display: inline-block;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-transition: border-color ease $duration/2;
-  -o-transition: border-color ease $duration/2;
-  -webkit-transition: border-color ease $duration/2;
-  transition: border-color ease $duration/2;
+  -moz-transition: border-color ease 2;
+  -o-transition: border-color ease 2;
+  -webkit-transition: border-color ease 2;
+  transition: border-color ease 2;
   cursor:pointer;
+}

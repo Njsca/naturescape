@@ -4,7 +4,7 @@
   grid-template-columns: 35% 65%;
   margin: 3rem;
   border-radius: 20px;
-  border: 1px solid red;
+  border: 1px solid $dark-green;
 }
 
 .map-filters{
@@ -22,4 +22,10 @@
 
 .map-container{
   height: 100%;
+}
+
+.map-filters{
+  overflow: scroll;
+  align-items: center;
+  align-content: center;
 }
