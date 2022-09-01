@@ -1,34 +1,34 @@
-.button {
-  background-color: #A8345C;
-  border: none;
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  height: 100%;
-  width: 30%;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+// wrap buttons inside a buttons div to have text aligned
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  padding-right: 12px;
 }
 
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: $magenta;
+  border: 1px solid $magenta;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-right: 10px;
+  box-sizing: 30px 80px;
+  appearance: none;
+  border-radius: 0.6em;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  text-align: center;
 
-.show-button {
-    background-color: #A8345C;
-    border: none;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    width: 28vh;
-    height: 8vh;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    margin: 5vh;
+  &:hover,
+  &:focus {
+    color: $magenta;
+    outline: 0;
+  }
 }

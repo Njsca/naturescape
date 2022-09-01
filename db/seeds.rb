@@ -45,6 +45,34 @@ user4 = User.new(
 )
 user4.save!
 
+# tag creation
+one_day_tag = Tag.new(name: "1 day")
+one_day_tag.save!
+multiple_days_tag = Tag.new(name: "multiple days")
+multiple_days_tag.save!
+start_date_tag = Tag.new(name: "start date")
+start_date_tag.save!
+end_date_tag = Tag.new(name: "end date")
+end_date_tag.save!
+dog_tag = Tag.new(name: "dog friendly")
+dog_tag.save!
+kid_tag = Tag.new(name: "kid friendly")
+kid_tag.save!
+beginner_tag = Tag.new(name: "beginner")
+beginner_tag.save!
+intermediate_tag = Tag.new(name: "intermediate")
+intermediate_tag.save!
+expert_tag = Tag.new(name: "expert")
+expert_tag.save!
+flat_tag = Tag.new(name: "flat")
+flat_tag.save!
+hill_tag = Tag.new(name: "hills")
+hill_tag.save!
+mountain_tag = Tag.new(name: "mountains")
+mountain_tag.save!
+english_tag = Tag.new(name: "english-speaking")
+english_tag.save!
+
 puts "users created!"
 
 puts "creating hikes..."
@@ -67,6 +95,12 @@ hike1 = Hike.new(
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id
 )
+file = URI.open("app/assets/images/hikepictures/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
+file2 = URI.open("app/assets/images/hikepictures/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
+file3 = URI.open("app/assets/images/hikepictures/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
+hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png")
 hike1.save!
 
 hike2 = Hike.new(
