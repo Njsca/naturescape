@@ -42,30 +42,28 @@
   margin-bottom: 6px;
 }
 
-
-.tick-container{
-  box-sizing: border-box;
-  padding-right: 6px;
-  padding-top: 20px;
-  text-align: right;
-}
-
 /* Checkmark style starts */
 
-.check-box {
-  height: 2px;
-  width: 2px;
-  background-color: transparent;
-  border: 0.5px solid $magenta;
-  border-radius: 5px;
-  position: relative;
-  // display: inline-block;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-transition: border-color ease 2;
-  -o-transition: border-color ease 2;
-  -webkit-transition: border-color ease 2;
-  transition: border-color ease 2;
-  cursor:pointer;
+.checkbox-item {
+  margin-left: 155px;
+  margin-bottom: 10px;
+}
+
+.item-bottom-info {
+  display: flex;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid $magenta;
+    appearance: none;
 }
