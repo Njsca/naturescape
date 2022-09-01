@@ -1,5 +1,17 @@
 <div class="container">
   <div class="show-info-full-width">
     <p class="show-title">Ask Katherine anything...</p>
+<%#
+    <div class="message-container" data-controller=“chatroom-subscription”>
+      <label for="booking-message">Put message here</label>
+      <input type="text" name="booking-message" class="message" data-chatroom-subscription-target="message">
+    </div> %>
+
+    <%# ADD Code stimulus controller from above into simple form below!!! %>
+
+    <%= simple_form_for [@hike, @booking] do |f| %>
+      <%= f.input :message %>
+      <%= f.button :submit %>
+    <% end %>
   </div>
 </div>
