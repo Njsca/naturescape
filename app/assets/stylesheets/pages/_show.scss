@@ -11,6 +11,18 @@
   background-color: white;
 }
 
+.show-info-full-width {
+  margin: 5vh;
+  height: 75vh;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid lightgray;
+}
+
 .show-left {
   margin: 5vh;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
