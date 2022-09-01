@@ -1,48 +1,83 @@
 <form class="filters-form">
   <p>Duration</p>
-  <input type="radio" id="1-day" name="duration" value="multiple-days">
-  <label for="1-day">1 day</label><br>
-  <input type="radio" id="multiple-days" name="duration" value="multiple-days">
-  <label for="multiple-days">multiple days</label>
+  <div class="filter-category">
+    <input type="radio" class ="duration-radio-btn" id="1-day" name="duration" value="multiple-days">
+    <label for="1-day">1 day</label><br>
+    <input type="radio" class ="duration-radio-btn" id="multiple-days" name="duration" value="multiple-days">
+    <label for="multiple-days">multiple days</label>
+  </div>
   <br>
-  <br>
+
+
   <p>Date(s)</p>
-  <input type="date" id="start-date" name="start-date">
-  <%# TODO: make this appear only when you select "multiple days" above %>
-  to
-  <input type="date" id="end-date" name="end-date">
+  <div class="filter-category">
+    <input type="date" class="date-selection" id="start-date" name="start-date">
+    <%# TODO: make this appear only when you select "multiple days" above %>
+    <div id="end-date-field" style="display:block">
+      to
+      <input type="date" class="date-selection" id="end-date" name="end-date">
+    </div>
+  </div>
   <br>
-  <br>
+
   <p>Extra buddies</p>
-  <input type="checkbox" id="dog" name="extra-buddies" value="dog">
-  <label for="dog"> dog friendly</label><br>
-  <input type="checkbox" id="child" name="extra-buddies" value="child">
-  <label for="child"> kid friendly</label><br>
+    <div class="filter-category">
+      <div class="dog-friendly-wrapper">
+        <input type="checkbox" class="extra-buddies-checkbox" id="dog" name="extra-buddies" value="dog">
+        <label for="dog"> dog friendly</label>
+      </div>
+      <div class="kid-friendly-wrapper">
+        <input type="checkbox" class="extra-buddies-checkbox" id="child" name="extra-buddies" value="child">
+        <label for="child"> kid friendly</label>
+      </div>
+    </div>
   <br>
-  <br>
+
   <p>Difficulty</p>
-  <input type="radio" id="beginner" name="difficulty" value="beginner">
-  <label for="beginner">beginner</label><br>
-  <input type="radio" id="intermediate" name="difficulty" value="intermediate">
-  <label for="intermediate">intermediate</label>
-  <input type="radio" id="expert" name="difficulty" value="expert">
-  <label for="expert">expert</label>
+  <div class="filter-category">
+    <input type="radio" class="difficulty-radio-btn" id="beginner" name="difficulty" value="beginner">
+    <label for="beginner">beginner</label><br>
+    <input type="radio" class="difficulty-radio-btn" id="intermediate" name="difficulty" value="intermediate">
+    <label for="intermediate">intermediate</label>
+    <input type="radio" class="difficulty-radio-btn" id="expert" name="difficulty" value="expert">
+    <label for="expert">expert</label>
+  </div>
   <br>
-  <br>
+
   <p>Length</p>
-  <input type="range" min="1" max="40" value="20" class="slider" id="myRange">
+  <input type="range" min="1" max="40" value="20" class="slider" id="range">
   <br>
-  <br>
+
   <p>Terrain type</p>
-  <input type="radio" id="flat" name="difficulty" value="flat">
-  <label for="flat">flat</label><br>
-  <input type="radio" id="hills" name="difficulty" value="hills">
-  <label for="hills">hills</label>
-  <input type="radio" id="mountains" name="difficulty" value="mountains">
-  <label for="mountains">mountains</label>
+  <div class="filter-category">
+    <input type="radio" class="terrain-radio-btn" id="flat" name="difficulty" value="flat">
+    <label for="flat"><i class="fa-solid fa-minus"></i></label>
+    <input type="radio" class="terrain-radio-btn" id="hills" name="difficulty" value="hills">
+    <label for="hills"><i class="fa-solid fa-mound"></i></label>
+    <input type="radio" class="terrain-radio-btn" id="mountains" name="difficulty" value="mountains">
+    <label for="mountains"><i class="fa-solid fa-mountain" title="moutains"></i></label>
+  </div>
   <br>
-  <br>
+
   <p>Languages</p>
-  <input type="checkbox" id="english" name="languages" value="english">
-  <label for="english"> english-speaking</label><br>
+  <div class="english-checkbox-wrapper">
+    <input type="checkbox" class="english-checkbox" id="english" name="languages" value="english">
+    <label for="english"> english-speaking</label>
+  </div>
 </form>
+
+<script>
+function endDateFieldVisibility() {
+  console.log("hella")
+  if (document.getElementById("multiple-days").checked) {
+      //display block/none -- not working either
+      document.getElementById("end-date-field").style.visibility = "visible"
+    }
+  else {
+    document.getElementById("end-date-field").style.visibility = "hidden"
+  }
+}
+endDateFieldVisibility()
+
+document.getElementById("range")
+</script>
