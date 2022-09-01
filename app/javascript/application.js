@@ -8,4 +8,3 @@ console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)
 document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("keyup", (e) => {console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)})
 
 import "map_controller"
-
