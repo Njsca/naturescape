@@ -1,0 +1,274 @@
+.filter-category{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+// duration filters (one day/multiple days)
+.duration-radio-btn{
+  position: absolute;
+  transform: scale(0);
+}
+
+.duration-radio-btn + label{
+  cursor: pointer;
+  background-color: white;
+  color: $magenta;
+  border-radius: 6px;
+  padding: 3px;
+  border: 1px solid $magenta;
+}
+
+.duration-radio-btn:checked + label{
+  background-color: $magenta;
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+// date selection filters
+// TODO: Make the second field appear only for multi-day hikes
+.date-selection{
+  color: $magenta;
+  border-radius: 6px;
+  border: 1px solid $magenta;
+  padding: 3px;
+}
+
+::-webkit-calendar-picker-indicator{
+  color: $magenta;
+  // the following lines of code make the calendar icon white
+  // so that it's not visible anymore; use either one of them
+  // filter: invert(1);
+  // color-scheme: dark;
+}
+
+// Extra buddies filters
+
+.extra-buddies-checkbox{
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  border: 1px solid $magenta;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extra-buddies-checkbox + label {
+  cursor: pointer;
+}
+
+.dog-friendly-wrapper{
+  height: 50px;
+  width: 100px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.kid-friendly-wrapper{
+  height: 50px;
+  width: 100px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.extra-buddies-checkbox:after{
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 20px;
+  color: $magenta;
+  display: none;
+}
+.extra-buddies-checkbox:checked:after{
+  display: block;
+}
+
+// Difficulty filters
+.difficulty-radio-btn{
+  position: absolute;
+  transform: scale(0);
+}
+
+.difficulty-radio-btn + label{
+  cursor: pointer;
+  background-color: white;
+  color: $magenta;
+  border-radius: 6px;
+  padding: 3px;
+  border: 1px solid $magenta;
+}
+
+.difficulty-radio-btn:checked + label{
+  background-color: $magenta;
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+// Terrain filters
+.terrain-radio-btn{
+  position: absolute;
+  transform: scale(0);
+}
+
+.terrain-radio-btn + label{
+  cursor: pointer;
+  background-color: white;
+  color: $magenta;
+  border-radius: 6px;
+  padding: 3px;
+  border: 1px solid $magenta;
+  font-size: 40px;
+}
+
+.terrain-radio-btn:checked + label{
+  background-color: $magenta;
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}
+// English-speaking filter
+.english-checkbox-wrapper{
+  height: 50px;
+  width: 100px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.english-checkbox{
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  width: 32px;
+  border-radius: 5px;
+  border: 1px solid $magenta;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.english-checkbox + label {
+  cursor: pointer;
+}
+.english-checkbox:after{
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 20px;
+  color: $magenta;
+  display: none;
+}
+.english-checkbox:checked:after{
+  display: block;
+}
+
+// slider customization
+input[type=range] {
+  height: 26px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  // animate: 0.2s;
+  box-shadow: 1px 1px 1px $magenta;
+  background: $magenta;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  // box-shadow: 1px 0px 0px #000000;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: $magenta;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  // animate: 0.2s;
+  box-shadow: 1px 1px 1px $magenta;
+  background: $magenta;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  // box-shadow: 1px 0px 0px #000000;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  // animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: $magenta;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 1px 1px 1px $magenta;
+}
+input[type=range]::-ms-fill-upper {
+  background: $magenta;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 1px 1px 1px $magenta;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  // box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: $magenta;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: $magenta;
+}
