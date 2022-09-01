@@ -11,6 +11,7 @@ const sugg = document.querySelector(".suggestions")
 
 sugg.addEventListener("input", (e) => {
   console.log(sugg)
+  console.log("PD")
   console.log("helllooooo")
   window.location.assign(`http://localhost:3000/hikes?query${sugg}`)
   console.log("asasd")

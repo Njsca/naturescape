@@ -1,3 +1,13 @@
-<h4>I am an ugly card in need of styling</h4>
-<p><%= hike.title %>
-<%= hike.location %></p>
+<div class="item-card">
+    <%= image_tag "vdj.jpg", class: "card-img-top" %>
+  <div class="item-details">
+    <h2><a href=""> <%= hike.title %> </a></h2>
+    <p> <%= hike.location %> </p>
+    <h3> length  |  level </h3>
+
+        <div class="hike-icons">
+          <i class="fa-solid fa-mountain" title="moutains"></i>
+          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        </div>
+  </div>
+</div>
