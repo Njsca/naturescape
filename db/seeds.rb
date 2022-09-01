@@ -5,17 +5,73 @@ Hike.destroy_all
 
 puts "creating users..."
 
-user1 = User.new(first_name: "Anja", last_name: "Anja", email: "anja@email.com", password: "password", location: "Switzerland")
+user1 = User.new(
+  first_name: "Anja",
+  last_name: "Anja",
+  nickname: "AnjaK",
+  email: "anja@email.com",
+  password: "password",
+  location: "Switzerland"
+)
 user1.save!
 
-user2 = User.new(first_name: "Joeri", last_name: "Joeri", email: "joeri@email.com", password: "password", location: "Netherlands")
+user2 = User.new(
+  first_name: "Joeri",
+  last_name: "Joeri",
+  nickname: "JoeriV",
+  email: "joeri@email.com",
+  password: "password",
+  location: "Netherlands"
+)
 user2.save!
 
-user3 = User.new(first_name: "Paul", last_name: "Paul", email: "paul@email.com", password: "password", location: "England")
+user3 = User.new(
+  first_name: "Paul",
+  last_name: "Paul",
+  nickname: "PaulG",
+  email: "paul@email.com",
+  password: "password",
+  location: "England"
+)
 user3.save!
 
-user4 = User.new(first_name: "Denis", last_name: "Denis", email: "denis@email.com", password: "password", location: "Italy")
+user4 = User.new(
+  first_name: "Denis",
+  last_name: "Denis",
+  nickname: "DenisC",
+  email: "denis@email.com",
+  password: "password",
+  location: "Italy"
+)
 user4.save!
+
+# tag creation
+one_day_tag = Tag.new(name: "1 day")
+one_day_tag.save!
+multiple_days_tag = Tag.new(name: "multiple days")
+multiple_days_tag.save!
+start_date_tag = Tag.new(name: "start date")
+start_date_tag.save!
+end_date_tag = Tag.new(name: "end date")
+end_date_tag.save!
+dog_tag = Tag.new(name: "dog friendly")
+dog_tag.save!
+kid_tag = Tag.new(name: "kid friendly")
+kid_tag.save!
+beginner_tag = Tag.new(name: "beginner")
+beginner_tag.save!
+intermediate_tag = Tag.new(name: "intermediate")
+intermediate_tag.save!
+expert_tag = Tag.new(name: "expert")
+expert_tag.save!
+flat_tag = Tag.new(name: "flat")
+flat_tag.save!
+hill_tag = Tag.new(name: "hills")
+hill_tag.save!
+mountain_tag = Tag.new(name: "mountains")
+mountain_tag.save!
+english_tag = Tag.new(name: "english-speaking")
+english_tag.save!
 
 puts "users created!"
 
