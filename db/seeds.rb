@@ -95,6 +95,12 @@ hike1 = Hike.new(
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id
 )
+file = URI.open("app/assets/images/hikepictures/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
+file2 = URI.open("app/assets/images/hikepictures/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
+file3 = URI.open("app/assets/images/hikepictures/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
+hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png")
 hike1.save!
 
 hike2 = Hike.new(
