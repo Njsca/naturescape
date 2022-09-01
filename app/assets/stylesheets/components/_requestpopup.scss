@@ -1,0 +1,55 @@
+// .popup-card {
+//   background: #ffffff;
+//   display: flex;
+//   flex-direction: column;
+//   overflow: hidden;
+//   position: relative;
+//   width: 500px;
+//   height: 300px;
+//   box-shadow: 0 2px 7px #000000;
+//   border-radius: 15px;
+//   padding: 0px;
+//   margin: 20px;
+// }
+
+// .popup-details {
+//   padding: 10px;
+// }
+
+// .popup-details p {
+//   padding: 10px;
+//   text-align: center;
+// }
+
+// .close-icon {
+//   align-items: right;
+// }
+
+// .fa-regular {
+//   width: 30px;
+//   height: 30px;
+//   text-align: right;
+// }
+
+
+
+.flash {
+  font-family: $headers-font;
+  font-size: 18px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.flash-success {
+  border: 2px solid $magenta;
+}
+
+.flash a {
+  padding-left: 2px;
+}
