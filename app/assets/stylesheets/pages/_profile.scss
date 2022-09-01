@@ -1,4 +1,4 @@
-.container {
+.flex-container {
   display: flex;
   background-color: white;
   max-width: 1400px;
@@ -68,7 +68,7 @@
   border: 1px solid lightgray;
   border-radius: 10px;
   font-size: 14px;
-  padding: 4vh;
+  padding: 3vh;
   text-align: left;
   color: black;
 }
@@ -83,22 +83,23 @@
 
 .avatar-profile {
   position: absolute;
-  margin-left: 389px;
+  margin-left: 400px;
   margin-top: -33px;
   width: 105px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-// my messages
+// ---- MY MESSAGES ---- \\
 
 .message-info {
-  display: flex;
+  // display: flex;
   grid-template-columns: 50% 50%;
   background-color: white;
 }
 
 .message-right {
+  width: auto;
   margin: 5vh;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   background-color: white;
@@ -112,14 +113,13 @@
 
 .message-title {
   text-transform: bold;
-  text-align: center;
-  font-size: larger;
-  border-bottom: 1px solid lightgray;
+  text-align: left;
+  font-size: 18px;
   height: 8vh;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  color: grey;
-  padding: 16px;
+  color: black;
+  margin-left: 22px;
 }
 
 .message-object {
@@ -143,5 +143,9 @@
 
 
 #message-accept-btn {
+  margin-bottom: 22px;
+}
+
+#message-decline-btn {
   margin-bottom: 22px;
 }
