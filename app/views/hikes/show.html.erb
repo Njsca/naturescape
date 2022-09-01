@@ -8,7 +8,7 @@
       </div>
 
       <!-- location and dates goes below -->
-      <div class="d-flex">
+      <div class="d-flex" style="height: fit-content !important;">
         <div class="show-location">
           <i class="fa-solid fa-location-dot"></i>
           <br>
@@ -52,13 +52,11 @@
           data-map-marker-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-      </div>
 
 
-      <!-- image files go below -->
-      <div class="show-images">
-        <h3>show images</h3>
-      </div>
+        <!-- image files go below -->
+        <div class="show-images">
+        </div>
     </div>
   </div>
 </div>
