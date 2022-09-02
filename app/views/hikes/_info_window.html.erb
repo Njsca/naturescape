@@ -1,7 +1,7 @@
 <div class="item-card">
     <%= image_tag "vdj.jpg", class: "card-img-top" %>
   <div class="item-details">
-    <h2><a href=""> <%= hike.title %> </a></h2>
+    <h2><%= link_to hike.title, hike_path(hike) %></h2>
     <p> <%= hike.location %> </p>
     <h3> <%= hike.level %>  |  <%= hike.duration %>  </h3>
 
