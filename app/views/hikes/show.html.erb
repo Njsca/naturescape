@@ -25,13 +25,14 @@
       <!-- row of tags goes below -->
       <div class="d-flex">
         <div class="show-tags">
-          <i class="fa-solid fa-dog"></i>
+          <i class="fa-solid fa-paw"></i>
           <i class="fa-solid fa-child"></i>
-          <i class="fa-solid fa-mountains"></i>
+          <i class="fa-solid fa-carrot"></i>
         </div>
       </div>
 
       <!-- hike description text and button goes below -->
+
       <div class="show-description mb-3">
         <%= @hike.description %></p>
       </div>
@@ -45,11 +46,11 @@
     </div>
 
     <!-- Map info goes below -->
-    <div>
+
       <div class="show-right">
         <div class="show-map"
           data-controller="map"
-          data-map-marker-value="<%= @markers.to_json %>"
+          data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
 
