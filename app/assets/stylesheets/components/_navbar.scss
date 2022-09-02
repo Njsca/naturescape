@@ -1,10 +1,35 @@
-.navbar-lewagon {
-  display: flex;
-  justify-content: space-between;
+.navbar {
+  flex-direction: row;
   background: white;
-  height: 80px;
-  padding: 10px 65px;
-  margin-top: 20px;
+  height: 50px;
+  color: $dark-green;
+}
+
+.navbar-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: $magenta;
+  border: 1px solid $magenta;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-right: 10px;
+  box-sizing: 30px 80px;
+  appearance: none;
+  border-radius: 0.6em;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  text-align: center;
+  width: 20%;
+}
+
+p {
+  padding-left: 25px;
+  font-size: xx-large;
+  color: $dark-green;
 }
 
 .nav-search {
@@ -27,12 +52,12 @@
   align-items: center;
   justify-content: space-between;
   color: white;
-  margin: 0 10px 0 auto;
   height: 3.0rem;
   width: fit-content;
   padding: 15px;
   border-radius: 50px;
   background-color: $dark-green;
+  padding-right: 25px;
 }
 
 .avatar {
