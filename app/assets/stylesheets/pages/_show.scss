@@ -87,12 +87,13 @@
   color: grey;
 }
 
-.show-button-contaner {
+.show-button-container {
   text-align: center;
-  border: 1px solid lightgray;
+  // border: 1px solid lightgray;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   height: 20vh;
+  margin-left: 50px;
 }
 
 .show-right{
