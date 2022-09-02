@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: white;
+  height: 800px;
 }
 
 .show-left {
@@ -22,6 +23,7 @@
   border: 1px solid lightgray;
   height: fit-content;
   overflow-y: scroll;
+  height: 600px;
 }
 
 
@@ -65,10 +67,14 @@
   color: grey;
 }
 
+#i {
+  height: 100px;
+}
+
 .show-description {
   text-align: center;
   border-top: 1px solid lightgray;
-  height: 40vh;
+  height: 60vh;
   font-size: small;
   padding: 5vh;
   text-align: left;
@@ -91,6 +97,7 @@
   border-bottom-right-radius: 25px;
   height: fit-content;
   overflow-y: scroll;
+  height: 600px;
 }
 
 .show-map {
