@@ -1,7 +1,6 @@
-<div class="flex-container">
-  <div class="profile-info">
-    <div class="profile-center">
-
+<div class="container">
+  <div class="profile-info row">
+    <div class="profile-center col-sm">
       <!-- Name and last name -->
         <div class="profile-name">
           <h2>Katherine Mayens</h2>
@@ -26,15 +25,70 @@
         <p>Hi, I’m Katherine and I grew up in the heart of the Vallée de Joux in Switzerland. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!</p>
       </div>
 
-    <div class="buttons justify-content-end">
-      <a class="btn" id="profile-edit-btn" href="">edit</a>
+      <%# <div class="buttons justify-content-end">
+        <a class="btn" id="profile-edit-btn" href="">edit</a>
+      </div> %>
+
+      <div class="buttons justify-content-end">
+        <a class="btn" id="profile-contact-btn" href="">send message</a>
+      </div>
     </div>
   </div>
+</div>
 
-<!-- my messages -->
-  <div class="message-info">
-    <div class="message-right">
+<!-- HIKES AND OWN HIKES -->
 
+<div class="container-hike">
+  <div class="hike-info row">
+    <div class="hike-center col-sm">
+      <!-- title -->
+        <div class="hike-name">
+          <h2>My own hikes</h2>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-hike">
+  <div class="hike-info row">
+    <div class="hike-center col-sm">
+      <!-- title -->
+        <div class="hike-name">
+          <h2>My joined hikes</h2>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<%# <div style="width: 50%; margin: auto; min-height: 25vh;">
+  <div style="background-color: magenta; display: flex;">
+    <div style="background-color: red; width: 50% important!;">
+      <a  class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Your hikes
+      </a>
+    </div>
+    <div>
+      <a class="" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Your joined hikes
+    </a>
+    </div>
+
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="">
+      Have a look at the hikes you planned!
+    </div>
+  </div>
+</div> %>
+
+
+
+
+<!-- MESSAGES/MESSENGER -->
+
+    <%# <div class="message-right col-sm">
       <!-- titles -->
       <div class="d-flex">
         <div class="message-title">
@@ -48,7 +102,7 @@
         </div>
       </div>
 
-      <!-- message received -->
+      <!-- message from user -->
       <div class="message-description">
         <p></p>
       </div>
@@ -58,6 +112,8 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
 
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

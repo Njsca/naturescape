@@ -16,8 +16,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
-  margin-right: 10px;
-  box-sizing: 30px 80px;
+  // box-sizing: 30px 80px;
   appearance: none;
   border-radius: 0.6em;
   cursor: pointer;
@@ -29,6 +28,36 @@
   &:hover,
   &:focus {
     color: $magenta;
+    outline: 0;
+  }
+}
+
+// TO EDIT - CAN'T MAKE IT SAME SIZEIOAWJFOIEJIORFERDFFFF
+
+.btn2 {
+  font-family: 'Roboto', sans-serif;
+  appearance: none;
+  background-color: white;
+  border: 1px solid $magenta;
+  border-radius: 0.6em;
+  color: $magenta;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  text-align: center;
+
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  &:hover {
+    box-shadow: 0 0 40px 40px $magenta inset;
+  }
+
+  &:hover,
+  &:focus {
+    color: #fff;
     outline: 0;
   }
 }
