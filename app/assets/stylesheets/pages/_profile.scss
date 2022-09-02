@@ -1,4 +1,4 @@
-.flex-container {
+.container {
   display: flex;
   background-color: white;
   max-width: 1400px;
@@ -14,7 +14,7 @@
 }
 
 .profile-center {
-  margin: 5vh;
+  margin: 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   background-color: white;
   border-top-left-radius: 25px;
@@ -100,7 +100,7 @@
 
 .message-right {
   width: auto;
-  margin: 5vh;
+  margin: 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   background-color: white;
   border-top-left-radius: 25px;
