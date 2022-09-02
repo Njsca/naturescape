@@ -25,31 +25,38 @@
       <!-- row of tags goes below -->
       <div class="d-flex">
         <div class="show-tags">
-          <i class="fa-solid fa-dog"></i>
+          <i class="fa-solid fa-paw"></i>
           <i class="fa-solid fa-child"></i>
-          <i class="fa-solid fa-mountains"></i>
+          <i class="fa-solid fa-carrot"></i>
         </div>
       </div>
 
       <!-- hike description text and button goes below -->
       <div class="show-description">
-        <%= @hike.description %></p>
+        <%= @hike.description %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="show-button-container">
+            <div class="show-button">
+              <%= link_to "Find a hike to join", hikes_path %>
+            </div>
+          </div>
       </div>
 
-      <div class="show-button-container">
-        <div class="show-button">
-          <p>request to join</p>
-        </div>
-      </div>
+
 
     </div>
 
     <!-- Map info goes below -->
-    <div>
+
       <div class="show-right">
         <div class="show-map"
           data-controller="map"
-          data-map-marker-value="<%= @markers.to_json %>"
+          data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
 

@@ -85,12 +85,7 @@ hike1 = Hike.new(
   Switzerland Trail OHV road. The Switzerland Trail OHV road is slightly downhill or
   flat from the trailhead to where it intersects with the east end of the Bald Mountain Trail.
   It is then slightly uphill or flat from that point to where it intersects with the west
-  end of the Bald Mountain Trail. The road is wide and rocky with some uneven and loose
-  footing in places. It is fairly exposed and can be dusty if it hasn't rained or snowed for
-  a bit. You can keep up a good, quick pace along the road, however, as the inclines are moderate
-  and there's plenty of room to step around or over any obstacles. If you are running at a
-  peak time you are likely to encounter a fair number of off-road vehicles on the road.
-  There's plenty of room to pass, although the dust and noise may be an issue for some people.",
+  end of the Bald Mountain Trail.",
   location: "Engelberg, Switzerland",
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id
