@@ -282,6 +282,34 @@ hike10 = Hike.new(
 )
 hike10.save!
 
+hike11 = Hike.new(
+  title: "American Hike",
+  description: "hike in the USA",
+  location: "Colorado, USA",
+  date: DateTime.new(2022, 9, 15),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
+)
+hike11.save!
+
+hike12 = Hike.new(
+  title: "American Hike 2.0",
+  description: "hike in the USA again",
+  location: "Arizona, USA",
+  date: DateTime.new(2022, 10, 15),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
+)
+hike12.save!
+
 puts "All done!"
 
 # one day hikes

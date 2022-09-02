@@ -15,27 +15,55 @@ class HikesController < ApplicationController
     #   end
     # end
 
-    if params[:duration] == "1-day"
-      @hikes = Hike.one_day
+    if params.keys.count > 2
+      hikes_id = []
+      
+      if params[:duration] == "1-day"
+        Hike.one_day.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:duration] == "multiple-days"
+        Hike.multiple_days.each { |hike| hikes_id << hike.id }
+      end
+
+      if params["extra-buddies"] == "dog"
+        Hike.dog_friendly.each { |hike| hikes_id << hike.id }
+      end
+
+      if params["extra-buddies"] == "kid"
+        Hike.kid_friendly.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:difficulty] == "beginner"
+        Hike.beginner.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:difficulty] == "intermediate"
+        Hike.intermediate.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:difficulty] == "expert"
+        Hike.expert.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:terrain] == "flat"
+        Hike.flat.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:terrain] == "hills"
+        Hike.hills.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:terrain] == "mountains"
+        Hike.mountains.each { |hike| hikes_id << hike.id }
+      end
+
+      if params[:language] == "english"
+        Hike.english.each { |hike| hikes_id << hike.id }
+      end
+
+      @hikes = Hike.where(id: hikes_id)
     end
-
-    if params[:duration] == "multiple"
-      @hikes = Hike.multiple_days
-    end
-
-
-    # scope :one_day, -> { where("duration = '1 day'" ) }
-    # scope :multiple_day, -> { where("duration = 'multiple days'" ) }
-    # scope :dog_friendly, -> { where("buddy = 'dog'" ) }
-    # scope :kid_friendly, -> { where("buddy = 'kid'" ) }
-    # scope :beginner, -> { where("level = 'beginner'" ) }
-    # scope :intermediate, -> { where("level = 'intermediate'" ) }
-    # scope :expert, -> { where("level = 'expert'" ) }
-    # scope :flat, -> { where("terrain = 'flat'" ) }
-    # scope :hills, -> { where("terrain = 'hills'" ) }
-    # scope :mountains, -> { where("terrain = 'mountains'" ) }
-    # scope :english, -> { where("language = 'english'" ) }
-
 
     @markers = @hikes.geocoded.map do |hike|
       {

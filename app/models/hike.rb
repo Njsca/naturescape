@@ -7,7 +7,7 @@ class Hike < ApplicationRecord
   has_many_attached :photos
 
   scope :one_day, -> { where("duration = '1 day'" ) }
-  scope :multiple_day, -> { where("duration = 'multiple days'" ) }
+  scope :multiple_days, -> { where("duration = 'multiple days'" ) }
   scope :dog_friendly, -> { where("buddy = 'dog'" ) }
   scope :kid_friendly, -> { where("buddy = 'kid'" ) }
   scope :beginner, -> { where("level = 'beginner'" ) }
