@@ -1,7 +1,7 @@
 .container {
   background-color: white;
   max-width: 1400px;
-  height: 100vh;
+  height: 800px;
   padding-top: 4vh;
 }
 
@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: white;
-  height: 800px;
+  height: 100%;
 }
 
 .show-info-full-width {
@@ -34,8 +34,8 @@
   border-bottom-right-radius: 25px;
   border: 1px solid lightgray;
   height: fit-content;
-  overflow-y: scroll;
-  height: 600px;
+
+  height: 700px;
 }
 
 
@@ -101,6 +101,35 @@
   height: 20vh;
 }
 
+.show-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: $magenta;
+  border: 1px solid $magenta;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-right: 10px;
+  box-sizing: 30px 80px;
+  appearance: none;
+  border-radius: 0.6em;
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+  text-align: center;
+  width: 40%;
+  height: 20%;
+}
+
+
+.p {
+  color: white;
+  position: relative;
+}
+
+
 .show-right{
   background-color: white;
   border-top-left-radius: 25px;
@@ -108,12 +137,12 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   height: fit-content;
-  overflow-y: scroll;
-  height: 600px;
+  padding-top: 20px;
+  height: 700px;
 }
 
 .show-map {
-  height: 40vh;
+  height: 50%;
   color: black;
   // background-color: lightgray;
   text-align: center;
@@ -123,7 +152,7 @@
 }
 
 .show-images {
-  height: 40vh;
+  height: 50%;
   text-align: center;
   margin: 20px;
   border-radius: 25px;

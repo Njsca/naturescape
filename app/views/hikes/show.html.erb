@@ -33,31 +33,32 @@
 
       <!-- hike description text and button goes below -->
       <div class="show-description">
-        <%= @hike.description %></p>
+        <%= @hike.description %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="show-button-container">
+            <div class="show-button">
+              <%= link_to "Find a hike to join", hikes_path %>
+            </div>
+          </div>
       </div>
 
-      <div class="show-button-container">
-        <div class="show-button">
-          <p>request to join</p>
-        </div>
-      </div>
+
 
     </div>
 
     <!-- Map info goes below -->
-    <%# <div>
+
       <div class="show-right">
         <div class="show-map"
-          data-controller="show_map"
-          data-map-marker-value="<%= @markers.to_json %>
-          <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>
-        <%# </div> %>
-
-    <div class="show-map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
 
 
         <!-- image files go below -->
