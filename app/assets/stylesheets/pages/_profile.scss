@@ -3,8 +3,9 @@
   flex-direction: column;
   background-color: white;
   max-width: 1400px;
-  height: 100vh;
+  height: 75vh;
   padding-top: 4vh;
+  margin: 0px auto 40px auto;
 }
 
 .row {
@@ -99,34 +100,61 @@
 
 // ---- MY HIKES ---- \\
 
-#exTab1 .tab-content {
-  color : white;
-  background-color: $light-green;
-  padding : 5px 15px;
+
+.hike-info {
+  margin-right: 200px;
 }
 
-#exTab2 h3 {
-  color: black;
-  padding : 5px 15px;
+.container-hike {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 1400px;
+  height: 75vh;
+  padding-top: 4vh;
+  margin: -16px 83px 40px auto;
 }
 
-/* remove border radius for the tab */
+// #exTab1 .tab-content {
+//   color : black;
+//   padding : 5px 15px;
+// }
 
-#exTab1 .nav-pills > li > a {
-  border-radius: 0;
-}
+// #exTab2 h3 {
+//   color : white;
+//   background-color: #428bca;
+//   padding : 5px 15px;
+// }
 
-/* change border radius for the tab , apply corners on top*/
+// /* remove border radius for the tab */
 
-#exTab3 .nav-pills > li > a {
-  border-radius: 4px 4px 0 0 ;
-}
+// #exTab1 .nav-pills > li > a {
+//   border-radius: 0;
+// }
 
-#exTab3 .tab-content {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
-}
+// /* change border radius for the tab , apply corners on top*/
+
+// #exTab3 .nav-pills > li > a {
+//   border-radius: 4px 4px 0 0 ;
+// }
+
+// #exTab3 .tab-content {
+//   color : white;
+//   background-color: #0f602a;
+//   padding : 5px 15px;
+// }
+
+// .hike-type {
+//   width: 50%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+
+// .tabs-container {
+//   justify-content: space-between;
+// }
+
 
 
 
