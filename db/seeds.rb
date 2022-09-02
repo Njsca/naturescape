@@ -88,15 +88,20 @@ hike1 = Hike.new(
   end of the Bald Mountain Trail.",
   location: "Engelberg, Switzerland",
   date: DateTime.new(2022, 9, 9),
-  user_id: user1.id
+  user_id: user1.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
 )
-file = URI.open("app/assets/images/hikepictures/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
-file2 = URI.open("app/assets/images/hikepictures/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
-file3 = URI.open("app/assets/images/hikepictures/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
+hike1.save!
+file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
+file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
+# file3 = File.open("app/assets/images/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
 hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
 hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
-hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png")
-hike1.save!
+# hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png") too large
 
 hike2 = Hike.new(
   title: "Teufelsschlucht Belchen",
@@ -112,7 +117,11 @@ hike2 = Hike.new(
   und der natürlichen Wasserfontaine «Spitzbrunnen».",
   location: "Hägendorf-Olten, Switzerland",
   date: DateTime.new(2022, 9, 14),
-  user_id: user2.id
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "mountains"
 )
 hike2.save!
 
@@ -122,7 +131,12 @@ hike3 = Hike.new(
   Suitable for all skill levels. The starting point of the Tour is accessible with public transport.",
   location: "Suhr, Aarau, Aargau, Switzerland",
   date: DateTime.new(2022, 9, 14),
-  user_id: user3.id
+  user_id: user3.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "hills",
+  language: "english"
 )
 hike3.save!
 
@@ -138,7 +152,12 @@ hike4 = Hike.new(
   residential tower you have a view of the surrounding Jura hills.",
   location: "Läufelfingen, Sissach, Basel-Landschaft, Switzerland",
   date: DateTime.new(2022, 9, 25),
-  user_id: user4.id
+  user_id: user4.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
 )
 hike4.save!
 
@@ -151,7 +170,11 @@ hike5 = Hike.new(
   you can enjoy a magnificent panoramic view of 23 Black Forest peaks.",
   location: "Todtnau, Germany",
   date: DateTime.new(2022, 9, 11),
-  user_id: user1.id
+  user_id: user1.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "expert",
+  terrain: "mountains"
 )
 hike5.save!
 
@@ -166,7 +189,13 @@ hike6 = Hike.new(
   location: "Schluchsee, Germany
   ",
   date: DateTime.new(2022, 9, 4),
-  user_id: user2.id
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "flat",
+  language: "english"
+
 )
 hike6.save!
 
@@ -178,7 +207,12 @@ hike7 = Hike.new(
   For the rocky ascent you will be rewarded with a fantastic view and an exciting castle ruin.",
   location: "Hilzingen, Germany",
   date: DateTime.new(2022, 9, 10),
-  user_id: user3.id
+  user_id: user3.id,
+  duration: "multiple days",
+  buddy: "kid",
+  level: "intermediate",
+  terrain: "mountains",
+  language: "english"
 )
 hike7.save!
 
@@ -191,7 +225,11 @@ hike8 = Hike.new(
   Marked by a wooden sign and a big stone man.",
   location: "Haute-Savoie, France",
   date: DateTime.new(2022, 9, 8),
-  user_id: user4.id
+  user_id: user4.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "flat"
 )
 hike8.save!
 
@@ -206,7 +244,12 @@ hike9 = Hike.new(
   Note: Ample car park at the start but get there early on weekends or in season.",
   location: "Orcines, Clermont-Ferrand, France",
   date: DateTime.new(2022, 9, 16),
-  user_id: user1.id
+  user_id: user1.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
 )
 hike9.save!
 
@@ -225,8 +268,84 @@ hike10 = Hike.new(
   Saint-Arey, Sinard, Treffort.",
   location: "Isère, France",
   date: DateTime.new(2022, 9, 23),
-  user_id: user2.id
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
 )
 hike10.save!
 
+hike11 = Hike.new(
+  title: "American Hike",
+  description: "hike in the USA",
+  location: "Colorado, USA",
+  date: DateTime.new(2022, 9, 15),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
+)
+hike11.save!
+
+hike12 = Hike.new(
+  title: "American Hike 2.0",
+  description: "hike in the USA again",
+  location: "Arizona, USA",
+  date: DateTime.new(2022, 10, 15),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "mountains",
+  language: "english"
+)
+hike12.save!
+
 puts "All done!"
+
+# one day hikes
+HikeTag.create!(hike: hike1, tag: one_day_tag)
+HikeTag.create!(hike: hike3, tag: one_day_tag)
+HikeTag.create!(hike: hike4, tag: one_day_tag)
+HikeTag.create!(hike: hike6, tag: one_day_tag)
+HikeTag.create!(hike: hike8, tag: one_day_tag)
+HikeTag.create!(hike: hike9, tag: one_day_tag)
+
+# dog friendly hikes
+HikeTag.create!(hike: hike1, tag: dog_tag)
+HikeTag.create!(hike: hike2, tag: dog_tag)
+HikeTag.create!(hike: hike4, tag: dog_tag)
+HikeTag.create!(hike: hike7, tag: dog_tag)
+HikeTag.create!(hike: hike8, tag: dog_tag)
+HikeTag.create!(hike: hike10, tag: dog_tag)
+
+# level hikes
+HikeTag.create!(hike: hike1, tag: beginner_tag)
+HikeTag.create!(hike: hike3, tag: beginner_tag)
+HikeTag.create!(hike: hike5, tag: beginner_tag)
+HikeTag.create!(hike: hike7, tag: beginner_tag)
+HikeTag.create!(hike: hike8, tag: beginner_tag)
+HikeTag.create!(hike: hike10, tag: beginner_tag)
+
+#terrain type
+HikeTag.create!(hike: hike1, tag: mountain_tag)
+HikeTag.create!(hike: hike2, tag: hill_tag)
+HikeTag.create!(hike: hike3, tag: hill_tag)
+HikeTag.create!(hike: hike4, tag: hill_tag)
+HikeTag.create!(hike: hike5, tag: hill_tag)
+HikeTag.create!(hike: hike6, tag: mountain_tag)
+HikeTag.create!(hike: hike7, tag: mountain_tag)
+HikeTag.create!(hike: hike8, tag: mountain_tag)
+HikeTag.create!(hike: hike10, tag: mountain_tag)
+
+# eng speaking
+HikeTag.create!(hike: hike1, tag: english_tag)
+HikeTag.create!(hike: hike3, tag: english_tag)
+HikeTag.create!(hike: hike7, tag: english_tag)
+HikeTag.create!(hike: hike8, tag: english_tag)
+HikeTag.create!(hike: hike9, tag: english_tag)
+HikeTag.create!(hike: hike10, tag: english_tag)

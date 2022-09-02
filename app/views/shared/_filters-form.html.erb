@@ -1,7 +1,7 @@
-<form class="filters-form">
+<form class="filters-form" action="/hikes" >
   <p>Duration</p>
   <div class="filter-category">
-    <input type="radio" class ="duration-radio-btn" id="1-day" name="duration" value="multiple-days">
+    <input type="radio" class ="duration-radio-btn" id="1-day" name="duration" value="1-day">
     <label for="1-day">1 day</label><br>
     <input type="radio" class ="duration-radio-btn" id="multiple-days" name="duration" value="multiple-days">
     <label for="multiple-days">multiple days</label>
@@ -64,9 +64,11 @@
 
   <p>Languages</p>
   <div class="english-checkbox-wrapper">
-    <input type="checkbox" class="english-checkbox" id="english" name="languages" value="english">
+    <input type="checkbox" class="english-checkbox" id="english" name="english" value="english">
     <label for="english"> english-speaking</label>
   </div>
+
+  <button type="submit">Submit</button>
 </form>
 
 <script>
