@@ -1,17 +1,46 @@
 <div class="container">
-  <div class="show-info-full-width">
-    <p class="show-title">Ask Katherine anything...</p>
+  <div>
+    <%# <p class="show-title">Ask Katherine anything...</p> %>
+    <p class="show-title">Want to join <strong><%= @hike.title %></strong>?</p>
+    <div class="d-flex" style="height: fit-content !important;">
+      <div class="show-location">
+        <i class="fa-solid fa-location-dot"></i>
+        <br>
+        <%= @hike.location %></p>
+      </div>
+      <div class="show-dates">
+        <i class="fa-solid fa-calendar-days"></i>
+        <br>
+        <%= @hike.date %></p>
+      </div>
+    </div>
 <%#
     <div class="message-container" data-controller=“chatroom-subscription”>
       <label for="booking-message">Put message here</label>
       <input type="text" name="booking-message" class="message" data-chatroom-subscription-target="message">
     </div> %>
 
-    <%# ADD Code stimulus controller from above into simple form below!!! %>
+    <%# Info fiels %>
 
-    <%= simple_form_for [@hike, @booking] do |f| %>
-      <%= f.input :message %>
-      <%= f.button :submit %>
-    <% end %>
+    <%# ADD Code stimulus controller from above into simple form below!!! %>
+    <div class="chat-container">
+      <div class="chat">
+        <img class="avatar" style="width: 100px;" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+        <p class="show-title">Request to join</p>
+        <%= simple_form_for [@hike, @booking], class: "chat-form-style" do |f| %>
+          <%= f.input :message, as: :text, label: "Tell Katherine a little about yourself. Why would you like to join this event?",
+           input_html: {:size => 500} %>
+          <%#= f.simple_fields_for :message do |message_subform| %>
+            <%#= message_subform.text_field :content %>
+          <%# end %>
+          <%= f.button :submit, "Send message", class: "d-none" %>
+        <% end %>
+        <div class="show-button-container-chat">
+        <%# <div class="show-button"> %>
+          <%= link_to "Send your message", profile_path, class: "btn-chat w-50" %>
+        <%# </div> %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

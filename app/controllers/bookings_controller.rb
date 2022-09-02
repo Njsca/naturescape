@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @chatroom = @booking.create_chatroom!
+      # @chatroom.create_message!
+      @message = Message.new
+      @message.user = current_user
+      @message.chatroom = @chatroom
 
       redirect_to hike_booking_chatroom_path(@hike, @booking, @booking.chatroom)
     else

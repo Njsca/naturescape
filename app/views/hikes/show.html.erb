@@ -32,22 +32,16 @@
       </div>
 
       <!-- hike description text and button goes below -->
-      <div class="show-description">
-        <%= @hike.description %>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-          <div class="show-button-container">
-            <div class="show-button">
-              <%= link_to "Find a hike to join", hikes_path %>
-            </div>
-          </div>
+
+      <div class="show-description mb-3">
+        <%= @hike.description %></p>
       </div>
 
-
+      <div class="show-button-container">
+        <%# <div class="show-button"> %>
+          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "btn w-25 mt-4" %>
+        <%# </div> %>
+      </div>
 
     </div>
 
