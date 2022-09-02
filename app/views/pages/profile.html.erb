@@ -25,12 +25,46 @@
         <p>Hi, I’m Katherine and I grew up in the heart of the Vallée de Joux in Switzerland. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!</p>
       </div>
 
-      <div class="buttons justify-content-end">
+      <%# <div class="buttons justify-content-end">
         <a class="btn" id="profile-edit-btn" href="">edit</a>
+      </div> %>
+
+      <div class="buttons justify-content-end">
+        <a class="btn" id="profile-contact-btn" href="">send message</a>
       </div>
     </div>
 
-    <div class="message-right col-sm">
+
+<!-- HIKES AND OWN HIKES -->
+
+  <div class="profile-info row">
+    <div class="profile-center col-sm">
+        <div id="exTab2" class="container">
+        <ul class="nav nav-tabs">
+              <li class="active">
+                <a  href="#1" data-toggle="tab">your own hikes</a>
+              </li>
+              <li><a href="#2" data-toggle="tab">your joined hikes</a>
+              </li>
+            </ul>
+
+              <div class="tab-content ">
+                <div class="tab-pane active" id="1">
+                  <h3>user's hikes cards will be displayed here</h3>
+                </div>
+                <div class="tab-pane" id="2">
+                  <h3>user's joined hikes cards will be displayed here</h3>
+                </div>
+              </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MESSAGES/MESSENGER -->
+
+    <%# <div class="message-right col-sm">
       <!-- titles -->
       <div class="d-flex">
         <div class="message-title">
@@ -54,4 +88,8 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
