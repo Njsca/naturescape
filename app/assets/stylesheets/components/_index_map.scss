@@ -12,7 +12,9 @@
 }
 
 .mapboxgl-popup {
-  max-width: 200px;
+  // max-width: 200px;
+  background: transparent;
+  border: none;
 }
 
 .mapboxgl-popup-content {
@@ -28,4 +30,13 @@
   overflow: scroll;
   align-items: center;
   align-content: center;
+}
+
+.mapboxgl-popup-tip {
+  border-bottom-color: transparent !important;
+}
+.mapboxgl-popup-content {
+  background: transparent !important;
+  width: 322px;
+  box-shadow: none !important;
 }

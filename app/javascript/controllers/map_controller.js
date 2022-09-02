@@ -14,7 +14,7 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
-      // custom map that doesn't work = "mapbox://styles/nisca/cl7g6mcoc000714oz9vkesg1p"
+      // custom map that doesn't work = "mapbox://styles/nisca/cl7g6mcoc000714oz9vkesg1p" "mapbox://styles/mapbox/streets-v10"
     })
 
     this.#addMarkersToMap()
@@ -23,13 +23,6 @@ export default class extends Controller {
   }
 
     #addMarkersToMap() {
-      this.markersValue.forEach((marker) => {
-        const popup = new mapboxgl.Popup().setHTML(marker.info_window) // Add this
-        new mapboxgl.Marker()
-          .setLngLat([ marker.lng, marker.lat ])
-          .setPopup(popup) // Add this
-          .addTo(this.map)
-      });
       this.markersValue.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
