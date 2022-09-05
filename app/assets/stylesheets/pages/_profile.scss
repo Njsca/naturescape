@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  // background-color: white;
   max-width: 1400px;
   height: 75vh;
   padding-top: 4vh;
@@ -117,106 +117,3 @@
   padding-top: 4vh;
   margin: -16px 83px 40px auto;
 }
-
-// #exTab1 .tab-content {
-//   color : black;
-//   padding : 5px 15px;
-// }
-
-// #exTab2 h3 {
-//   color : white;
-//   background-color: #428bca;
-//   padding : 5px 15px;
-// }
-
-// /* remove border radius for the tab */
-
-// #exTab1 .nav-pills > li > a {
-//   border-radius: 0;
-// }
-
-// /* change border radius for the tab , apply corners on top*/
-
-// #exTab3 .nav-pills > li > a {
-//   border-radius: 4px 4px 0 0 ;
-// }
-
-// #exTab3 .tab-content {
-//   color : white;
-//   background-color: #0f602a;
-//   padding : 5px 15px;
-// }
-
-// .hike-type {
-//   width: 50%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-// }
-
-// .tabs-container {
-//   justify-content: space-between;
-// }
-
-
-
-
-// ---- MY MESSAGES ---- \\
-
-// .message-info {
-//   // display: flex;
-//   grid-template-columns: 50% 50%;
-//   background-color: white;
-// }
-
-// .message-right {
-//   width: auto;
-//   margin: 100px;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-//   background-color: white;
-//   border-top-left-radius: 25px;
-//   border-top-right-radius: 25px;
-//   border-bottom-left-radius: 25px;
-//   border-bottom-right-radius: 25px;
-//   border: 1px solid lightgray;
-// }
-
-
-// .message-title {
-//   text-transform: bold;
-//   text-align: left;
-//   font-size: 18px;
-//   height: 8vh;
-//   border-top-left-radius: 25px;
-//   border-top-right-radius: 25px;
-//   color: black;
-//   margin-left: 22px;
-// }
-
-// .message-object {
-//   text-align: center;
-//   border-right: 1px solid lightgray;
-//   width: 50%;
-//   height: 8vh;
-//   color: grey;
-//   padding: 8px;
-// }
-
-// .message-description {
-//   text-align: center;
-//   border-top: 1px solid lightgray;
-//   height: 40vh;
-//   font-size: small;
-//   padding: 5vh;
-//   text-align: left;
-//   color: grey;
-// }
-
-
-// #message-accept-btn {
-//   margin-bottom: 22px;
-// }
-
-// #message-decline-btn {
-//   margin-bottom: 22px;
-// }

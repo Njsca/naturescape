@@ -1,3 +1,22 @@
+// .form-banner {
+  // background-image: url("green-mountains.png");
+  // background-size: cover;
+  // background-position: bottom;
+// }
+
+.mountains {
+  position: fixed;
+  overflow-y: scroll;
+  background-image: url("mountains_1.png");
+  background-size: cover;
+  background-color: none;
+  background-position: center;
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
 .form-control {
   background-color: $light-green !important;
   padding: 10px;
