@@ -33,13 +33,11 @@
           <%#= f.simple_fields_for :message do |message_subform| %>
             <%#= message_subform.text_field :content %>
           <%# end %>
-          <%= f.button :submit, "Send message", class: "d-none" %>
+          <div class="show-button-container-chat">
+            <%= f.button :submit, "Send message to the event organizer", class: "show-button" %>
+            <%= link_to "See your upcoming events!", profile_path, class: "show-button" %>
+          </div>
         <% end %>
-        <div class="show-button-container-chat">
-        <%# <div class="show-button"> %>
-          <%= link_to "Send your message", profile_path, class: "btn-chat w-50" %>
-        <%# </div> %>
-        </div>
       </div>
     </div>
   </div>

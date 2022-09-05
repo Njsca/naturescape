@@ -93,6 +93,9 @@ hike1 = Hike.new(
   length: "7"
 )
 hike1.save!
+hike1_chatroom = Chatroom.new(hike: hike1)
+hike1_chatroom.save!
+
 file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
 file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
 # file3 = File.open("app/assets/images/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
@@ -113,6 +116,8 @@ hike2 = Hike.new(
   length: "10"
 )
 hike2.save!
+hike2_chatroom = Chatroom.new(hike: hike2)
+hike2_chatroom.save!
 
 hike3 = Hike.new(
   title: "Tour du Mont-Blanc",
@@ -128,6 +133,8 @@ hike3 = Hike.new(
   length: "15"
 )
 hike3.save!
+hike3_chatroom = Chatroom.new(hike: hike3)
+hike3_chatroom.save!
 
 hike4 = Hike.new(
   title: "Ruine Homburg",
@@ -150,6 +157,8 @@ hike4 = Hike.new(
   length: "5,"
 )
 hike4.save!
+hike4_chatroom = Chatroom.new(hike: hike4)
+hike4_chatroom.save!
 
 hike5 = Hike.new(
   title: "Hasenhornturm",
@@ -168,6 +177,8 @@ hike5 = Hike.new(
   length: "25"
 )
 hike5.save!
+hike5_chatroom = Chatroom.new(hike: hike5)
+hike5_chatroom.save!
 
 hike6 = Hike.new(
   title: "Bildstein",
@@ -190,6 +201,8 @@ hike6 = Hike.new(
 
 )
 hike6.save!
+hike6_chatroom = Chatroom.new(hike: hike6)
+hike6_chatroom.save!
 
 hike7 = Hike.new(
   title: "Lünersee Circuit Trail",
@@ -206,6 +219,8 @@ hike7 = Hike.new(
   length: "17"
 )
 hike7.save!
+hike7_chatroom = Chatroom.new(hike: hike7)
+hike7_chatroom.save!
 
 hike8 = Hike.new(
   title: "Mont Veyrier",
@@ -224,6 +239,8 @@ hike8 = Hike.new(
   length: "9"
 )
 hike8.save!
+hike8_chatroom = Chatroom.new(hike: hike8)
+hike8_chatroom.save!
 
 hike9 = Hike.new(
   title: "Puy de Dôme",
@@ -245,6 +262,8 @@ hike9 = Hike.new(
   length: "7"
 )
 hike9.save!
+hike9_chatroom = Chatroom.new(hike: hike9)
+hike9_chatroom.save!
 
 hike10 = Hike.new(
   title: "Passerelle du Monteynard (Ebron)",
@@ -271,6 +290,8 @@ hike10 = Hike.new(
   length: "5"
 )
 hike10.save!
+hike10_chatroom = Chatroom.new(hike: hike10)
+hike10_chatroom.save!
 
 hike11 = Hike.new(
   title: "Lac de Moiry, Val d'Anniviers",
@@ -286,6 +307,8 @@ hike11 = Hike.new(
   length: "8"
 )
 hike11.save!
+hike11_chatroom = Chatroom.new(hike: hike11)
+hike11_chatroom.save!
 
 hike12 = Hike.new(
   title: "Brent Crater Trail",
@@ -301,6 +324,8 @@ hike12 = Hike.new(
   length: "4"
 )
 hike12.save!
+hike12_chatroom = Chatroom.new(hike: hike12)
+hike12_chatroom.save!
 
 puts "All done!"
 
