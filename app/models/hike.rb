@@ -5,6 +5,7 @@ class Hike < ApplicationRecord
   has_many :tags, through: :hike_tags
   validates :title, :date, :location, :description, presence: true
   has_many_attached :photos
+  has_one :chatroom, dependent: :destroy
 
   scope :one_day, -> { where("duration = '1 day'" ) }
   scope :multiple_days, -> { where("duration = 'multiple days'" ) }

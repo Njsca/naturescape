@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @user = current_user
+    @hikes = Hike.all
+    # @hike = Hike.find(params[:id])
+    @bookings = current_user.bookings
   end
-
 end

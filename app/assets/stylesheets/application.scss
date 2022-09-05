@@ -11,9 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
+@import "pages/login_signup_forms";
 
 // This is just to override the default grey colour on every page
-body{
+
+body {
   background-color: white;
 }

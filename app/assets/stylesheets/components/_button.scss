@@ -10,7 +10,7 @@
 .btn {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  color: white;
+  color: white !important;
   background-color: $magenta;
   border: 1px solid $magenta;
   display: flex;
@@ -27,12 +27,17 @@
 
   &:hover,
   &:focus {
-    color: $magenta;
-    outline: 0;
+    color: $magenta !important;
+    outline: 0 !important;
   }
 }
 
-// TO EDIT - CAN'T MAKE IT SAME SIZEIOAWJFOIEJIORFERDFFFF
+.btn > a {
+  color: white !important;
+  font-weight: bold;
+}
+
+// TO EDIT - CAN'T MAKE IT SAME SIZE IOAWJFOIEJIORFERDFFFF
 
 .btn2 {
   font-family: 'Roboto', sans-serif;

@@ -2,12 +2,29 @@
     <%= image_tag "vdj.jpg", class: "card-img-top" %>
   <div class="item-details">
     <h2><%= link_to hike.title, hike_path(hike) %></h2>
-    <p> <%= hike.location %> </p>
-    <h3> <%= hike.level %>  |  <%= hike.duration %>  </h3>
+    <p> <%= hike.location %> | <%= hike.date %> </p>
+    <h3> <%= hike.level %>  |  <%= hike.duration %> | <%= hike.length %> km </h3>
 
-        <div class="hike-icons">
-          <i class="fa-solid fa-mountain" title="moutains"></i>
-          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        <div class="hike-icons d-flex flex-row justify-content-around">
+          <% if hike.terrain == "mountains" %>
+            <i class="fa-solid fa-mountain"></i>
+          <% elsif hike.terrain == "hills" %>
+            <i class="fa-solid fa-mound"></i>
+          <% elsif hike.terrain == "flat" %>
+            <i class="fa-solid fa-minus" title="flat"></i>
+          <% end %>
+
+          <% if hike.buddy == "dog" %>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <% end %>
+
+          <% if hike.buddy == "kid" %>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <% end %>
+
+          <% if hike.buddy == "kid" %>
+            <i class="fa-solid fa-child-reaching"></i>
+          <% end %>
         </div>
   </div>
 </div>

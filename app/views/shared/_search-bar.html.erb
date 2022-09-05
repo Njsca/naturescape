@@ -1,16 +1,17 @@
+<form novalidate="novalidate" class="simple_form search" action="/hikes" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group" >
+      <input data="map" class="form-control string required" type="address" data-map-input="search_query"
+      name="search[query]" id="search_query" placeholder="Enter a location..."/>
+      <button name="button" type="submit" class="btn search-btn btn-flat">
+        <i class="fas fa-search magnifing-glass"></i>
+      </button>
+  </div>
+</form>
 
-  <%# <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group"
-    data-controller="address-autocomplete"
-    data-address_autocomplete_api_key_value="  ENV['MAPBOX_API_KEY']  ">
-        <input data = "address-autocomplete" class="form-control string required" type="address" name="search[query]" id="search_query" placeholder="Enter a location..."/>
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search magnifing-glass"></i>
-        </button>
-    </div>
-  </form> %>
-
-<%# Comment this in to get the search bar in the navbar %>
+<%# Comment this in to get the search bar in the navbar -- it's not sending input to the map though %>
 <%# <div id="geocoder"></div> %>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+
+<%# This is how the search input can be accessed after submitting the navbar form %>
+<%# params[:search][:query] %>
