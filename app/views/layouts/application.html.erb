@@ -26,9 +26,9 @@
   <%= yield %>
 
 
-  <%# unless action_name == "home" || "profile"%>
-    <%#= render "shared/footer" %>
-  <%# end %>
+  <% unless action_name == "home" %>
+    <%= render "shared/footer" %>
+  <% end %>
 
   </body>
 </html>
