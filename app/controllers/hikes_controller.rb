@@ -43,12 +43,12 @@ class HikesController < ApplicationController
 
       if union.count > 0
         @hikes = Hike.where(id: union)
-        @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
+        # @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
       else
         @hikes = Hike.where(id: @hikes.pluck(:id))
       end
 
-
+      # raise
     else
       @hikes = Hike.all
     end
