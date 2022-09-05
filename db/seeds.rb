@@ -1,4 +1,5 @@
 
+
 puts "Destroying seeds"
 User.destroy_all
 Hike.destroy_all
@@ -78,18 +79,13 @@ puts "users created!"
 puts "creating hikes..."
 
 hike1 = Hike.new(
-  title: "Bald Mountain Summit Loop",
-  description: "25km. You can head to the south end of the trailhead parking lot to begin
-  on the Switzerland Trail OHV road (FS 120J) or follow a short connector trail next
-  to the trailhead sign that passes by a few campsites before connecting with the
-  Switzerland Trail OHV road. The Switzerland Trail OHV road is slightly downhill or
-  flat from the trailhead to where it intersects with the east end of the Bald Mountain Trail.
-  It is then slightly uphill or flat from that point to where it intersects with the west
-  end of the Bald Mountain Trail.",
-  location: "Engelberg, Switzerland",
+  title: "Vallée de Joux",
+  description: "25km/day. Katherine here, I grew up in the heart of the Vallée de Joux in Switzerland and I am planning a lovely hike from du Col du Marchairuz. On the first day, we will leave early in the morning and hike up to the Mont-Tendre summit where we’ll cook a traditional “moitié-moitié” cheese fondue and admire a 360° view of the Leman Lake, the Vallée and France before heading up to a mountain cottage for the night. On the second day, we will reach the lake “de Joux” and spend the night in camping in the woods and hike our way back to our starting point the next morning.
+  Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!",
+  location: "Col du Marchairuz, Switzerland",
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id,
-  duration: "1 day",
+  duration: "multiple days",
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
@@ -105,18 +101,9 @@ hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
 # hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png") too large
 
 hike2 = Hike.new(
-  title: "Teufelsschlucht Belchen",
-  description: "17 km. Diese abwechslungsreiche Wanderung führt durch interessante Gebiete,
-  wie sie für den Jura typisch sind:
-  Schlucht, Wälder, Weiden und Felsgrat. Nach dem einmaligen Ausblick von
-  der Belchenflue und dem Abstieg durch Wälder und über Wiesen lockt die Stadt
-  Olten mit einer Rast an der Aare.
-  Startort dieser Wanderung ist Hägendorf, eines der Industriedörfer im Gäu.
-  Der wilde Cholersbach, hat die Tüfelsschlucht tief in das Juragestein eingefressen.
-  Steile Felswände, Grotten, Höhlen und Strudellöcher sind so entstanden.
-  Der Weg schlängelt sich dem wilden Bach entlang vorbei an märchenhaften Moosfelsen
-  und der natürlichen Wasserfontaine «Spitzbrunnen».",
-  location: "Hägendorf-Olten, Switzerland",
+  title: "5 Lakes Walk",
+  description: "17km/day. The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
+  location: "Zermatt, Switzerland",
   date: DateTime.new(2022, 9, 14),
   user_id: user2.id,
   duration: "1 day",
@@ -128,10 +115,9 @@ hike2 = Hike.new(
 hike2.save!
 
 hike3 = Hike.new(
-  title: "Suhrer Chopf",
-  description: "6 km. Intermediate Hiking Tour. Good fitness required. Easily-accessible paths.
-  Suitable for all skill levels. The starting point of the Tour is accessible with public transport.",
-  location: "Suhr, Aarau, Aargau, Switzerland",
+  title: "Tour du Mont-Blanc",
+  description: "The Tour du Mont Blanc is a system of hiking trails that covers 170 kilometers, with many different starting points, including Courmayeur, Les Houches, and Chamonix. Along the way, mountain refuges (mostly dormitory-style accommodations) allow hikers to rest and get refreshments or refuel with a hearty meal and stay overnight in cozy Alpine lodgings.",
+  location: "Chamonix, France",
   date: DateTime.new(2022, 9, 14),
   user_id: user3.id,
   duration: "multiple-days",
@@ -206,17 +192,15 @@ hike6 = Hike.new(
 hike6.save!
 
 hike7 = Hike.new(
-  title: "Hohenkrähen",
-  description: "12km. On a more than 600 meters high and steeply sloping volcanic
-  cone towers the ruin Hohenkrähen above Schlatt.
-  The way up is actually quite narrow and meanders right up the cliff face up to the castle ruin.
-  For the rocky ascent you will be rewarded with a fantastic view and an exciting castle ruin.",
-  location: "Hilzingen, Germany",
+  title: "Lünersee Circuit Trail",
+  description: "Lünersee is a large alpine lake high above Brand Valley in the Austrian State of Vorarlberg. Set amidst the striking limestone mountains of the Rätikon, this beautiful lake is a scenic destination for casual walking as well as strenuous hiking.",
+  location: "Vorarlberg, Austria",
   date: DateTime.new(2022, 9, 10),
   user_id: user3.id,
   duration: "multiple-days",
   buddy: "kid",
-  level: "intermediate",
+  buddy: "dog",
+  level: "beginner",
   terrain: "mountains",
   language: "english",
   length: "17"
@@ -278,9 +262,10 @@ hike10 = Hike.new(
   location: "Isère, France",
   date: DateTime.new(2022, 9, 23),
   user_id: user2.id,
-  duration: "1 day",
+  duration: "multiple days",
   buddy: "kid",
   level: "beginner",
+
   terrain: "mountains",
   language: "english",
   length: "5"
@@ -288,9 +273,9 @@ hike10 = Hike.new(
 hike10.save!
 
 hike11 = Hike.new(
-  title: "American Hike",
-  description: "hike in the USA",
-  location: "Colorado, USA",
+  title: "Lac de Moiry, Val d'Anniviers",
+  description: "Hugging a ridge above the water, the trail offers a breathtaking view over the Moiry Lake reflecting the mountains like a mirror.",
+  location: "Zinal, Switzerland",
   date: DateTime.new(2022, 9, 15),
   user_id: user2.id,
   duration: "1 day",
@@ -303,9 +288,9 @@ hike11 = Hike.new(
 hike11.save!
 
 hike12 = Hike.new(
-  title: "American Hike 2.0",
-  description: "hike in the USA again",
-  location: "Arizona, USA",
+  title: "Brent Crater Trail",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "Algonquin Park, Canada",
   date: DateTime.new(2022, 10, 15),
   user_id: user2.id,
   duration: "1 day",
