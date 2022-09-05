@@ -1,8 +1,9 @@
 class HikesController < ApplicationController
   def index
-    @hikes = Hike.all
 
-    if params.keys.count > 2
+
+    # if params.keys.count > 2
+    if params[:start_date].present? || params['duration'].present? || params['extra-buddies'].present? || params['difficulty'].present? || params['terrain-type'].present?
       query = []
 
       if params['duration']
@@ -20,16 +21,37 @@ class HikesController < ApplicationController
         query << "terrain = '#{params['terrain-type']}'"
       end
 
-      if params['length']
-        query << "length <= '#{params['length']}'"
+      # if params['length']
+      #   query << "length <= '#{params['length']}'"
+      # end
+
+      # if params[:start_date].present?
+      #   dates = params[:start_date].split("-")
+      #   date = Date.new(dates[0].to_i, dates[1].to_i, dates[2].to_i)
+      # end
+
+      @date_hikes = Hike.where(date: params[:start_date])
+
+      query = query.join(" AND ")
+
+      @hikes = []
+
+      if query != ""
+        @hikes = Hike.where(query)
       end
 
-      if params['date']
-        query << "date >= '#{params['date']}' AND date >= '#{params['date']} + 3'"
+      union = @hikes.pluck(:id) & @date_hikes.pluck(:id)
+
+      if union.count > 0
+        @hikes = Hike.where(id: union)
+        @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
+      else
+        @hikes = Hike.where(id: @hikes.pluck(:id))
       end
 
-      @hikes = Hike.where(query.join(" AND "))
 
+    else
+      @hikes = Hike.all
     end
 
     @markers = @hikes.geocoded.map do |hike|

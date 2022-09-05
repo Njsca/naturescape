@@ -17,15 +17,21 @@
   // margin: 0px auto 40px auto;
 }
 
-// .row {
-//   width: 80%;
-//   justify-content: center;
-//   // margin-right: 200px;
-// }
+
+.hikes-container {
+  background-color: white;
+  padding-top: 4vh;
+}
+
+.row {
+  width: 100%;
+  justify-content: center;
+  // margin-right: 200px;
+}
+
 
 .profile-info {
   // grid-template-columns: 50% 50%;
-  height: 100px;
   background-color: white;
 }
 
@@ -50,6 +56,7 @@
   padding-left: 22px;
   padding-top: 22px;
   padding-bottom: 5px;
+  position: relative;
 }
 
 .profile-name h2 {

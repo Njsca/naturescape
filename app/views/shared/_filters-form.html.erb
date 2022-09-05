@@ -8,15 +8,9 @@
   </div>
   <br>
 
-
-  <p>Date(s)</p>
+  <p>Date</p>
   <div class="filter-category">
-    <input type="date" class="date-selection" id="start-date" name="start-date">
-    <%# TODO: make this appear only when you select "multiple days" above %>
-    <div id="end-date-field" style="display:block">
-      to
-      <input type="date" class="date-selection" id="end-date" name="end-date">
-    </div>
+    <input type="date" class="date-selection" id="start-date" name="start_date">
   </div>
   <br>
 
@@ -44,12 +38,12 @@
   </div>
   <br>
 
-  <p>Length</p>
+  <%# <p>Length</p>
   <div class="slider">
-    <input type="range" min="1" max="40" value="20" class="slider" id="range" oninput="rangeValue.innerText = this.value + ' km'">
+    <input type="range" min="1" max="40" name="length" value="40" class="slider" id="length" oninput="rangeValue.innerText = this.value + ' km'">
     <p id="rangeValue"></p>
   </div>
-  <br>
+  <br> %>
 
   <p>Terrain type</p>
   <div class="filter-category">

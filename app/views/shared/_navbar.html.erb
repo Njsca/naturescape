@@ -1,19 +1,24 @@
 <div class="nav-container">
-  <div class="navbar"><p>natureEscape</p>
-    <div class="hike-search">
-      <%= link_to "Find a hike", hikes_path %>
-      </button>
-    </div>
-        <div class="navbar-hamburger dropdown">
-          <i class="fa-solid fa-bars dropbtn"></i>
-          <i class="fa-solid fa-user avatar"></i>
+
+  <div class="navbar">
+    <p>natureEscape</p>
+    <%= render "shared/search-bar" %>
+      <div class="navbar-hamburger dropdown">
+        <i class="fa-solid fa-bars dropbtn"></i>
+        <i class="fa-solid fa-user avatar"></i>
+
           <div class="dropdown-content">
             <%= link_to "Plan a hike", "", class: "dropdown-item" %>
             <%= link_to "My profile", "/profile", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </div>
+
+
+    <%# <div class="buttons buttons-wrapper-hike-search">
+      <button class="btn search-hike-btn">
+      <%= link_to "Find a hike to join", hikes_path %>
+      <%# </button>
+    </div> %>
