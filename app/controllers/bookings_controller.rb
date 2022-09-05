@@ -6,21 +6,29 @@ class BookingsController < ApplicationController
 
   def create
     # raise
+    # @user.booking = current_user
     @booking = Booking.new
     @hike = Hike.find(params[:hike_id])
     @booking.user = current_user
     @booking.hike = @hike
 
     if @booking.save
-      @chatroom = @booking.create_chatroom!
-      # @chatroom.create_message!
-      @message = Message.new
-      @message.user = current_user
-      @message.chatroom = @chatroom
+      # @chatroom = Chatroom.create(booking_id: @booking.id) - For creating event!!
 
-      redirect_to hike_booking_chatroom_path(@hike, @booking, @booking.chatroom)
+      redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    # @booking.hike_id = params[:hike_id]
+    @hike = @booking.hike_id
+    @booking.destroy
+
+    if @booking.destroy
+      redirect_to profile_path, status: :see_other
     end
   end
 

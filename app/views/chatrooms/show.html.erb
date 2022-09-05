@@ -17,7 +17,7 @@
       <% end %>
     </div>
     <div class="typefield" data-chatroom-subscription-target="typefield">
-      <%= simple_form_for [@hike, @booking, @chatroom, @message],
+      <%= simple_form_for [@hike, @chatroom, @message],
         html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
         class: "d-flex" } do |f|
       %>

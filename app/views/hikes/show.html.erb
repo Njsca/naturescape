@@ -39,7 +39,8 @@
 
       <div class="show-button-container">
         <%# <div class="show-button"> %>
-          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "btn w-25 mt-4" %>
+        <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
+        <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
         <%# </div> %>
       </div>
 
