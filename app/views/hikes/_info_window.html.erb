@@ -3,11 +3,30 @@
   <div class="item-details">
     <h2><%= link_to hike.title, hike_path(hike) %></h2>
     <p> <%= hike.location %> </p>
-    <h3> <%= hike.level %>  |  <%= hike.duration %>  </h3>
+    <h3> <%= hike.level %>  |  <%= hike.duration %> </h3>
+    <h5> <%= hike.length %> km </h5>
 
         <div class="hike-icons">
-          <i class="fa-solid fa-mountain" title="moutains"></i>
-          <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <% if hike.terrain == "mountain" %>
+            <i class="fa-solid fa-mountain" title="moutains"></i>
+          <% elsif hike.terrain == "hills" %>
+            <i class="fa-solid fa-mound" title="hills"></i>
+          <% elsif hike.terrain == "flat" %>
+            <i class="fa-solid fa-minus" title="flat"></i>
+          <% end %>
+
+          <% if hike.buddy == "dog" %>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <% end %>
+
+          <% if hike.buddy == "kid" %>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <% end %>
+
+          <% if hike.buddy == "kid" %>
+            <i class="fa-solid fa-child-reaching"></i>
+          <% end %>
+
         </div>
   </div>
 </div>
