@@ -2,67 +2,34 @@ class HikesController < ApplicationController
   def index
     @hikes = Hike.all
 
-    # if params[:duration].present?
-    #   if params[:duration] == "1-day"
-    #     @ids = []
-    #     HikeTag.one_day_tag.each do |tag|
-    #       tag.hike.id
-    #     end
-
-    #     @hikes = Hike.all.select do |hike|
-    #       @ids.include?(hike.id)
-    #     end
-    #   end
-    # end
-
     if params.keys.count > 2
-      hikes_id = []
-      
-      if params[:duration] == "1-day"
-        Hike.one_day.each { |hike| hikes_id << hike.id }
+      query = []
+
+      if params['duration']
+        query << "duration = '#{params['duration']}'"
+      end
+      if params['extra-buddies']
+        query << "buddy = '#{params['extra-buddies']}'"
       end
 
-      if params[:duration] == "multiple-days"
-        Hike.multiple_days.each { |hike| hikes_id << hike.id }
+      if params['difficulty']
+        query << "level = '#{params['difficulty']}'"
       end
 
-      if params["extra-buddies"] == "dog"
-        Hike.dog_friendly.each { |hike| hikes_id << hike.id }
+      if params['terrain-type']
+        query << "terrain = '#{params['terrain-type']}'"
       end
 
-      if params["extra-buddies"] == "kid"
-        Hike.kid_friendly.each { |hike| hikes_id << hike.id }
+      if params['length']
+        query << "length <= '#{params['length']}'"
       end
 
-      if params[:difficulty] == "beginner"
-        Hike.beginner.each { |hike| hikes_id << hike.id }
+      if params['date']
+        query << "date >= '#{params['date']}' AND date >= '#{params['date']} + 3'"
       end
 
-      if params[:difficulty] == "intermediate"
-        Hike.intermediate.each { |hike| hikes_id << hike.id }
-      end
+      @hikes = Hike.where(query.join(" AND "))
 
-      if params[:difficulty] == "expert"
-        Hike.expert.each { |hike| hikes_id << hike.id }
-      end
-
-      if params[:terrain] == "flat"
-        Hike.flat.each { |hike| hikes_id << hike.id }
-      end
-
-      if params[:terrain] == "hills"
-        Hike.hills.each { |hike| hikes_id << hike.id }
-      end
-
-      if params[:terrain] == "mountains"
-        Hike.mountains.each { |hike| hikes_id << hike.id }
-      end
-
-      if params[:language] == "english"
-        Hike.english.each { |hike| hikes_id << hike.id }
-      end
-
-      @hikes = Hike.where(id: hikes_id)
     end
 
     @markers = @hikes.geocoded.map do |hike|
