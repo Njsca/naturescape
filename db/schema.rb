@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_094427) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_134954) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,8 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_094427) do
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "booking_id"
-    t.index ["booking_id"], name: "index_chatrooms_on_booking_id"
+    t.bigint "hike_id"
+    t.index ["hike_id"], name: "index_chatrooms_on_hike_id"
   end
 
   create_table "equipment", force: :cascade do |t|
@@ -133,7 +134,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_094427) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
-  add_foreign_key "chatrooms", "bookings"
+  add_foreign_key "chatrooms", "hikes"
   add_foreign_key "equipment", "bookings"
   add_foreign_key "hike_tags", "hikes"
   add_foreign_key "hike_tags", "tags"
