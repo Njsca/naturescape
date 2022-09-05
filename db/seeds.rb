@@ -49,7 +49,7 @@ user4.save!
 # tag creation
 one_day_tag = Tag.new(name: "1 day")
 one_day_tag.save!
-multiple_days_tag = Tag.new(name: "multiple days")
+multiple_days_tag = Tag.new(name: "multiple-days")
 multiple_days_tag.save!
 start_date_tag = Tag.new(name: "start date")
 start_date_tag.save!
@@ -89,7 +89,8 @@ hike1 = Hike.new(
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "7"
 )
 hike1.save!
 file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
@@ -108,7 +109,8 @@ hike2 = Hike.new(
   duration: "1 day",
   buddy: "dog",
   level: "intermediate",
-  terrain: "mountains"
+  terrain: "mountains",
+  length: "10"
 )
 hike2.save!
 
@@ -118,10 +120,12 @@ hike3 = Hike.new(
   location: "Chamonix, France",
   date: DateTime.new(2022, 9, 14),
   user_id: user3.id,
-  duration: "multiple days",
-  level: "expert",
-  terrain: "mountains",
-  language: "english"
+  duration: "multiple-days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "hills",
+  language: "english",
+  length: "15"
 )
 hike3.save!
 
@@ -142,7 +146,8 @@ hike4 = Hike.new(
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "5,"
 )
 hike4.save!
 
@@ -156,10 +161,11 @@ hike5 = Hike.new(
   location: "Todtnau, Germany",
   date: DateTime.new(2022, 9, 11),
   user_id: user1.id,
-  duration: "multiple days",
+  duration: "multiple-days",
   buddy: "dog",
   level: "expert",
-  terrain: "mountains"
+  terrain: "mountains",
+  length: "25"
 )
 hike5.save!
 
@@ -179,7 +185,8 @@ hike6 = Hike.new(
   buddy: "dog",
   level: "beginner",
   terrain: "flat",
-  language: "english"
+  language: "english",
+  length: "6"
 
 )
 hike6.save!
@@ -190,12 +197,13 @@ hike7 = Hike.new(
   location: "Vorarlberg, Austria",
   date: DateTime.new(2022, 9, 10),
   user_id: user3.id,
-  duration: "multiple days",
+  duration: "multiple-days",
   buddy: "kid",
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "17"
 )
 hike7.save!
 
@@ -212,7 +220,8 @@ hike8 = Hike.new(
   duration: "1 day",
   buddy: "dog",
   level: "beginner",
-  terrain: "flat"
+  terrain: "flat",
+  length: "9"
 )
 hike8.save!
 
@@ -232,7 +241,8 @@ hike9 = Hike.new(
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "7"
 )
 hike9.save!
 
@@ -255,8 +265,10 @@ hike10 = Hike.new(
   duration: "multiple days",
   buddy: "kid",
   level: "beginner",
-  terrain: "hills",
-  language: "english"
+
+  terrain: "mountains",
+  language: "english",
+  length: "5"
 )
 hike10.save!
 
@@ -270,7 +282,8 @@ hike11 = Hike.new(
   buddy: "kid",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "8"
 )
 hike11.save!
 
@@ -284,7 +297,8 @@ hike12 = Hike.new(
   buddy: "kid",
   level: "beginner",
   terrain: "mountains",
-  language: "english"
+  language: "english",
+  length: "4"
 )
 hike12.save!
 
