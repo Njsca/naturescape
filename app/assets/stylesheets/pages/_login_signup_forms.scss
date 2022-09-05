@@ -1,0 +1,53 @@
+.form-control {
+  background-color: $light-green !important;
+  padding: 10px;
+  opacity: 0.2;
+}
+
+.logsign {
+  width: 900px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 220px;
+
+  .h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.login-card {
+  margin: 100px 100px 50px 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid lightgray;
+  padding: 40px;
+}
+
+.signup-card {
+  margin: 0px 100px 100px 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid lightgray;
+  padding: 40px;
+}
+
+.forgot-password {
+  font-size: 12px;
+  margin-top: 15px;
+  a {
+    text-decoration: none;
+    color: $light-green;
+  }
+}
+
+.form-actions {
+  margin-top: 16px;
+}

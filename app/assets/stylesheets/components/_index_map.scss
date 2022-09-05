@@ -4,7 +4,8 @@
   grid-template-columns: 30% 70%;
   margin: 3rem;
   border-radius: 20px;
-  border: 1px solid $dark-green;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border: 1px solid lightgray;
 }
 
 .map-filters{
