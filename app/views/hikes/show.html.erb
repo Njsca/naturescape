@@ -23,42 +23,67 @@
       </div>
 
       <!-- row of tags goes below -->
+      <%# <div class="d-flex">
+        <div class="show-tags">
+          <div class="icon-show">
+            <i class="fa-solid fa-paw mx-1"></i>
+            <i class="fa-solid fa-child mx-1"></i>
+            <i class="fa-solid fa-mountain mx-1"></i>
+          </div>
+        </div>
+      </div> %>
+
       <div class="d-flex">
         <div class="show-tags">
-          <i class="fa-solid fa-paw"></i>
-          <i class="fa-solid fa-child"></i>
-          <i class="fa-solid fa-carrot"></i>
+          <% if @hike.terrain == "mountains" %>
+            <i class="fa-solid fa-mountain mx-1"></i>
+          <% elsif @hike.terrain == "hills" %>
+            <i class="fa-solid fa-mound mx-1"></i>
+          <% elsif @hike.terrain == "flat" %>
+            <i class="fa-solid fa-minus mx-1" title="flat"></i>
+          <% end %>
+          <% if @hike.buddy == "dog" %>
+            <i class="fa-solid fa-paw mx-1" title="dog friendly"></i>
+          <% end %>
+          <% if @hike.buddy == "kid" %>
+            <i class="fa-solid fa-paw mx-1" title="dog friendly"></i>
+          <% end %>
+          <% if @hike.buddy == "kid" %>
+            <i class="fa-solid fa-child-reaching mx-1"></i>
+          <% end %>
         </div>
       </div>
 
       <!-- hike description text and button goes below -->
 
-      <div class="show-description mb-3">
+      <div class="show-description">
         <%= @hike.description %></p>
       </div>
 
       <div class="show-button-container">
-        <%# <div class="show-button"> %>
         <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
         <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
-        <%# </div> %>
+      </div>
+
+      <div class="d-flex justify-content-center">
+      <%= link_to :back do %>
+        <p><i class="fa-solid fa-arrow-rotate-left" style="font-size: 20px;"></i> Back</p>
+      <% end %>
       </div>
 
     </div>
 
     <!-- Map info goes below -->
 
-      <div class="show-right">
-        <div class="show-map"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-
-
-        <!-- image files go below -->
-        <div class="show-images">
-        </div>
+    <div class="show-right">
+      <div class="show-map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <!-- image files go below -->
+      <div class="show-images">
+      </div>
     </div>
   </div>
 </div>
