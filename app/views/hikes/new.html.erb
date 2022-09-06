@@ -1,0 +1,26 @@
+<div class="mountains">
+  <div class="container">
+    <div class="logsign">
+      <div class="login-card col-sm">
+        <h2>Organize a hike</h2>
+        <%= simple_form_for(@hike) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :title, wrapper_html: { class:  'type' }%>
+          <%= f.input :date %>
+          <%= f.input :location %>
+          <%= f.input :description %>
+          <%= f.input :duration %>
+          <%= f.input :buddy %>
+          <%= f.input :level %>
+          <%= f.input :terrain %>
+          <%= f.input :length %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        </div>
+        <div class="d-flex justify-content-center form-actions">
+            <%= f.submit "New hike", class: "btn new-hike-btn" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

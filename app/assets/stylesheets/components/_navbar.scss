@@ -6,6 +6,7 @@
   padding-right: 43px;
   padding-left: 43px;
   padding-top: 20px;
+  position: relative;
 }
 
 .hike-search a {
@@ -121,7 +122,11 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  color: $dark-green;
 }
 
+.dropdown-content a:hover {
+  color: rgba(168, 52, 92, 0.7);
+}
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
