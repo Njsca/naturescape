@@ -7,6 +7,11 @@ class Hike < ApplicationRecord
   has_many_attached :photos
   has_one :chatroom, dependent: :destroy
 
+  BUDDIES = ['dog', 'kid']
+  LEVELS = ['beginner', 'intermediate', 'expert']
+  TERRAINS = ['mountains', 'hills', 'flat']
+  DURATIONS = ['1 day', 'multiple days']
+
   scope :one_day, -> { where("duration = '1 day'" ) }
   scope :multiple_days, -> { where("duration = 'multiple days'" ) }
   scope :dog_friendly, -> { where("buddy = 'dog'" ) }
