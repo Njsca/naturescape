@@ -212,7 +212,6 @@ hike7 = Hike.new(
   user_id: user3.id,
   duration: "multiple-days",
   buddy: "kid",
-  buddy: "dog",
   level: "beginner",
   terrain: "mountains",
   language: "english",

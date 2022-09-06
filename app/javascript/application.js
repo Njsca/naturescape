@@ -3,14 +3,21 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)
+// console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)
 
-document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", (e) => {console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)})
-const sugg = document.querySelector(".suggestions")
+// document.querySelector(".mapboxgl-ctrl-geocoder--input").addEventListener("change", (e) => {console.log(document.querySelector(".mapboxgl-ctrl-geocoder--input").value)})
+// const sugg = document.querySelector(".suggestions")
 
-sugg.addEventListener("input", (e) => {
-  console.log(sugg)
-  console.log("helllooooo")
-  window.location.assign(`http://localhost:3000/hikes?query${sugg}`)
-  console.log("asasd")
-})
+// sugg.addEventListener("input", (e) => {
+//   console.log(sugg)
+//   console.log("helllooooo")
+//   window.location.assign(`http://localhost:3000/hikes?query${sugg}`)
+//   console.log("asasd")
+// })
+
+// import { initMapbox } from '../javascript/plugins/init_mapbox';
+
+// document.addEventListener('turbo:load', () => {
+//   initMapbox();
+//   console.log("hello frm application.js")
+// });
