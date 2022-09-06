@@ -12,5 +12,6 @@ class PagesController < ApplicationController
     @hikes = Hike.all
     # @hike = Hike.find(params[:id])
     @bookings = current_user.bookings
+    @my_hikes = Hike.where(user_id: current_user.id)
   end
 end

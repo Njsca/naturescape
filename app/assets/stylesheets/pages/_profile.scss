@@ -1,19 +1,18 @@
 .all-container {
-  // height: 100%;
-  // width: 100%;
   display: flex;
-  // flex-direction: column;
-  padding-top:33px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
 
 .container-profile {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   // background-color: white;
   // max-width: 1400px;
-  height: 75vh;
+  // height: 75vh;
   padding-top: 4vh;
-  width: 75vw;
+  width: 80vw;
   // margin: 0px auto 40px auto;
 }
 
@@ -137,7 +136,7 @@
 }
 
 .hike-name {
-  width: 15rem;
+  margin-top: 30px;
 }
 
 .hike-name h2 {
@@ -152,18 +151,80 @@
   position: relative;
   width: 300px;
   height: 300px;
-  box-shadow: 0 2px 7px #000000;
+  box-shadow: 0 2px 6px #ccc;
   border-radius: 15px;
   padding: 0px;
   margin: 10px;
 }
 
 .hike-icons-profile {
-  padding: 2px 10px 0 8px;
+  padding: 4px 10px 2px 8px;
+  display: flex;
 }
 
 .delete-btn {
   font-weight: lighter;
   font-size: 12px;
-  margin-left: 125px;
+  margin-left: 115px;
+}
+
+.plus-button {
+  width: 300px;
+  height: 300px;
+  background-color: rgba($color: $light-green, $alpha: 0.8);
+  box-shadow: 0 2px 7px #CCC;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.plus  {
+  font-size: 80px;
+}
+
+// Cards profile
+
+.cards-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards-profile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-profile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-profile {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-profile {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-profile {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
