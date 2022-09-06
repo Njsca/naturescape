@@ -1,7 +1,6 @@
 class HikesController < ApplicationController
   def index
 
-
     # if params.keys.count > 2
     if params[:start_date].present? || params['duration'].present? || params['extra-buddies'].present? || params['difficulty'].present? || params['terrain-type'].present?
       query = []
@@ -42,14 +41,13 @@ class HikesController < ApplicationController
 
       union = @hikes.pluck(:id) & @date_hikes.pluck(:id)
 
+
       if union.count.positive?
         @hikes = Hike.where(id: union)
         @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
       else
         @hikes = Hike.where(id: @hikes.pluck(:id))
       end
-
-
     else
       @hikes = Hike.all
     end
@@ -120,3 +118,52 @@ class HikesController < ApplicationController
     @hike = Hike.find(params[:id])
   end
 end
+
+
+# hikes_id = []
+      
+# if params[:duration] == "1-day"
+#   Hike.one_day.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:duration] == "multiple-days"
+#   Hike.multiple_days.each { |hike| hikes_id << hike.id }
+# end
+
+# if params["extra-buddies"] == "dog"
+#   Hike.dog_friendly.each { |hike| hikes_id << hike.id }
+# end
+
+# if params["extra-buddies"] == "kid"
+#   Hike.kid_friendly.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:difficulty] == "beginner"
+#   Hike.beginner.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:difficulty] == "intermediate"
+#   Hike.intermediate.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:difficulty] == "expert"
+#   Hike.expert.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:terrain] == "flat"
+#   Hike.flat.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:terrain] == "hills"
+#   Hike.hills.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:terrain] == "mountains"
+#   Hike.mountains.each { |hike| hikes_id << hike.id }
+# end
+
+# if params[:language] == "english"
+#   Hike.english.each { |hike| hikes_id << hike.id }
+# end
+
+# @hikes = Hike.where(id: hikes_id)
