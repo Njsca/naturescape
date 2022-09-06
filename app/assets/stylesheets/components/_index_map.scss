@@ -14,6 +14,7 @@
 .map-filters{
   padding: 1rem;
   background-color: white;
+  border-radius: 20px 0px 0px 20px;
 }
 
 .mapboxgl-popup {
@@ -51,4 +52,8 @@
 	background-image: url("mountain-bg.png");
 	background-size: cover;
   margin-top: 20px;
+}
+
+.mapboxgl-canvas, #map {
+  border-radius: 0px 20px 20px 0px
 }

@@ -1,0 +1,5 @@
+const initMapbox = () => {
+
+}
+
+export { initMapbox }

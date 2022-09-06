@@ -81,4 +81,3 @@ end
 ## Custom gems
 gem "cloudinary"
 gem "geocoder"
-
