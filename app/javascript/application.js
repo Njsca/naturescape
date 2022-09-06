@@ -14,3 +14,5 @@ sugg.addEventListener("input", (e) => {
   window.location.assign(`http://localhost:3000/hikes?query${sugg}`)
   console.log("asasd")
 })
+
+console.log("kh")

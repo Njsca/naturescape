@@ -13,7 +13,7 @@ export default class extends Controller {
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
       )
-    }
+  }
 
   #justifyClass(currentUserIsSender) {
     return currentUserIsSender ? "justify-content-end" : "justify-content-start"
@@ -42,7 +42,7 @@ export default class extends Controller {
       left: 0,
       behavior: 'smooth'
     });
-    // this.typefieldTarget.scrollTo(10, this.typefieldTarget.scrollHeight)
+    this.messagesTarget.scrollTo(10, this.messagesTarget.scrollHeight)
   }
 
   resetForm(event) {

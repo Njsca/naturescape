@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
@@ -11,6 +13,7 @@ class MessagesController < ApplicationController
         sender_id: @message.user.id
       )
       head :ok
+
     else
       render "chatrooms/show", status: :unprocessable_entity
     end
