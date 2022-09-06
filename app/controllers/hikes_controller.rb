@@ -42,7 +42,7 @@ class HikesController < ApplicationController
 
       union = @hikes.pluck(:id) & @date_hikes.pluck(:id)
 
-      if union.count > 0
+      if union.count.positive?
         @hikes = Hike.where(id: union)
         @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
       else
@@ -76,5 +76,47 @@ class HikesController < ApplicationController
         image_url: helpers.asset_url("pinpoint.png")
       }
     end
+  end
+
+  def new
+    @hike = Hike.new
+  end
+
+  def create
+    @hike = Hike.new(hike_params)
+    @hike.user = current_user
+
+    if @hike.save
+      redirect_to hike_path(@hike)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    set_hike
+    if @hike.update(hike_params)
+      redirect_to hike_path(@hike)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    set_hike
+    @hike.destroy
+    redirect_to profile_path, status: :see_other
+  end
+
+  private
+
+  def hike_params
+    params.require(:hike).permit(:title, :date, :location, :description, :duration, :buddy, :level, :terrain, :language, :length, photos: [])
+  end
+
+  def set_hike
+    @hike = Hike.find(params[:id])
   end
 end

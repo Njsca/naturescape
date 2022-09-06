@@ -13,8 +13,8 @@ application.register("chatroom-subscription", ChatroomSubscriptionController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import MapController from "./map_controller"
-application.register("map", MapController)
+// import MapController from "./map_controller"
+// application.register("map", MapController)
 
-import ShowMapController from "./show_map_controller"
-application.register("show-map", ShowMapController)
+// import ShowMapController from "./show_map_controller"
+// application.register("show-map", ShowMapController)
