@@ -2,6 +2,8 @@
   <div class="banner-content">
     <h1>Your next adventure awaits</h1>
     <p>Join a hiking trip with new buddies and make forever lasting memories</p>
+    <%= link_to "Find a hike to join", hikes_path, class: "show-button mt-4", style: "height: 50px;" %>
+
 
     <%# <%= render "shared/search-bar" %>
     <%# <div id="geocoder" class="geocoder"></div> %>
@@ -16,8 +18,51 @@
 
 
 <div class="home-container">
-    <%= image_tag "homepage_intro.png", class: "hp-intro" %>
+  <%= image_tag "homepage_intro.png", class: "hp-intro" %>
+</div>
+
+<div class="d-flex justify-content-center" style="background-color: rgb(21, 21, 21); padding-bottom: 60px;">
+  <div class="cards-home">
+    <div class="item-card-home mt-4">
+      <%= image_tag "vdj.jpg", class: "card-img-top" %>
+      <div class="item-details">
+        <h2><%= link_to @hike1.title, hike_path(@hike1) %></h2>
+        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike1.location %></p>
+        <h3>22km/day  |  intermediate</h3>
+
+        <div class="hike-icons">
+          <i class="fa-solid fa-mountain" title="moutains"></i>
+          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        </div>
+      </div>
+    </div>
+      <div class="item-card-home mt-4">
+      <%= image_tag "vdj.jpg", class: "card-img-top" %>
+      <div class="item-details">
+        <h2><%= link_to @hike2.title, hike_path(@hike2) %></h2>
+        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike2.location %></p>
+        <h3>22km/day  |  intermediate</h3>
+
+        <div class="hike-icons">
+          <i class="fa-solid fa-mountain" title="moutains"></i>
+          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        </div>
+      </div>
+    </div>
+      <div class="item-card-home mt-4">
+      <%= image_tag "vdj.jpg", class: "card-img-top" %>
+      <div class="item-details">
+        <h2><%= link_to @hike3.title, hike_path(@hike3) %></h2>
+        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike3.location %></p>
+        <h3>22km/day  |  intermediate</h3>
+
+        <div class="hike-icons">
+          <i class="fa-solid fa-mountain" title="moutains"></i>
+          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-
