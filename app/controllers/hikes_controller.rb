@@ -83,7 +83,7 @@ class HikesController < ApplicationController
   def create
     @hike = Hike.new(hike_params)
     @hike.user = current_user
-
+    raise
     if @hike.save
       redirect_to hike_path(@hike)
     else
@@ -121,7 +121,7 @@ end
 
 
 # hikes_id = []
-      
+
 # if params[:duration] == "1-day"
 #   Hike.one_day.each { |hike| hikes_id << hike.id }
 # end
