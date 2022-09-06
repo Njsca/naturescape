@@ -5,25 +5,25 @@
     <p> <%= hike.location %> | <%= hike.date %> </p>
     <h3> <%= hike.level %>  |  <%= hike.duration %> | <%= hike.length %> km </h3>
 
-        <div class="hike-icons d-flex flex-row justify-content-around">
+        <div class="hike-icons d-flex flex-row justify-content-center">
           <% if hike.terrain == "mountains" %>
-            <i class="fa-solid fa-mountain"></i>
+            <i class="fa-solid fa-mountain mx-1"></i>
           <% elsif hike.terrain == "hills" %>
-            <i class="fa-solid fa-mound"></i>
+            <i class="fa-solid fa-mound mx-1"></i>
           <% elsif hike.terrain == "flat" %>
             <i class="fa-solid fa-minus" title="flat"></i>
           <% end %>
 
           <% if hike.buddy == "dog" %>
-            <i class="fa-solid fa-paw" title="dog friendly"></i>
+            <i class="fa-solid fa-paw mx-1" title="dog friendly"></i>
           <% end %>
 
           <% if hike.buddy == "kid" %>
-            <i class="fa-solid fa-paw" title="dog friendly"></i>
+            <i class="fa-solid fa-paw mx-1" title="dog friendly"></i>
           <% end %>
 
           <% if hike.buddy == "kid" %>
-            <i class="fa-solid fa-child-reaching"></i>
+            <i class="fa-solid fa-child-reaching mx-1"></i>
           <% end %>
         </div>
   </div>
