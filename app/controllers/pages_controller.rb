@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @hike1 = Hike.first
     @hike2 = Hike.last
-    @hike3 = Hike.find(64)
+    @hike3 = Hike.order(Arel.sql('RANDOM()')).first
   end
 
   def uikit
