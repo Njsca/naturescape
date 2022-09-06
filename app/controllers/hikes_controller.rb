@@ -42,7 +42,7 @@ class HikesController < ApplicationController
 
       union = @hikes.pluck(:id) & @date_hikes.pluck(:id)
 
-      if union.count > 0
+      if union.count.positive?
         @hikes = Hike.where(id: union)
         @hikes = Hike.where(id: @hikes.pluck(:id) + @date_hikes.pluck(:id))
       else
