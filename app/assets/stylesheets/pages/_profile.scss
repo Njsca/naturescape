@@ -6,7 +6,7 @@
 }
 
 .container-profile {
-  // display: flex;
+  display: flex;
   // flex-direction: column;
   // background-color: white;
   // max-width: 1400px;
@@ -45,6 +45,20 @@
   border-bottom-right-radius: 25px;
   border: 1px solid lightgray;
 }
+
+// .list-hikes {
+//   padding-top: 4vh;
+//   width: 200px;
+//   margin: 0 100px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+//   border: 1px solid lightgray;
+//   background-color: white;
+//   border-top-left-radius: 25px;
+//   border-top-right-radius: 25px;
+//   border-bottom-left-radius: 25px;
+//   border-bottom-right-radius: 25px;
+//   border: 1px solid lightgray;
+// }
 
 .profile-name {
   display: flex;
@@ -106,7 +120,7 @@
 #profile-contact-btn {
   margin-bottom: 22px;
   margin-right: 10px;
-  width: 15%;
+  width: 20%;
 }
 
 .avatar-profile {
