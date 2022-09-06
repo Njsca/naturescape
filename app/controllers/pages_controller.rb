@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :index, :uikit, :profile ]
 
   def home
+    @hike1 = Hike.first
+    @hike2 = Hike.last
+    @hike3 = Hike.find(64)
   end
 
   def uikit

@@ -18,7 +18,11 @@
 }
 
 .form-control {
+<<<<<<< HEAD
   background-color: #EBEDE4;
+=======
+  background-color: #EBEDE4 !important;
+>>>>>>> 1cfd91d22e6f788feb90735b6e8643eef848102b
   padding: 10px;
   color: black !important;
 }
@@ -37,7 +41,7 @@
 .login-card {
   margin: 100px 100px 50px 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  background-color: white;
+  background-color: rgba(254, 254, 254, 0.8);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
