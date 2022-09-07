@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @hike = Hike.find(params[:hike_id])
     @booking.user = current_user
     @booking.hike = @hike
+    @booking.status = 0
 
     if @booking.save
       # @chatroom = Chatroom.create(booking_id: @booking.id) - For creating event!!
@@ -18,6 +19,13 @@ class BookingsController < ApplicationController
       redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(status: params[:status])
+      redirect_to profile_path
     end
   end
 

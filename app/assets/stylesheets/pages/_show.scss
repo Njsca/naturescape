@@ -118,7 +118,7 @@
   align-self: center;
   align-items: center;
   justify-content: center;
-  margin-right: 30px;
+  margin: 0 35px 35px 35px;
   box-sizing: 30px 80px;
   appearance: none;
   border-radius: 0.6em;
@@ -179,4 +179,13 @@
 
 .icon-show {
   font-size: 20px;
+}
+
+.avatar-request {
+  // position: absolute;
+  margin-right: 20px;
+  // margin-bottom: 10px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
