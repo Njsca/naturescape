@@ -62,22 +62,13 @@
     <label for="english"> english-speaking</label>
   </div>
 
-  <div class="buttons">
+  <div class="buttons filters-buttons">
     <button type="submit" class="btn">Submit</button>
+    <div class="pt-3">
+      <%= link_to hikes_path do %>
+        <p class="refresh-filters-link"><i class="fa-solid fa-arrow-rotate-left"></i>Refresh</p>
+      <% end %>
+    </div>
   </div>
+
 </form>
-
-<script>
-function endDateFieldVisibility() {
-  if (document.getElementById("multiple-days").checked) {
-      //display block/none -- not working either
-      document.getElementById("end-date-field").style.visibility = "visible"
-    }
-  else {
-    document.getElementById("end-date-field").style.visibility = "hidden"
-  }
-}
-endDateFieldVisibility()
-
-document.getElementById("range")
-</script>

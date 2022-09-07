@@ -23,6 +23,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.footer-container{
+  z-index: 9999;
+}
 .page-container {
   display: grid;
   min-height: 100vh;

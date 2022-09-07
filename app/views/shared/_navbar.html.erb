@@ -1,7 +1,9 @@
 <div class="nav-container">
 
   <div class="navbar">
-    <p>natureEscape</p>
+    <%= link_to root_path do %>
+      <%= image_tag "naturEscape green:black.png", class: "navbar-logo" %>
+    <% end %>
     <%= render "shared/search-bar" %>
       <div class="navbar-hamburger dropdown">
         <i class="fa-solid fa-bars dropbtn"></i>

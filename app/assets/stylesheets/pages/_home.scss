@@ -77,3 +77,16 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.home-logo{
+  height: 200px;
+  width: auto;
+}
+.home-logo-container{
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+.banner{
+  position: relative;
+}
