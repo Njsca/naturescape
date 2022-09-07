@@ -60,10 +60,12 @@
         <%= @hike.description %></p>
       </div>
 
-      <div class="show-button-container">
-        <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
-        <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
-      </div>
+      <% if @hike.user_id != current_user.id %>
+        <div class="show-button-container">
+          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
+        </div>
+      <% end %>
+      <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
 
       <div class="d-flex justify-content-center">
       <%= link_to hikes_path do %>
@@ -71,6 +73,29 @@
       <% end %>
       </div>
 
+      <hr>
+        <%# Pending events %>
+      <div class="hike-name my-2">
+        <h2 class="text-center mb-5">Requests</h2>
+      </div>
+      <%# <ul> %>
+        <% @bookings.where(:status == "pending" || :status == "accepted").each do |booking| %>
+          <%# <li> %>
+          <% if booking.hike.user_id == current_user.id %>
+
+          <p class="mx-4"><img class="avatar-request" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= booking.user.nickname %>
+          <% if booking.status == "pending" %>
+            <%= link_to "Accept request", hike_booking_path(booking.hike.id, booking, {status: "accepted"}),
+                class: "delete-btn", data: {turbo_method: :patch} %>
+            <%= link_to "Decline request", hike_booking_path(booking.hike.id, booking, {status: "rejected"}),
+                class: "delete-btn", data: {turbo_method: :patch} %>
+            <% else %>
+              is joining the hike!! 🥳</p>
+            <% end %>
+          <% end %>
+          <%# </li> %>
+        <% end %>
+      <%# </ul> %>
     </div>
 
     <!-- Map info goes below -->

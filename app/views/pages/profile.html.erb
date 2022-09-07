@@ -6,7 +6,6 @@
           <div class="profile-name">
             <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
             <img class="avatar-profile" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-
           </div>
 
         <!-- location and tag -->
@@ -21,75 +20,85 @@
             <p><i class="fa-solid fa-paw"></i> Dog owner</p>
           </div>
         </div>
-  <!--new push-->
+        <!--new push-->
         <!-- profile description -->
         <div class="profile-description">
+          <%# <p>= @user.bio</p> %>
           <p>Hi, I’m Katherine and I grew up in the heart of the Vallée de Joux in Switzerland. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!</p>
           <%#= link_to "edit", edit_user_registration(@user) %>
         </div>
 
-
-        <%# <div class="buttons justify-content-end">
-          <a class="btn" id="profile-edit-btn" href="">edit</a>
-        </div> %>
-
         <div class="buttons justify-content-end">
-          <a href="https://naturescape-app.herokuapp.com/hikes/31/bookings/28/chatrooms/18" class="btn", id="profile-contact-btn">Edit profile</a>
-          <%#= link_to "Send a message", hike_booking_chatroom_path(Chatroom.first), class: "btn", id: "profile-contact-btn" %>
+          <%# <a href="https://naturescape-app.herokuapp.com/hikes/31/bookings/28/chatrooms/18" class="btn", id="profile-contact-btn">Edit profile</a> %>
+          <%= link_to "Edit your profile", edit_user_registration_path, class: "btn", id: "profile-contact-btn" %>
         </div>
       </div>
     </div>
   </div>
 
-
-  <div class="hike-name">
+  <%# Events you join %>
+  <div class="hike-name my-5">
     <h2>Upcoming events you're joining</h2>
   </div>
+
+    <div class="cards-profile">
+      <% @my_bookings.each do |booking| %>
+        <div class="item-card-profile mt-4">
+          <% if booking.status == "pending" %>
+            <%= image_tag "vdj.jpg", class: "card-img-top-pending" %>
+          <% else %>
+            <%= image_tag "vdj.jpg", class: "card-img-top" %>
+          <% end %>
+            <div class="item-details">
+              <h2><%= link_to booking.hike.title, hike_path(booking.hike) %></h2>
+              <p><i class="fa-solid fa-location-dot mr-5"></i> <%= booking.hike.location %></p>
+              <% if booking.status == "pending" %>
+                <h3>Request: <%= booking.status %></h3>
+              <% else %>
+                <h3><%= booking.hike.length %>km/day | <%= booking.hike.level %></h3>
+              <% end %>
+              <div class="hike-icons-profile">
+                <i class="fa-solid fa-mountain" title="moutains"></i>
+                <i class="fa-solid fa-paw mx-2" title="dog friendly"></i>
+                <p><%= link_to "cancel booking", hike_booking_path(booking.hike.id, booking), class: "delete-btn-join",
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
+      <div class="plus-button mt-4">
+        <%= link_to hikes_path do %>
+          <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
+        <% end %>
+      </div>
+    </div>
+
+
+  <%# Events you organise %>
+  <div class="hike-name my-5">
+    <h2>Events you're organizing</h2>
+  </div>
   <div class="cards-profile">
-    <% @bookings.each do |booking| %>
+    <% @my_hikes.each do |my_hike| %>
       <div class="item-card-profile mt-4">
         <%= image_tag "vdj.jpg", class: "card-img-top" %>
         <div class="item-details">
-          <h2><%= link_to booking.hike.title, hike_path(booking.hike) %></h2>
-          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= booking.hike.location %></p>
-          <h3>22km/day  |  intermediate</h3>
+          <h2><%= link_to my_hike.title, hike_path(my_hike) %></h2>
+          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= my_hike.location %></p>
+          <h3><%= my_hike.length %>km/day | <%= my_hike.level %></h3>
           <div class="hike-icons-profile">
             <i class="fa-solid fa-mountain" title="moutains"></i>
             <i class="fa-solid fa-paw mx-2" title="dog friendly"></i>
-            <%= link_to "cancel booking", hike_booking_path(booking.hike.id, booking), class: "delete-btn",
+            <%= link_to "cancel event", hike_path(my_hike.id), class: "delete-btn",
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
     <% end %>
     <div class="plus-button mt-4">
-      <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
-    </div>
-  </div>
-
-  <div class="hike-name">
-    <h2>Events you're organizing</h2>
-  </div>
-  <div class="cards-profile">
-      <% @my_hikes.each do |my_hike| %>
-        <div class="item-card-profile mt-4">
-          <%= image_tag "vdj.jpg", class: "card-img-top" %>
-          <div class="item-details">
-            <h2><%= link_to my_hike.title, hike_path(my_hike) %></h2>
-            <p><%= my_hike.location %></p>
-            <h3><i class="fa-solid fa-location-dot mr-5"></i> 22km/day  |  intermediate</h3>
-            <div class="hike-icons-profile">
-              <i class="fa-solid fa-mountain" title="moutains"></i>
-              <i class="fa-solid fa-paw mx-2" title="dog friendly"></i>
-              <%= link_to "cancel event", hike_path(my_hike.id), class: "delete-btn",
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <div class="plus-button mt-4">
+      <%= link_to new_hike_path do %>
         <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
-      </div>
+    <% end %>
   </div>
   <br>
   <%= link_to :back do %>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
 
   resources :hikes do
-    resources :bookings, only: %i[new create destroy]
+    resources :bookings
     resources :chatrooms, only: %i[show new create]
   end
 
