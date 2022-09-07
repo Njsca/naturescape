@@ -170,6 +170,31 @@
   border-radius: 15px;
   padding: 0px;
   margin: 10px;
+
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+  &:hover:before {
+    transform: scale(2.15);
+  }
 }
 
 .hike-icons-profile {
@@ -178,9 +203,16 @@
 }
 
 .delete-btn {
-  font-weight: lighter;
+  font-weight: bold;
+  color: $magenta;
   font-size: 12px;
   margin-left: 134px;
+
+  &:hover,
+  &:focus {
+    color: $dark-green;
+    outline: 0;
+  }
 }
 
 .delete-btn-join {
@@ -248,4 +280,40 @@
   .cards-profile {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+// .fa-sharp {
+//   -webkit-transition: -webkit-transform 0.2s;
+// 	transition: -webkit-transform 0.2s;
+// 	transition: transform 0.2s;
+// 	transition: transform 0.2s, -webkit-transform 0.2s;
+
+//   .plus-button:hover {
+//     -webkit-transform: scale(1.5);
+//     transform: scale(1.5);
+//   }
+// }
+
+.fa-sharp {
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+
+}
+.fa-sharp:hover {
+    // box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
 }
