@@ -154,7 +154,8 @@
 }
 
 .hike-name h2 {
-  font-size: 25px;
+  font-size: 28px;
+  color: $dark-green;
 }
 
 .item-card-profile {
@@ -179,7 +180,13 @@
 .delete-btn {
   font-weight: lighter;
   font-size: 12px;
-  margin-left: 115px;
+  margin-left: 134px;
+}
+
+.delete-btn-join {
+  font-weight: lighter;
+  font-size: 12px;
+  margin-left: 114px;
 }
 
 .plus-button {
