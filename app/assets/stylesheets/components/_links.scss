@@ -6,3 +6,15 @@ a:hover {
   text-decoration: none;
   color: black;
 }
+.back-link{
+  font-size: 20px;
+  color: $dark-green;
+}
+.back-link:hover{
+  color: $magenta;
+}
+.back-link-container{
+  display: flex;
+  width: 100wh !important;
+  padding-left: 3.5rem;
+}

@@ -4,7 +4,7 @@
       <div class="profile-center col-sm">
         <!-- Name and last name -->
           <div class="profile-name">
-            <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+            <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
             <img class="avatar-profile" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
 
           </div>
@@ -12,7 +12,7 @@
         <!-- location and tag -->
         <div class="d-flex" style="font-size: 16px;">
           <div class="profile-hometown">
-            <p><i class="fa-solid fa-location-dot"></i> Le Brassus, Switzerland</p>
+            <p><i class="fa-solid fa-location-dot"></i> <%= @user.location %> </p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
         </div> %>
 
         <div class="buttons justify-content-end">
-          <a href="https://naturescape-app.herokuapp.com/hikes/31/bookings/28/chatrooms/18" class="btn", id="profile-contact-btn">Edit profile</a>
+          <a href="https://naturescape-app.herokuapp.com/hikes/31/bookings/28/chatrooms/18" class="btn", id="profile-contact-btn"><i class="fa-solid fa-pen"></i>  Edit</a>
           <%#= link_to "Send a message", hike_booking_chatroom_path(Chatroom.first), class: "btn", id: "profile-contact-btn" %>
         </div>
       </div>
@@ -92,11 +92,12 @@
       </div>
   </div>
   <br>
-  <%= link_to :back do %>
-    <p><i class="fa-solid fa-arrow-rotate-left" style="font-size: 20px;"></i> Back</p>
-  <% end %>
-  <br>
 </div>
+  <div class="back-link-container">
+    <%= link_to :back do %>
+      <p class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</p>
+    <% end %>
+  </div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
