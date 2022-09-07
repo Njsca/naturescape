@@ -1,13 +1,13 @@
-const fitMapToMarkers = (map, markers) => {
-  const bounds = new mapboxgl.LngLatBounds();
-    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-};
 
 const initMapbox = () => {
   // To refactor in javascript/plugins/init_mapbox.js
-      // + import & call in javascript/application.js
+  // + import & call in javascript/application.js
 
+  const fitMapToMarkers = (map, markers) => {
+    const bounds = new mapboxgl.LngLatBounds();
+      markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+      map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  };
 
 
         const mapElement = document.getElementById('map');
@@ -16,9 +16,8 @@ const initMapbox = () => {
           mapboxgl.accessToken = mapElement.dataset.mapApiKeyValue;
           const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v10'
+            style: `mapbox://styles/mapbox/outdoors-v10`
           });
-
           // Markers
           const markers = JSON.parse(mapElement.dataset.mapMarkersValue);
 
@@ -48,8 +47,7 @@ const initMapbox = () => {
 
       }
 
-
+      console.log("Hello from initmapbox.js")
 }
 
 export { initMapbox }
-export { fitMapToMarkers }

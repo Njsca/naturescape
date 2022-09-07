@@ -13,8 +13,8 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
-      // custom map that doesn't work = "mapbox://styles/nisca/cl7g6mcoc000714oz9vkesg1p" "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v11"
+      // custom map that doesn't work = "mapbox://styles/nisca/cl7g6mcoc000714oz9vkesg1p" "mapbox://styles/mapbox/streets-v11"
     })
 
     this.#addMarkersToMap()

@@ -17,11 +17,10 @@ import "bootstrap"
 
 // console.log("kh")
 
-import { fitMapToMarkers } from "./plugins/init_mapbox";
-import { initMapbox } from "./plugins/init_mapbox";
+import { initMapbox } from "../javascript/plugins/init_mapbox"
 
 document.addEventListener('turbo:load', () => {
-  fitMapToMarkers();
   initMapbox();
-});
+  console.log("Hello from appication.js")
 
+});
