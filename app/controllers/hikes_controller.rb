@@ -83,7 +83,7 @@ class HikesController < ApplicationController
   def create
     @hike = Hike.new(hike_params)
     @hike.user = current_user
-    raise
+    # raise
     if @hike.save
       redirect_to hike_path(@hike)
     else
