@@ -1,3 +1,17 @@
+.forest {
+  position: fixed;
+  overflow-y: scroll;
+  background-image: url("forest.png");
+  background-size: cover;
+  background-color: none;
+  background-position: center;
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+
 .map-wrapper{
   display: grid;
   height: 80vh;
