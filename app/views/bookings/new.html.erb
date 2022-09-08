@@ -23,7 +23,7 @@
     <%# Info fiels %>
 
     <%# ADD Code stimulus controller from above into simple form below!!! %>
-    <div class="chat-container">
+    <div class="chat-container mt-5">
       <div class="chat">
         <img class="avatar" style="width: 100px;" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
         <p class="show-title">Request to join</p>
@@ -33,11 +33,40 @@
           <%#= f.simple_fields_for :message do |message_subform| %>
             <%#= message_subform.text_field :content %>
           <%# end %>
-          <div class="show-button-container-chat">
-            <%= f.button :submit, "Send message to the event organizer", class: "show-button" %>
-            <%= link_to "See your upcoming events!", profile_path, class: "show-button" %>
-          </div>
+          <button type="button" class="btn my-5" style="margin-left: 174px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Send message to the event organizer
+          </button>
+          <%# <div class="show-button-container-chat"> %>
+            <%#= f.button :submit, "Send message to the event organizer", class: "btn", data: {'bs-toggle': "modal", 'bs-target': "#exampleModal"} %>
+            <%#= link_to "See your upcoming events!", profile_path, class: "show-button" %>
+          <%# </div> %>
         <% end %>
+        <%= link_to :back do %>
+          <p><i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i> Back</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <span><strong>Wowza! 😎 </strong> Your request to join this hike has been sent and can be found in your profile. Katherine will reach out to you soon. </span>
+          <a data-bs-dismiss="alert" aria-label="Close">
+          </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn2" data-bs-dismiss="modal"><%= link_to "Continue", profile_path %></button>
       </div>
     </div>
   </div>
