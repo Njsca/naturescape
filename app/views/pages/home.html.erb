@@ -5,8 +5,8 @@
   <div class="banner-content">
     <h1>Your next adventure awaits</h1>
     <p>Join a hiking trip with new buddies and make forever lasting memories</p>
-    <%= link_to "Find a hike to join", hikes_path, class: "show-button mt-4", style: "height: 50px;" %>
-
+    <%= link_to "Find a hike", hikes_path, class: "show-button-home mt-4", style: "height: 50px;" %>
+    <h6> psst, follow the steps...</h6>
 
     <%# <%= render "shared/search-bar" %>
     <%# <div id="geocoder" class="geocoder"></div> %>
@@ -18,6 +18,28 @@
 
   </div>
 </div>
+
+
+<svg id="svg-sprite">
+	<symbol id="paw" viewBox="0 0 249 209.32">
+	<image xlink:href="https://res.cloudinary.com/anjaky/image/upload/v1662546364/naturEscape_olvrvb.png" x="0" y="0" height="100px" width="100px"/>
+	</symbol>
+</svg>
+
+<div class="ajax-loader">
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+
+  <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+</div>
+
 
 
 <div class="home-container">

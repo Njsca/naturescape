@@ -6,7 +6,7 @@
 }
 
 .container-profile {
-  // display: flex;
+  display: flex;
   // flex-direction: column;
   // background-color: white;
   // max-width: 1400px;
@@ -45,6 +45,20 @@
   border-bottom-right-radius: 25px;
   border: 1px solid lightgray;
 }
+
+// .list-hikes {
+//   padding-top: 4vh;
+//   width: 200px;
+//   margin: 0 100px;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+//   border: 1px solid lightgray;
+//   background-color: white;
+//   border-top-left-radius: 25px;
+//   border-top-right-radius: 25px;
+//   border-bottom-left-radius: 25px;
+//   border-bottom-right-radius: 25px;
+//   border: 1px solid lightgray;
+// }
 
 .profile-name {
   display: flex;
@@ -107,7 +121,7 @@
 #profile-contact-btn {
   margin-bottom: 22px;
   margin-right: 10px;
-  width: 15%;
+  width: 25%;
 }
 
 .avatar-profile {
@@ -141,7 +155,8 @@
 }
 
 .hike-name h2 {
-  font-size: 25px;
+  font-size: 28px;
+  color: $dark-green;
 }
 
 .item-card-profile {
@@ -156,6 +171,31 @@
   border-radius: 15px;
   padding: 0px;
   margin: 10px;
+
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+  &:hover:before {
+    transform: scale(2.15);
+  }
 }
 
 .hike-icons-profile {
@@ -164,9 +204,22 @@
 }
 
 .delete-btn {
+  font-weight: bold;
+  color: $magenta;
+  font-size: 12px;
+  margin-left: 134px;
+
+  &:hover,
+  &:focus {
+    color: $dark-green;
+    outline: 0;
+  }
+}
+
+.delete-btn-join {
   font-weight: lighter;
   font-size: 12px;
-  margin-left: 115px;
+  margin-left: 114px;
 }
 
 .plus-button {
@@ -228,4 +281,40 @@
   .cards-profile {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+// .fa-sharp {
+//   -webkit-transition: -webkit-transform 0.2s;
+// 	transition: -webkit-transform 0.2s;
+// 	transition: transform 0.2s;
+// 	transition: transform 0.2s, -webkit-transform 0.2s;
+
+//   .plus-button:hover {
+//     -webkit-transform: scale(1.5);
+//     transform: scale(1.5);
+//   }
+// }
+
+.fa-sharp {
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+
+}
+.fa-sharp:hover {
+    // box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
 }

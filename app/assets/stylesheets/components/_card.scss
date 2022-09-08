@@ -4,7 +4,12 @@
   max-height: 50%;
 }
 
+.card-img-top-pending {
+  object-fit: cover;
+  max-height: 50%;
+  filter: grayscale(80%);
+}
+
 .hike-icons {
   padding: 2px 10px 0 8px;
 }
-
