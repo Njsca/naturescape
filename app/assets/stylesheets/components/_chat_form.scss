@@ -18,7 +18,11 @@
   align-items: center;
   // margin-top: 18vh;
   // margin-bottom: 20vh;
-  margin: 120px 100px 50px 225px;
+  margin: 14px 100px 50px 225px;
+}
+
+.modal-backdrop {
+  z-index: 1
 }
 
 .chatroom {

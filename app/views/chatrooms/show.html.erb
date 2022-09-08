@@ -1,7 +1,7 @@
 <div class="mountains">
   <div class="chat-container">
     <div class="chat">
-      <h4 class="show-chat-title">Say hi!</h4>
+      <h4 class="show-chat-title pb-2">Say hi!</h4>
       <p class="chat-intro"> We love connecting likeminded people. Introduce yourself, tell a few words about your hiking experience and why you'd be a perfect buddy. 😀</i></p>
 
       <!-- app/views/chatrooms/show.html.erb -->
@@ -10,7 +10,7 @@
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
       data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
 
-        <div class="messages" data-chatroom-subscription-target="messages" style="overflow-y: scroll; height: 400px;">
+        <div class="messages" data-chatroom-subscription-target="messages" style="overflow-y: scroll; height: 250px;">
           <% @chatroom.messages.each do |message| %>
             <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
               <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
@@ -30,12 +30,14 @@
               # placeholder: "Message #{@chatroom.name}",
               wrapper_html: {class: "flex-grow-1"}
             %>
-            <%= f.submit "Send", class: "btn btn-primary m-3", style: "font-weight: bold;"  %>
+            <%= f.submit "Send", class: "btn m-2", style: "font-weight: bold;"  %>
           <% end %>
         </div>
-          <%#= link_to "Your profile", profile_path do %>
-          <%# <i class="fa-solid fa-arrow-rotate-left"></i> Back %>
-        <%# end %>
+        <div class=“back-link-container”>
+          <%= link_to :back do %>
+            <p><i class="fa-solid fa-arrow-left" style="font-size: 20px; margin-top: 20px;"></i> Back</p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
