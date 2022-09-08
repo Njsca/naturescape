@@ -78,6 +78,23 @@ puts "users created!"
 
 puts "creating hikes..."
 
+hike3 = Hike.new(
+  title: "Tour du Mont-Blanc",
+  description: "The Tour du Mont Blanc is a system of hiking trails that covers 170 kilometers, with many different starting points, including Courmayeur, Les Houches, and Chamonix. Along the way, mountain refuges (mostly dormitory-style accommodations) allow hikers to rest and get refreshments or refuel with a hearty meal and stay overnight in cozy Alpine lodgings.",
+  location: "Chamonix, France",
+  date: DateTime.new(2022, 9, 14),
+  user_id: user3.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "hills",
+  language: "english",
+  length: "15"
+)
+hike3.save!
+hike3_chatroom = Chatroom.new(hike: hike3)
+hike3_chatroom.save!
+
 hike1 = Hike.new(
   title: "Vallée de Joux",
   description: "25km/day. Katherine here, I grew up in the heart of the Vallée de Joux in Switzerland and I am planning a lovely hike from du Col du Marchairuz. On the first day, we will leave early in the morning and hike up to the Mont-Tendre summit where we’ll cook a traditional “moitié-moitié” cheese fondue and admire a 360° view of the Leman Lake, the Vallée and France before heading up to a mountain cottage for the night. On the second day, we will reach the lake “de Joux” and spend the night in camping in the woods and hike our way back to our starting point the next morning.
@@ -117,22 +134,6 @@ hike2.save!
 hike2_chatroom = Chatroom.new(hike: hike2)
 hike2_chatroom.save!
 
-hike3 = Hike.new(
-  title: "Tour du Mont-Blanc",
-  description: "The Tour du Mont Blanc is a system of hiking trails that covers 170 kilometers, with many different starting points, including Courmayeur, Les Houches, and Chamonix. Along the way, mountain refuges (mostly dormitory-style accommodations) allow hikers to rest and get refreshments or refuel with a hearty meal and stay overnight in cozy Alpine lodgings.",
-  location: "Chamonix, France",
-  date: DateTime.new(2022, 9, 14),
-  user_id: user3.id,
-  duration: "multiple days",
-  buddy: "dog",
-  level: "intermediate",
-  terrain: "hills",
-  language: "english",
-  length: "15"
-)
-hike3.save!
-hike3_chatroom = Chatroom.new(hike: hike3)
-hike3_chatroom.save!
 
 hike4 = Hike.new(
   title: "Ruine Homburg",
@@ -902,22 +903,6 @@ hike47.save!
 hike47_chatroom = Chatroom.new(hike: hike47)
 hike47_chatroom.save!
 
-hike48 = Hike.new(
-  title: "Lagorai Loop Track",
-  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
-  location: "Trento, Italy",
-  date: DateTime.new(2022, 9, 20),
-  user_id: user2.id,
-  duration: "1 day",
-  buddy: "dog",
-  level: "intermediate",
-  terrain: "mountains",
-  language: "english",
-  length: "11"
-)
-hike48.save!
-hike48_chatroom = Chatroom.new(hike: hike48)
-hike48_chatroom.save!
 
 hike49 = Hike.new(
   title: "Monte Cavo Summit",
@@ -969,6 +954,23 @@ hike51 = Hike.new(
 hike51.save!
 hike51_chatroom = Chatroom.new(hike: hike51)
 hike51_chatroom.save!
+
+hike48 = Hike.new(
+  title: "Lagorai Loop Track",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "Trento, Italy",
+  date: DateTime.new(2022, 9, 20),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "mountains",
+  language: "english",
+  length: "11"
+)
+hike48.save!
+hike48_chatroom = Chatroom.new(hike: hike48)
+hike48_chatroom.save!
 
 puts "All done!"
 
