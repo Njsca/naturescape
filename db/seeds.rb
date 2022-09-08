@@ -92,18 +92,14 @@ hike1 = Hike.new(
   language: "english",
   length: "7"
 )
-hike1.save!
-# file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
-# file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
 hike1_chatroom = Chatroom.new(hike: hike1)
 hike1_chatroom.save!
 
-# file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
-# file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
-# file3 = File.open("app/assets/images/xavier-von-erlach-z6LR8pafdaQ-unsplash.jpg")
-# hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
-# hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
-# hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png") too large
+file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
+file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
+hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
+hike1.save!
 
 hike2 = Hike.new(
   title: "5 Lakes Walk",

@@ -1,7 +1,7 @@
 <div class="forest">
   <div class="map-wrapper">
     <div class="map-filters">
-    <h4>Find your perfect hike</h4>
+    <h4 class="filters-h4">Find your perfect hike</h4>
         <%= render "shared/filters-form" %>
     </div>
       <div id="map" class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"

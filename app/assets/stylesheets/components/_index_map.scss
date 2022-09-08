@@ -68,6 +68,10 @@
   margin-top: 20px;
 }
 
-.mapboxgl-canvas, #map {
-  border-radius: 0px 20px 20px 0px
+#map .mapboxgl-canvas {
+  border-radius: 0px 20px 20px 0px ;
+}
+
+#map{
+  border-radius: 0px 20px 20px 0px ;
 }

@@ -87,6 +87,19 @@
   }
 }
 
+
+.home-logo{
+  height: 200px;
+  width: auto;
+}
+.home-logo-container{
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+.banner{
+  position: relative;
+}
 .show-button-home {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
