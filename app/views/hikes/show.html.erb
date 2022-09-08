@@ -38,7 +38,7 @@
           <% if @hike.terrain == "mountains" %>
             <i class="fa-solid fa-mountain mx-1"></i>
           <% elsif @hike.terrain == "hills" %>
-            <i class="fa-solid fa-mound mx-1"></i>
+            <i class="fa-solid fa-mound mx-1></i>
           <% elsif @hike.terrain == "flat" %>
             <i class="fa-solid fa-minus mx-1" title="flat"></i>
           <% end %>
@@ -58,44 +58,51 @@
 
       <div class="show-description">
         <%= @hike.description %></p>
+        <% if @hike.user_id != current_user.id %>
+          <p><img class="avatar-request h-25" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /> Organizer: <%= @hike.user.nickname %></p>
+        <% end %>
       </div>
 
+      <div class="show-button-container">
       <% if @hike.user_id != current_user.id %>
-        <div class="show-button-container">
-          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
-        </div>
+          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "btn", style: "font-weight: bold; margin: 8px;" %>
       <% end %>
-      <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
+      <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "btn2 mx-2", style: "height: 25%; padding-top: 6px;" %>
+      </div>
 
       <div class="d-flex justify-content-center">
       <%= link_to hikes_path do %>
-        <p><i class="fa-solid fa-arrow-rotate-left" style="font-size: 20px;"></i> Back</p>
+        <p><i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i> Back</p>
       <% end %>
       </div>
 
-      <hr>
-        <%# Pending events %>
-      <div class="hike-name my-2">
-        <h2 class="text-center mb-5">Requests</h2>
-      </div>
-      <%# <ul> %>
-        <% @bookings.where(:status == "pending" || :status == "accepted").each do |booking| %>
-          <%# <li> %>
-          <% if booking.hike.user_id == current_user.id %>
+      <% if @hike.user_id == current_user.id %>
 
-          <p class="mx-4"><img class="avatar-request" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= booking.user.nickname %>
-          <% if booking.status == "pending" %>
-            <%= link_to "Accept request", hike_booking_path(booking.hike.id, booking, {status: "accepted"}),
-                class: "delete-btn", data: {turbo_method: :patch} %>
-            <%= link_to "Decline request", hike_booking_path(booking.hike.id, booking, {status: "rejected"}),
-                class: "delete-btn", data: {turbo_method: :patch} %>
-            <% else %>
-              is joining the hike!! 🥳</p>
+        <hr>
+
+          <%# Pending events %>
+        <div class="hike-name my-2">
+          <h2 class="text-center mb-5">Requests</h2>
+        </div>
+        <%# <ul> %>
+          <% @bookings.where(:status == "pending" || :status == "accepted").each do |booking| %>
+            <%# <li> %>
+            <% if booking.hike.user_id == current_user.id %>
+
+            <p class="mx-4"><img class="avatar-request" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= booking.user.nickname %>
+            <% if booking.status == "pending" %>
+              <%= link_to "Accept request", hike_booking_path(booking.hike.id, booking, {status: "accepted"}),
+                  class: "delete-btn", data: {turbo_method: :patch} %>
+              <%= link_to "Decline request", hike_booking_path(booking.hike.id, booking, {status: "rejected"}),
+                  class: "delete-btn", data: {turbo_method: :patch} %>
+              <% else %>
+                is joining the hike!! 🥳</p>
+              <% end %>
             <% end %>
+            <%# </li> %>
           <% end %>
-          <%# </li> %>
+        <%# </ul> %>
         <% end %>
-      <%# </ul> %>
     </div>
 
     <!-- Map info goes below -->
