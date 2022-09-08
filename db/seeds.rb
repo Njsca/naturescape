@@ -130,7 +130,7 @@ hike1 = Hike.new(
   Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners! ",
   location: "Col du Marchairuz, Switzerland",
   date: DateTime.new(2022, 9, 9),
-  user_id: user1.id,
+  user_id: user5.id,
   duration: "1 day",
   buddy: "dog",
   level: "beginner",
@@ -170,6 +170,54 @@ hike2 = Hike.new(
 hike2.save!
 hike2_chatroom = Chatroom.new(hike: hike2)
 hike2_chatroom.save!
+
+hike61 = Hike.new(
+  title: "5 Lakes Walk",
+  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
+  location: "Lausanne, Switzerland",
+  date: DateTime.new(2022, 9, 14),
+  user_id: user5.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "mountains",
+  length: "28"
+)
+hike61.save!
+hike61_chatroom = Chatroom.new(hike: hike61)
+hike61_chatroom.save!
+
+hike62 = Hike.new(
+  title: "5 Lakes Walk",
+  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
+  location: "Lausanne, Switzerland",
+  date: DateTime.new(2022, 9, 14),
+  user_id: user5.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "mountains",
+  length: "28"
+)
+hike62.save!
+hike62_chatroom = Chatroom.new(hike: hike62)
+hike62_chatroom.save!
+
+hike63 = Hike.new(
+  title: "5 Lakes Walk",
+  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
+  location: "Lausanne, Switzerland",
+  date: DateTime.new(2022, 9, 14),
+  user_id: user5.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "intermediate",
+  terrain: "mountains",
+  length: "28"
+)
+hike63.save!
+hike63_chatroom = Chatroom.new(hike: hike63)
+hike63_chatroom.save!
 
 
 hike4 = Hike.new(
