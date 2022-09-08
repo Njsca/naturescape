@@ -90,7 +90,7 @@ hike1 = Hike.new(
   level: "beginner",
   terrain: "mountains",
   language: "english",
-  length: "7"
+  length: "25"
 )
 hike1_chatroom = Chatroom.new(hike: hike1)
 hike1_chatroom.save!
@@ -103,7 +103,7 @@ hike1.save!
 
 hike2 = Hike.new(
   title: "5 Lakes Walk",
-  description: "17km/day. The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
+  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
   location: "Zermatt, Switzerland",
   date: DateTime.new(2022, 9, 14),
   user_id: user2.id,
@@ -111,7 +111,7 @@ hike2 = Hike.new(
   buddy: "dog",
   level: "intermediate",
   terrain: "mountains",
-  length: "10"
+  length: "28"
 )
 hike2.save!
 hike2_chatroom = Chatroom.new(hike: hike2)
@@ -128,7 +128,7 @@ hike3 = Hike.new(
   level: "intermediate",
   terrain: "hills",
   language: "english",
-  length: "15"
+  length: "32"
 )
 hike3.save!
 hike3_chatroom = Chatroom.new(hike: hike3)
@@ -136,7 +136,7 @@ hike3_chatroom.save!
 
 hike4 = Hike.new(
   title: "Ruine Homburg",
-  description: "8 km. The Homburg ruin, also called Neu-Homberg, is located in the
+  description: "The Homburg ruin, also called Neu-Homberg, is located in the
   Swiss municipality of Läufelfingen in the canton of Basel-Landschaft.
   The ruin of the castle is located at 650 m above sea level.
   M. above the narrowest point of the named after her Homburgertal.
@@ -152,7 +152,7 @@ hike4 = Hike.new(
   level: "beginner",
   terrain: "mountains",
   language: "english",
-  length: "5,"
+  length: "7"
 )
 hike4.save!
 hike4_chatroom = Chatroom.new(hike: hike4)
@@ -160,7 +160,7 @@ hike4_chatroom.save!
 
 hike5 = Hike.new(
   title: "Hasenhornturm",
-  description: "23 km. The Hasenhorn Tower stands on the 1,155 meter high Hasenhorn,
+  description: "The Hasenhorn Tower stands on the 1,155 meter high Hasenhorn,
   not far from the city of Todtnau.
   The 21 meter high tower was built from old Douglas fir trunks that were cut in the Todtnauer city forest.
   From the viewing platform at a height of 15 meters,
@@ -180,7 +180,7 @@ hike5_chatroom.save!
 
 hike6 = Hike.new(
   title: "Bildstein",
-  description: "18km. The Bildsteinfelsen can be hiked from almost all directions.
+  description: "The Bildsteinfelsen can be hiked from almost all directions.
   The paths and paths are different in length, some are quite comfortable,
   others are sweaty. You can reach the vantage point of Altglashütten and the Windgfällweiher,
   Raitenbucher Höhe, Fischbach, the Kohlplatz, Schluchsee, the Stutz woods,
@@ -195,7 +195,7 @@ hike6 = Hike.new(
   level: "beginner",
   terrain: "flat",
   language: "english",
-  length: "6"
+  length: "18"
 
 )
 hike6.save!
@@ -221,7 +221,7 @@ hike7_chatroom.save!
 
 hike8 = Hike.new(
   title: "Mont Veyrier",
-  description: "16km. Mont Veyrier rises to 1,291 meters above sea level.
+  description: "Mont Veyrier rises to 1,291 meters above sea level.
   It is a magnificent summit, from which we have a very beautiful view of
   Annecy and its lake.
   One of the two peaks on the northeast side of the Annecy lake (at 1291 m).
@@ -233,7 +233,7 @@ hike8 = Hike.new(
   buddy: "dog",
   level: "beginner",
   terrain: "flat",
-  length: "9"
+  length: "8"
 )
 hike8.save!
 hike8_chatroom = Chatroom.new(hike: hike8)
@@ -241,7 +241,7 @@ hike8_chatroom.save!
 
 hike9 = Hike.new(
   title: "Puy de Dôme",
-  description: "9km. A decent hike up Puy de Dome, the highest peak in the
+  description: "A decent hike up Puy de Dome, the highest peak in the
   Monts Dome area of Auvergne at 1,465 Straight up from the car park up to the top
   and down the other side to do a bit of a loop.
   A good outing and I added a bit more to try and take a picture of the train
@@ -256,7 +256,7 @@ hike9 = Hike.new(
   level: "beginner",
   terrain: "mountains",
   language: "english",
-  length: "7"
+  length: "9"
 )
 hike9.save!
 hike9_chatroom = Chatroom.new(hike: hike9)
@@ -264,7 +264,7 @@ hike9_chatroom.save!
 
 hike10 = Hike.new(
   title: "Passerelle du Monteynard (Ebron)",
-  description: "26km. Lac de Monteynard-Avignonet is an artificial water reservoir
+  description: "Lac de Monteynard-Avignonet is an artificial water reservoir
   for the Électricité de France power station on the river Drac.
   It belongs to the department of Isère. It is bounded by the canyons of the Drac and Ebron.
   The lake was created in 1961, when the 145-metre-high dam was built.
@@ -284,7 +284,7 @@ hike10 = Hike.new(
 
   terrain: "mountains",
   language: "english",
-  length: "5"
+  length: "12"
 )
 hike10.save!
 hike10_chatroom = Chatroom.new(hike: hike10)
@@ -318,7 +318,7 @@ hike12 = Hike.new(
   level: "beginner",
   terrain: "mountains",
   language: "english",
-  length: "4"
+  length: "5"
 )
 hike12.save!
 hike12_chatroom = Chatroom.new(hike: hike12)
@@ -343,7 +343,7 @@ hike13_chatroom.save!
 
 hike14 = Hike.new(
   title: "Classic Inca Trail to Machu Pichu",
-  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  description: "Discover all the secrets of the Inca culture through the Sacred Valley and Machu Picchu 2 day tour.",
   location: "Cusco, Peru",
   date: DateTime.new(2022, 9, 21),
   user_id: user2.id,
@@ -437,7 +437,7 @@ hike19 = Hike.new(
   level: "intermediate",
   terrain: "mountains",
   language: "english",
-  length: "4"
+  length: "18"
 )
 hike19.save!
 hike19_chatroom = Chatroom.new(hike: hike19)
@@ -454,7 +454,7 @@ hike20 = Hike.new(
   level: "expert",
   terrain: "mountains",
   language: "english",
-  length: "23"
+  length: "34"
 )
 hike20.save!
 hike20_chatroom = Chatroom.new(hike: hike20)
