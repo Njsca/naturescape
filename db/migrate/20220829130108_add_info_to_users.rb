@@ -6,3 +6,4 @@ class AddInfoToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :bio, :text
   end
 end
+

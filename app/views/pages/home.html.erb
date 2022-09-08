@@ -1,4 +1,7 @@
 <div class="banner">
+  <div class="home-logo-container">
+    <%= image_tag "naturEscape white.png", class: "home-logo" %>
+  </div>
   <div class="banner-content">
     <h1>Your next adventure awaits</h1>
     <p>Join a hiking trip with new buddies and make forever lasting memories</p>
@@ -50,7 +53,7 @@
       <div class="item-details">
         <h2><%= link_to @hike1.title, hike_path(@hike1) %></h2>
         <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike1.location %></p>
-        <h3>22km/day  |  intermediate</h3>
+        <h3> <%= @hike1.length %> km/day | <%= @hike1.level %> </h3>
 
         <div class="hike-icons">
           <i class="fa-solid fa-mountain" title="moutains"></i>
@@ -63,7 +66,7 @@
       <div class="item-details">
         <h2><%= link_to @hike2.title, hike_path(@hike2) %></h2>
         <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike2.location %></p>
-        <h3>22km/day  |  intermediate</h3>
+        <h3> <%= @hike2.length %> km/day | <%= @hike2.level %> </h3>
 
         <div class="hike-icons">
           <i class="fa-solid fa-mountain" title="moutains"></i>
@@ -76,7 +79,7 @@
       <div class="item-details">
         <h2><%= link_to @hike3.title, hike_path(@hike3) %></h2>
         <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike3.location %></p>
-        <h3>22km/day  |  intermediate</h3>
+        <h3> <%= @hike3.length %> km/day | <%= @hike3.level %> </h3>
 
         <div class="hike-icons">
           <i class="fa-solid fa-mountain" title="moutains"></i>

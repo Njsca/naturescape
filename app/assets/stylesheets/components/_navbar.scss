@@ -1,7 +1,7 @@
 .navbar {
   flex-direction: row;
   background: white;
-  height: 50px;
+  height: fit-content;
   color: $dark-green;
   padding-right: 43px;
   padding-left: 43px;
@@ -21,6 +21,11 @@
     color: $dark-green;
     outline: 0;
   }
+}
+
+.navbar-logo{
+  height: 100px;
+  width: auto;
 }
 
 // .navbar-btn {

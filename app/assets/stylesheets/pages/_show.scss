@@ -1,7 +1,7 @@
 .container {
   // background-color: white;
   max-width: 1400px;
-  height: 800px;
+  height: fit-content;
   padding-top: 4vh;
   z-index: 1000;
   position: relative;
@@ -92,10 +92,13 @@
 .show-description {
   border-top: 1px solid lightgray;
   height: fit-content;
-  font-size: small;
+  font-size: 16px;
+  line-height: 1.5rem;
   padding: 35px;
   text-align: left;
   color: black;
+  font-weight: 300;
+  justify-content: center;
 }
 
 .show-button-container {
@@ -183,6 +186,27 @@
   font-size: 20px;
 }
 
+.carousel-shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+}
+
+.show-map {
+  border-radius: 20px !important;
+}
+
+.show-map .mapboxgl-canvas {
+  border-radius: 20px !important;
+}
+
+.carousel-control-prev{
+  height: 55%;
+}
+.carousel-control-next{
+  height: 65%;
+}
+#carouselExampleIndicators{
+  height: auto !important;
+}
 .avatar-request {
   // position: absolute;
   margin-right: 20px;

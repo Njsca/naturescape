@@ -5,12 +5,13 @@
 // }
 
 .mountains {
-  position: fixed;
+  // position: fixed;
   overflow-y: scroll;
   background-image: url("mountains.png");
   background-size: cover;
   background-color: none;
   background-position: center;
+  background-attachment: fixed;
   bottom: 0px;
 }
 
