@@ -66,7 +66,8 @@
 
     <%= link_to hike_path(@hike2) do %>
       <div class="item-card-home mt-4">
-        <%= image_tag "vdj.jpg", class: "card-img-top" %>
+
+        <%= image_tag "image_tag "jo-l-helvete-9KV0dlW2qC0-unsplash.jpg", class: "card-img-top" %>
         <div class="item-details">
             <h2> <%= @hike2.title %> </h2>
           <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike2.location %></p>
@@ -76,13 +77,15 @@
             <i class="fa-solid fa-mountain" title="moutains"></i>
             <i class="fa-solid fa-paw" title="dog friendly"></i>
           </div>
+
         </div>
       </div>
     <% end %>
 
     <%= link_to hike_path(@hike3) do %>
       <div class="item-card-home mt-4">
-        <%= image_tag "vdj.jpg", class: "card-img-top" %>
+
+        <%= image_tag "sylvain-muggli-W6A_qprTjEU-unsplash.jpg", class: "card-img-top" %>
         <div class="item-details">
             <h2> <%= @hike3.title %> </h2>
           <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike3.location %></p>
@@ -92,6 +95,7 @@
             <i class="fa-solid fa-mountain" title="moutains"></i>
             <i class="fa-solid fa-paw" title="dog friendly"></i>
           </div>
+
         </div>
       </div>
     <% end %>
