@@ -71,7 +71,7 @@ user6 = User.new(
   location: "Bern, Switzerland",
   bio: "I’m Stefan and work in the city. I’m a 20-something young professional and I’ve just finished an intensive tech bootcamp so I’m looking to spend more time in nature – especially hiking! I’m from Bern, Switzerland, and was introduced to NaturEscape by my friend that’s really into hiking."
 )
-stefan = File.open("app/assets/images/avatar-stefan.jpg")
+stefan = File.open("app/assets/images/avatar-steven.jpg")
 user6.photo.attach(io: stefan, filename: "avatar.png", content_type: "image/png")
 user6.save!
 
