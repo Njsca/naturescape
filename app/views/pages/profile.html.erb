@@ -5,7 +5,11 @@
         <!-- Name and last name -->
           <div class="profile-name">
             <h2><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %></h2>
-            <img class="avatar-profile" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+            <% if @current_user.photo.present? %>
+              <%= cl_image_tag @current_user.photo.key, class: "avatar-profile", crop: :fill %>
+            <% else %>
+              <img class="avatar-profile" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+            <% end %>
           </div>
 
         <!-- location and tag -->
@@ -23,8 +27,11 @@
         <!--new push-->
         <!-- profile description -->
         <div class="profile-description">
-          <%# <p>= @user.bio</p> %>
-          <p>Hi, I’m Katherine and I grew up in the heart of the Vallée de Joux in Switzerland. My family have always been interested in the great outdoors and have been especially passionate about hiking. We love to hike with animals. Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!</p>
+          <% if @user.bio.present? %>
+            <p> <%= @user.bio %> </p>
+          <% else %>
+            <p>Hi, I’m Katherine and I grew up in the heart of the Vallée de Joux in Switzerland. My family have always been interested in the great outdoors and have been especially passionate about hiking. We love to hike with animals. Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!</p>
+          <% end %>
           <%#= link_to "edit", edit_user_registration(@user) %>
         </div>
 
@@ -81,40 +88,6 @@
     <h2>Events you're organizing</h2>
   </div>
   <div class="cards-profile">
-    <% @my_hikes.each do |my_hike| %>
-      <div class="item-card-profile mt-4">
-        <%= image_tag "vdj.jpg", class: "card-img-top" %>
-        <div class="item-details">
-          <h2><%= link_to my_hike.title, hike_path(my_hike) %></h2>
-          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= my_hike.location %></p>
-          <h3><%= my_hike.length %>km/day | <%= my_hike.level %></h3>
-          <div class="hike-icons-profile">
-            <i class="fa-solid fa-mountain" title="moutains"></i>
-            <i class="fa-solid fa-paw mx-2" title="dog friendly"></i>
-            <%= link_to "cancel hike", hike_path(my_hike.id), class: "delete-btn",
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-
-
-    <div class="plus-button mt-4">
-      <%= link_to new_hike_path do %>
-        <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
-      <% end %>
-    </div>
-    <br>
-    <%= link_to :back do %>
-      <p><i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i> Back</p>
-    <% end %>
-    <br>
-  </div>
-
-  <div class="hike-name">
-    <h2>Events you're organizing</h2>
-  </div>
-  <div class="cards-profile">
       <% @my_hikes.each do |my_hike| %>
         <div class="item-card-profile mt-4">
           <%= image_tag "vdj.jpg", class: "card-img-top" %>
@@ -132,14 +105,16 @@
         </div>
       <% end %>
       <div class="plus-button mt-4">
-        <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
+        <%= link_to new_hike_path do %>
+          <i class="fa-sharp fa-solid fa-circle-plus plus"></i>
+        <% end %>
       </div>
   </div>
   <br>
 </div>
   <div class="back-link-container">
     <%= link_to :back do %>
-      <p class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</p>
+      <p class="back-link"><i class="fa-solid fa-arrow-left"></i> Back </p>
     <% end %>
   </div>
 

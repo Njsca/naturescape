@@ -1,5 +1,5 @@
 
-  <div class="container">
+  <div class="container" style="z-index: 100">
     <div class="logsign">
       <div class="login-card col-sm">
         <h2>Organize a hike</h2>
@@ -20,7 +20,7 @@
             <%= f.input :terrain, as: :radio_buttons, collection: Hike::TERRAINS, input_html: { class: "terrain-radio-btn" } %>
 
           </div>
-          <%= f.input :buddy, label: 'Extra buddies', as: :check_boxes, collection: Hike::BUDDIES, input_html: { class: "extra-buddies-checkbox" }, include_hidden: false %>
+          <%= f.input :buddy, label: 'Extra buddies', as: :check_boxes, collection: Hike::BUDDIES, input_html: { class: "custom-checkbox" }, include_hidden: false %>
           <%= f.input :length, label: 'Length (km)', collection: 1..40, label: "Lenght (km)" %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         </div>
