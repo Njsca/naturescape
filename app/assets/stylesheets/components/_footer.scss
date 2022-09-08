@@ -20,7 +20,7 @@ footer {
   height: 5rem;
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 .footer-container{
@@ -35,6 +35,7 @@ footer {
 footer .item.social {
   text-align: center;
   border-color: white;
+  margin-left: 27vh;
 }
 
 footer .item.social > a {
@@ -57,8 +58,9 @@ footer .item.social > a:hover {
 }
 
 footer .copyright {
-  text-align: center;
-  padding-top: 24px;
+  text-align: right;
+  padding-top: 12px;
+  padding-right: 24px;
   font-size: 13px;
   margin-bottom: 0;
   color: white;
