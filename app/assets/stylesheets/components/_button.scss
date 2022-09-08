@@ -3,12 +3,12 @@
 .buttons {
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  // margin-top: 5px;
   padding-right: 12px;
 }
 
 .btn {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   color: white !important;
   background-color: $magenta;
@@ -40,7 +40,7 @@
 // TO EDIT - CAN'T MAKE IT SAME SIZE IOAWJFOIEJIORFERDFFFF
 
 .btn2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif;
   appearance: none;
   background-color: white;
   border: 1px solid $magenta;
@@ -75,4 +75,8 @@
 }
 .search-hike-btn a{
   color: white;
+}
+.filters-buttons{
+  display: flex;
+  justify-content: space-between;
 }

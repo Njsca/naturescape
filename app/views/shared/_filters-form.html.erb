@@ -1,6 +1,6 @@
 <form class="filters-form" action="/hikes" >
-  <p>Duration</p>
-  <div class="filter-category">
+    <h6 class="mt-4">Duration</h6>
+  <div class="filter-category d-flex justify-content-between">
     <input type="radio" class ="duration-radio-btn" id="1 day" name="duration" value="1 day">
     <label for="1 day">1 day</label><br>
     <input type="radio" class ="duration-radio-btn" id="multiple-days" name="duration" value="multiple-days">
@@ -8,14 +8,15 @@
   </div>
   <br>
 
-  <p>Date</p>
-  <div class="filter-category">
+    <h6>Date</h6>
+  <div class="filter-category d-flex justify-content-start">
     <input type="date" class="date-selection" id="start-date" name="start_date">
   </div>
   <br>
 
-  <p>Extra buddies</p>
-    <div class="filter-category">
+
+    <h6>Extra buddies</h6>
+    <div class="filter-category d-flex justify-content-between ">
       <div class="dog-friendly-wrapper">
         <input type="checkbox" class="extra-buddies-checkbox" id="dog" name="extra-buddies" value="dog">
         <label for="dog"> dogs</label>
@@ -25,10 +26,18 @@
         <label for="child"> kids</label>
       </div>
     </div>
+    <%# <div class="english-checkbox-wrapper d-flex flex-column">
+      <p>Languages</p>
+      <div>
+        <input type="checkbox" class="english-checkbox" id="english" name="english" value="english">
+        <label for="english"> english</label>
+      </div>
+    </div> %>
+
   <br>
 
-  <p>Difficulty</p>
-  <div class="filter-category">
+  <h6>Difficulty</h6>
+  <div class="filter-category d-flex justify-content-between ">
     <input type="radio" class="difficulty-radio-btn" id="beginner" name="difficulty" value="beginner">
     <label for="beginner">beginner</label><br>
     <input type="radio" class="difficulty-radio-btn" id="intermediate" name="difficulty" value="intermediate">
@@ -45,7 +54,7 @@
   </div>
   <br> %>
 
-  <p>Terrain type</p>
+  <h6>Terrain type</h6>
   <div class="filter-category">
     <input type="radio" class="terrain-radio-btn" id="flat" name="terrain-type" value="flat">
     <label for="flat" class="terrain-type-font"><i class="fa-solid fa-minus"></i></label>
@@ -56,28 +65,13 @@
   </div>
   <br>
 
-  <p>Languages</p>
-  <div class="english-checkbox-wrapper">
-    <input type="checkbox" class="english-checkbox" id="english" name="english" value="english">
-    <label for="english"> english-speaking</label>
-  </div>
-
-  <div class="buttons">
+  <div class="buttons filters-buttons">
     <button type="submit" class="btn">Submit</button>
+    <div class="pt-3">
+      <%= link_to hikes_path do %>
+        <p class="refresh-filters-link"><i class="fa-solid fa-arrow-rotate-left"></i>Refresh</p>
+      <% end %>
+    </div>
   </div>
+
 </form>
-
-<script>
-function endDateFieldVisibility() {
-  if (document.getElementById("multiple-days").checked) {
-      //display block/none -- not working either
-      document.getElementById("end-date-field").style.visibility = "visible"
-    }
-  else {
-    document.getElementById("end-date-field").style.visibility = "hidden"
-  }
-}
-endDateFieldVisibility()
-
-document.getElementById("range")
-</script>

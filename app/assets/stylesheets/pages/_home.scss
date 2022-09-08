@@ -11,6 +11,12 @@
   padding-top: 3px;
 }
 
+.home-h1{
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 54px !important;
+  text-shadow: 2px 2px 4px rgba(177, 153, 146, 0.65);
+}
+
 .hp-intro {
   bottom: 0;
   top: 0px;
@@ -87,6 +93,21 @@
   }
 }
 
+
+.home-logo{
+  height: 8rem;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  width: auto;
+}
+.home-logo-container{
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+.banner{
+  position: relative;
+}
 .show-button-home {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
@@ -140,7 +161,7 @@
 	.paw{
 		width: 1.5em;
 		height: 1em;
-		animation: 2050ms pawAnimation ease-in-out infinite;
+		animation: 3050ms pawAnimation ease-in-out infinite;
 		opacity: 0;
 
 
@@ -250,8 +271,8 @@
 
 .ajax-loader{
   top: 70% !important;
-  left: 20% !important;
-  transform: rotate(128deg) translate(-50%, -30%) !important;
+  left: 30% !important;
+  transform: rotate(109deg) translate(-50%, -48%) !important;
 }
 // .ajax-loader2{
 // 	top: 15%;
