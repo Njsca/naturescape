@@ -1,17 +1,15 @@
-<div class="forest">
-  <div class="map-wrapper">
-    <div class="map-filters">
-    <h4 class="filters-h4">Find your perfect hike</h4>
-        <%= render "shared/filters-form" %>
-    </div>
-      <div id="map" class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" >
-      <pre id="result" class="d-none" data-map-target="result"></pre>
-    </div>
+<div class="map-wrapper">
+  <div class="map-filters">
+  <h4 class="filters-h4">Find your perfect hike</h4>
+      <%= render "shared/filters-form" %>
+  </div>
+    <div id="map" class="map-container" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" >
+    <pre id="result" class="d-none" data-map-target="result"></pre>
   </div>
 </div>
 
-
+<div class="forest background-prop"></div>
 
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
