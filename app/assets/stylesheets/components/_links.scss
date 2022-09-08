@@ -9,6 +9,9 @@ a:hover {
 .back-link{
   font-size: 16px;
   color: $dark-green;
+  background-color: rgba(254, 254, 254, 0.7);
+  border-radius: 25px;
+  padding: 0.5rem;
 }
 .back-link:hover{
   color: $magenta;
@@ -17,6 +20,7 @@ a:hover {
   display: flex;
   width: 100wh !important;
   padding-left: 3.5rem;
+  z-index: 100;
 }
 .refresh-filters-link{
   font-size: 16px;
