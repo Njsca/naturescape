@@ -1,0 +1,35 @@
+// .eumap {
+//   background-image: url("nEmap_5.png");
+//   opacity: 50%;
+//   position: fixed;
+//   background-size: 730px;
+//   margin-left: 470px;
+//   margin-top: 250px;
+//   margin-bottom: 20px;
+//   padding-top: 310px;
+//   background-repeat: no-repeat;
+//   background-color: none;
+//   bottom: 0px;
+//   padding: 300px;
+// }
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  z-index: 100;
+}
+
+
+.team-img {
+  bottom: 0;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 996px;
+  padding: 30px;
+  margin: -31px 89px 10px 136px;
+  opacity: 50%;
+  padding: 100px;
+}
