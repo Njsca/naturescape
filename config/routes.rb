@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: "pages#home"
-  get "/uikit", to: "pages#uikit"
+  get "/team", to: "pages#team"
   get '/profile', to: 'pages#profile'
 
   resources :hikes do
