@@ -958,7 +958,7 @@ hike53_chatroom.save!
 hike54 = Hike.new(
   title: "Kangaroo Island Wilderness Trail",
   description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
-  location: "Canberra, Australia",
+  location: "Sidney, Australia",
   date: DateTime.new(2022, 11, 12),
   user_id: user2.id,
   duration: "multiple days",
@@ -975,7 +975,7 @@ hike54_chatroom.save!
 hike55 = Hike.new(
   title: "Grand Loop Trail",
   description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
-  location: "Siberia, Russia",
+  location: "Novosibirsk, Russia",
   date: DateTime.new(2022, 11, 12),
   user_id: user2.id,
   duration: "multiple days",
