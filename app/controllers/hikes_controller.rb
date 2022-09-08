@@ -15,7 +15,9 @@ class HikesController < ApplicationController
 
   def show
     @hike = Hike.find(params[:id])
-    @chatroom = @hike.chatroom.id
+    @chatroom = Chatroom.new
+    @chatroom.hike = @hike
+    @chatroom.save!
     @bookings = Booking.all
 
     @markers = Hike.where(id: @hike.id).geocoded.map do |hike|

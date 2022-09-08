@@ -131,7 +131,7 @@ hike1 = Hike.new(
   location: "Col du Marchairuz, Switzerland",
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id,
-  duration: "one day",
+  duration: "1 day",
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
@@ -867,11 +867,79 @@ hike43 = Hike.new(
   level: "beginner",
   terrain: "hills",
   language: "english",
-  length: "11"
+  length: "17"
 )
 hike43.save!
 hike43_chatroom = Chatroom.new(hike: hike43)
 hike43_chatroom.save!
+
+hike52 = Hike.new(
+  title: "Masai Mara Track",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "Nairobi, Kenya",
+  date: DateTime.new(2022, 11, 12),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "dog",
+  level: "beginner",
+  terrain: "hills",
+  language: "english",
+  length: "14"
+)
+hike52.save!
+hike52_chatroom = Chatroom.new(hike: hike52)
+hike52_chatroom.save!
+
+hike53 = Hike.new(
+  title: "Cape Town Car Road Track",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "South Africa",
+  date: DateTime.new(2022, 11, 12),
+  user_id: user2.id,
+  duration: "1 day",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "hills",
+  language: "english",
+  length: "11"
+)
+hike53.save!
+hike53_chatroom = Chatroom.new(hike: hike53)
+hike53_chatroom.save!
+
+hike54 = Hike.new(
+  title: "Kangaroo Island Wilderness Trail",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "Canberra, Australia",
+  date: DateTime.new(2022, 11, 12),
+  user_id: user2.id,
+  duration: "multiple days",
+  buddy: "kid",
+  level: "beginner",
+  terrain: "hills",
+  language: "english",
+  length: "9"
+)
+hike54.save!
+hike54_chatroom = Chatroom.new(hike: hike54)
+hike54_chatroom.save!
+
+hike55 = Hike.new(
+  title: "Grand Loop Trail",
+  description: "The Brent Crater was formed when a meteorite crashed to earth thousands of years ago. From a wooden observation tower overlooking the crater, the trail descends to the crater floor before looping back to the starting point. Six interpretive stops relate some of the geological and historical significance of this unique feature. This trail is accessed from the Brent Campground.",
+  location: "Siberia, Russia",
+  date: DateTime.new(2022, 11, 12),
+  user_id: user2.id,
+  duration: "multiple days",
+  buddy: "dog",
+  level: "expert",
+  terrain: "mountains",
+  language: "english",
+  length: "30"
+)
+hike55.save!
+hike55_chatroom = Chatroom.new(hike: hike55)
+hike55_chatroom.save!
 
 hike44 = Hike.new(
   title: "Solovetsky Islands",
