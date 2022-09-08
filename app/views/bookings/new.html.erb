@@ -27,16 +27,17 @@
       <div class="chat">
         <img class="avatar" style="width: 100px;" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
         <p class="show-title">Request to join</p>
+
         <%= simple_form_for [@hike, @booking], class: "chat-form-style", style: "" do |f| %>
-          <%= f.input :message, as: :text, label: "Tell Katherine a little about yourself. Why would you like to join this event?",
+          <%= f.input :message, as: :text, label: "Tell @hike.user.first_name.capitalize a little about yourself. Why would you like to join this event?",
            input_html: {:size => 500} %>
+
           <%#= f.simple_fields_for :message do |message_subform| %>
             <%#= message_subform.text_field :content %>
           <%# end %>
            <button type="button" class="btn my-5" style="margin-left: 174px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Send message to the event organizer
           </button>
-
 
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="z-index: 2; position: relative;">
@@ -46,7 +47,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span><strong>Wowza! 😎 </strong> Your request to join this hike has been sent and can be found in your profile. Katherine will reach out to you soon. </span>
+                    <span><strong>Wowza! 😎 </strong> Your request to join this hike has been sent and can be found in your profile. @hike.user.first_name.capitalize will reach out to you soon. </span>
                     <a data-bs-dismiss="alert" aria-label="Close">
                     </a>
                 </div>
@@ -60,6 +61,7 @@
             </div>
           </div>
 
+
         <% end %>
         <div class=“back-link-container”>
           <%= link_to :back do %>
@@ -70,8 +72,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!-- Modal -->

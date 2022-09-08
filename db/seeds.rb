@@ -16,6 +16,7 @@ user1 = User.new(
 )
 user1.save!
 
+
 user2 = User.new(
   first_name: "Joeri",
   last_name: "Joeri",
@@ -44,7 +45,35 @@ user4 = User.new(
   password: "password",
   location: "Italy"
 )
+denis = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+user4.photo.attach(io: denis, filename: "nes.png", content_type: "image/png")
 user4.save!
+
+user5 = User.new(
+  first_name: "Katherine",
+  last_name: "Meyer",
+  nickname: "KatherineM",
+  email: "katherine@email.com",
+  password: "password",
+  location: "Le Brassus, Switzerland",
+  bio: "My name is Katherine, I’m in my mid-20s and I love the outdoors. I’m originally from Le Brassus, just north of Geneva, which is surrounded by beautiful countryside. This is where my passion for hiking and love of animals comes from – I have a Pinscher, called Lenny. My aim in setting up hikes is to allow other outdoor enthusiasts to see some of the wonderful countryside from my favourite part of Switzerland."
+)
+katherine = File.open("app/assets/images/avatar-katherine.jpg")
+user5.photo.attach(io: katherine, filename: "avatar.png", content_type: "image/png")
+user5.save!
+
+user6 = User.new(
+  first_name: "Stefan",
+  last_name: "Müller",
+  nickname: "StefanM",
+  email: "stefan@email.com",
+  password: "password",
+  location: "Bern, Switzerland",
+  bio: "I’m Stefan and work in the city. I’m a 20-something young professional and I’ve just finished an intensive tech bootcamp so I’m looking to spend more time in nature – especially hiking! I’m from Bern, Switzerland, and was introduced to NaturEscape by my friend that’s really into hiking."
+)
+stefan = File.open("app/assets/images/avatar-steven.jpg")
+user6.photo.attach(io: stefan, filename: "avatar.png", content_type: "image/png")
+user6.save!
 
 # tag creation
 one_day_tag = Tag.new(name: "1 day")
@@ -97,12 +126,12 @@ hike3_chatroom.save!
 
 hike1 = Hike.new(
   title: "Vallée de Joux",
-  description: "25km/day. Katherine here, I grew up in the heart of the Vallée de Joux in Switzerland and I am planning a lovely hike from du Col du Marchairuz. On the first day, we will leave early in the morning and hike up to the Mont-Tendre summit where we’ll cook a traditional “moitié-moitié” cheese fondue and admire a 360° view of the Leman Lake, the Vallée and France before heading up to a mountain cottage for the night. On the second day, we will reach the lake “de Joux” and spend the night in camping in the woods and hike our way back to our starting point the next morning.
-  Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners!",
+  description: "Katherine here, I grew up in the heart of the Vallée de Joux in Switzerland and I am planning a lovely hike from Col du Marchairuz. We will leave early in the morning and hike up to the Mont-Tendre summit where we’ll cook a traditional “moitié-moitié” cheese fondue and admire a 360° view of the Leman Lake, the Vallée and France before heading up to a mountain cottage for the lunch and to get some rest. After that, we will reach the lake “de Joux” and spend some time in the woods. Eventually, we will hike our way back to our starting point in the evening.
+  Lenny, my four-legged furry best buddy follows me on every adventure so I would love to meet other dog owners! ",
   location: "Col du Marchairuz, Switzerland",
   date: DateTime.new(2022, 9, 9),
   user_id: user1.id,
-  duration: "multiple days",
+  duration: "one day",
   buddy: "dog",
   level: "beginner",
   terrain: "mountains",
@@ -114,8 +143,16 @@ hike1_chatroom.save!
 
 file = File.open("app/assets/images/dorothea-oldani-ANG04nEhp3U-unsplash.jpg")
 file2 = File.open("app/assets/images/janis-wolf-vfmNDJQDoMM-unsplash.jpg")
+file3 = File.open("app/assets/images/hike1.jpg")
+file4 = File.open("app/assets/images/hike2.jpg")
+file5 = File.open("app/assets/images/hike3.jpg")
+file6 = File.open("app/assets/images/hike4.jpg")
 hike1.photos.attach(io: file, filename: "hike.png", content_type: "image/png")
 hike1.photos.attach(io: file2, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file3, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file4, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file5, filename: "hike.png", content_type: "image/png")
+hike1.photos.attach(io: file6, filename: "hike.png", content_type: "image/png")
 hike1.save!
 
 hike2 = Hike.new(
