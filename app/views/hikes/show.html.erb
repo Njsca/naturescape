@@ -95,7 +95,13 @@
             <%# <li> %>
             <% if booking.hike.user_id == current_user.id %>
 
-            <p class="mx-4"><img class="avatar-request" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= booking.user.nickname %>
+            <p class="mx-4">
+              <% if booking.user.photo.present? %>
+                <%= cl_image_tag booking.user.photo.key, class: "avatar-profile", crop: :fill %>
+              <% else %>
+                <img class="avatar-request h-25" alt="avatar" src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=170667a&w=0&h=zP3l7WJinOFaGb2i1F4g8IS2ylw0FlIaa6x3tP9sebU=" />
+              <% end %>
+            <%= booking.user.nickname %>
             <% if booking.status == "pending" %>
               <%= link_to "Accept request", hike_booking_path(booking.hike.id, booking, {status: "accepted"}),
                   class: "delete-btn", data: {turbo_method: :patch} %>
