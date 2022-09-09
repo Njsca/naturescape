@@ -137,7 +137,7 @@ hike1 = Hike.new(
   level: "beginner",
   terrain: "mountains",
   language: "english",
-  length: "25"
+  length: "12"
 )
 hike1_chatroom = Chatroom.new(hike: hike1)
 hike1_chatroom.save!
@@ -186,39 +186,9 @@ hike61 = Hike.new(
 )
 hike61.save!
 hike61_chatroom = Chatroom.new(hike: hike61)
+file10 = File.open("app/assets/images/toomas-tartes-Yizrl9N_eDA-unsplash.jpg")
+hike1.photos.attach(io: file10, filename: "hike.png", content_type: "image/png")
 hike61_chatroom.save!
-
-hike62 = Hike.new(
-  title: "5 Lakes Walk",
-  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
-  location: "Lausanne, Switzerland",
-  date: DateTime.new(2022, 9, 14),
-  user_id: user5.id,
-  duration: "multiple days",
-  buddy: "dog",
-  level: "intermediate",
-  terrain: "mountains",
-  length: "28"
-)
-hike62.save!
-hike62_chatroom = Chatroom.new(hike: hike62)
-hike62_chatroom.save!
-
-hike63 = Hike.new(
-  title: "5 Lakes Walk",
-  description: "The path leads past the lakes of the Stellisee, Grindjisee, Grünsee, Moosjisee and Leisee. Each of these mountain lakes is very different in terms of shape, colour, character and size, and has its own special attraction. The Leisee is good for swimming: children love it. The Grünsee looks out over a rather more rugged landscape, where Swiss stone pines nevertheless manage to grow among the scree and sand. The shores of the Grindjisee are home to rare flowers. And so on – each one promises a unique experience.",
-  location: "Lausanne, Switzerland",
-  date: DateTime.new(2022, 9, 14),
-  user_id: user5.id,
-  duration: "multiple days",
-  buddy: "dog",
-  level: "intermediate",
-  terrain: "mountains",
-  length: "28"
-)
-hike63.save!
-hike63_chatroom = Chatroom.new(hike: hike63)
-hike63_chatroom.save!
 
 
 hike4 = Hike.new(
