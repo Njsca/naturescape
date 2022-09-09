@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :team, :profile ]
+
+  skip_before_action :authenticate_user!, only: [ :home, :index, :team ]
 
   def home
     @hike1 = Hike.first

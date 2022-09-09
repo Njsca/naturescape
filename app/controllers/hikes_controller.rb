@@ -15,10 +15,12 @@ class HikesController < ApplicationController
 
   def show
     @hike = Hike.find(params[:id])
-    @chatroom = Chatroom.new
-    @chatroom.hike = @hike
-    @chatroom.save!
+    @chatroom = @hike.chatroom
     @bookings = Booking.all
+    @my_bookings = current_user.bookings
+    # @chatroom = Chatroom.new
+    # @chatroom.hike = @hike
+    # @chatroom.save!
 
     @markers = Hike.where(id: @hike.id).geocoded.map do |hike|
       {
@@ -37,7 +39,11 @@ class HikesController < ApplicationController
   def create
     @hike = Hike.new(hike_params)
     @hike.user = current_user
-    # raise
+    @chatroom = Chatroom.new
+    @chatroom.hike = @hike
+    @chatroom.save!
+    @bookings = Booking.all
+
     if @hike.save
       redirect_to hike_path(@hike)
     else
