@@ -1,5 +1,5 @@
-<div class="mountains">
-  <div class="container">
+
+  <div class="container" style="z-index: 100">
     <div class="logsign">
       <div class="login-card col-sm">
         <h2>Organize a hike</h2>
@@ -9,11 +9,19 @@
           <%= f.input :date %>
           <%= f.input :location %>
           <%= f.input :description %>
-          <%= f.input :duration %>
-          <%= f.input :buddy %>
-          <%= f.input :level %>
-          <%= f.input :terrain %>
-          <%= f.input :length %>
+          <div class="d-flex flex-start">
+
+            <%= f.input :duration, as: :radio_buttons, collection: Hike::DURATIONS, input_html: { class: "duration-radio-btn" } %>
+
+
+            <%= f.input :level, as: :radio_buttons, collection: Hike::LEVELS, input_html: { class: "difficulty-radio-btn" } %>
+
+
+            <%= f.input :terrain, as: :radio_buttons, collection: Hike::TERRAINS, input_html: { class: "terrain-radio-btn" } %>
+
+          </div>
+          <%= f.input :buddy, label: 'Extra buddies', as: :check_boxes, collection: Hike::BUDDIES, input_html: { class: "custom-checkbox" }, include_hidden: false %>
+          <%= f.input :length, label: 'Length (km)', collection: 1..40, label: "Lenght (km)" %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         </div>
         <div class="d-flex justify-content-center form-actions">
@@ -22,5 +30,13 @@
         <% end %>
       </div>
     </div>
+    <div class="back-link-container">
+      <%= link_to :back do %>
+        <p class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</p>
+      <% end %>
+    </div>
   </div>
-</div>
+
+
+
+<div class="mountains background-prop "></div>

@@ -5,22 +5,20 @@
 // }
 
 .mountains {
-  position: fixed;
+  // position: fixed;
   overflow-y: scroll;
   background-image: url("mountains.png");
   background-size: cover;
   background-color: none;
   background-position: center;
+  background-attachment: fixed;
   bottom: 0px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
 }
 
 .form-control {
-  background-color: $light-green !important;
+  background-color: #EBEDE4 !important;
   padding: 10px;
-  opacity: 0.2;
+  color: black !important;
 }
 
 .logsign {
@@ -37,7 +35,7 @@
 .login-card {
   margin: 100px 100px 50px 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  background-color: white;
+  background-color: rgba(254, 254, 254, 0.8);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -49,7 +47,7 @@
 .signup-card {
   margin: 0px 100px 100px 100px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  background-color: white;
+  background-color: rgba(254, 254, 254, 0.7);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;

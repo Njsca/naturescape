@@ -1,6 +1,86 @@
 class HikesController < ApplicationController
   def index
 
+    map_filter
+
+    @markers = @hikes.geocoded.map do |hike|
+      {
+        lat: hike.latitude,
+        lng: hike.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {hike: hike}),
+        image_url: helpers.asset_url("pinpoint.png")
+      }
+    end
+  end
+
+  def show
+    @hike = Hike.find(params[:id])
+    @chatroom = @hike.chatroom
+    @bookings = Booking.all
+    @my_bookings = current_user.bookings
+    # @chatroom = Chatroom.new
+    # @chatroom.hike = @hike
+    # @chatroom.save!
+
+    @markers = Hike.where(id: @hike.id).geocoded.map do |hike|
+      {
+        lat: hike.latitude,
+        lng: hike.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {hike: hike}),
+        image_url: helpers.asset_url("pinpoint.png")
+      }
+    end
+  end
+
+  def new
+    @hike = Hike.new
+  end
+
+  def create
+    @hike = Hike.new(hike_params)
+    @hike.user = current_user
+    @chatroom = Chatroom.new
+    @chatroom.hike = @hike
+    @chatroom.save!
+    @bookings = Booking.all
+
+    if @hike.save
+      redirect_to hike_path(@hike)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    set_hike
+    if @hike.update(hike_params)
+      redirect_to hike_path(@hike)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    set_hike
+    @chatrooms = Chatroom.where(hike: @hike)
+    @chatrooms.destroy_all
+    @hike.destroy
+    redirect_to profile_path, status: :see_other
+  end
+
+  private
+
+  def hike_params
+    params.require(:hike).permit(:title, :date, :location, :description, :duration, :buddy, :level, :terrain, :language, :length, photos: [])
+  end
+
+  def set_hike
+    @hike = Hike.find(params[:id])
+  end
+
+  def map_filter
     # if params.keys.count > 2
     if params[:start_date].present? || params['duration'].present? || params['extra-buddies'].present? || params['difficulty'].present? || params['terrain-type'].present?
       query = []
@@ -51,77 +131,12 @@ class HikesController < ApplicationController
     else
       @hikes = Hike.all
     end
-
-    @markers = @hikes.geocoded.map do |hike|
-      {
-        lat: hike.latitude,
-        lng: hike.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {hike: hike}),
-        image_url: helpers.asset_url("pinpoint.png")
-      }
-    end
-  end
-
-  def show
-    @hike = Hike.find(params[:id])
-    @chatroom = @hike.chatroom.id
-
-    @markers = Hike.where(id: @hike.id).geocoded.map do |hike|
-      {
-        lat: hike.latitude,
-        lng: hike.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {hike: hike}),
-        image_url: helpers.asset_url("pinpoint.png")
-      }
-    end
-  end
-
-  def new
-    @hike = Hike.new
-  end
-
-  def create
-    @hike = Hike.new(hike_params)
-    @hike.user = current_user
-
-    if @hike.save
-      redirect_to hike_path(@hike)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def edit; end
-
-  def update
-    set_hike
-    if @hike.update(hike_params)
-      redirect_to hike_path(@hike)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    set_hike
-    @hike.destroy
-    redirect_to profile_path, status: :see_other
-  end
-
-  private
-
-  def hike_params
-    params.require(:hike).permit(:title, :date, :location, :description, :duration, :buddy, :level, :terrain, :language, :length, photos: [])
-  end
-
-  def set_hike
-    @hike = Hike.find(params[:id])
   end
 end
 
 
 # hikes_id = []
-      
+
 # if params[:duration] == "1-day"
 #   Hike.one_day.each { |hike| hikes_id << hike.id }
 # end

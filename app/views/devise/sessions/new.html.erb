@@ -1,4 +1,4 @@
-<div class="mountains">
+
   <div class="container">
     <div class="logsign">
       <div class="login-card col-sm">
@@ -42,6 +42,10 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "last_name" }%>
+            <%= f.input :nickname,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "nickname" }%>
             <%= f.input :location,
                         required: true,
                         autofocus: true,
@@ -70,4 +74,5 @@
       </div>
     </div>
   </div>
-</div>
+
+<div class="mountains background-prop "></div>

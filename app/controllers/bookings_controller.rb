@@ -22,6 +22,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(status: params[:status])
+      redirect_to profile_path
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     # @booking.hike_id = params[:hike_id]

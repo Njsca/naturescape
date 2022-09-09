@@ -1,36 +1,44 @@
-<div class="chat-container">
-  <div class="chat">
-    <h4 class="show-title">Contact the event organizer</h4>
+<div class="mountains">
+  <div class="chat-container">
+    <div class="chat">
+      <h4 class="show-chat-title pb-2">Say hi!</h4>
+      <p class="chat-intro"> We love connecting likeminded people. Introduce yourself, tell a few words about your hiking experience and why you'd be a perfect buddy. 😀</i></p>
 
-    <!-- app/views/chatrooms/show.html.erb -->
-    <div class="container chatroom"
-    data-controller="chatroom-subscription"
-    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-          <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-            <%= render "messages/message", message: message %>
-          </div>
+      <!-- app/views/chatrooms/show.html.erb -->
+      <div class="container chatroom"
+      data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+      data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
+        <div class="messages" data-chatroom-subscription-target="messages" style="overflow-y: scroll; height: 250px;">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+              <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+                <%= render "messages/message", message: message %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+        <div class="typefield" data-chatroom-subscription-target="typefield">
+          <%= simple_form_for [@chatroom, @message],
+            remote: true,
+            html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
+            class: "d-flex flex-column"} do |f|
+          %>
+            <%= f.input :content,
+              label: false,
+              # placeholder: "Message #{@chatroom.name}",
+              wrapper_html: {class: "flex-grow-1"}
+            %>
+            <%= f.submit "Send", class: "btn m-2", style: "font-weight: bold;"  %>
+          <% end %>
+        </div>
+        <div class=“back-link-container”>
+          <%= link_to :back do %>
+            <p><i class="fa-solid fa-arrow-left" style="font-size: 20px; margin-top: 20px;"></i> Back</p>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="typefield" data-chatroom-subscription-target="typefield">
-      <%= simple_form_for [@hike, @chatroom, @message],
-        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" },
-        class: "d-flex" } do |f|
-      %>
-        <%= f.input :content,
-          label: false,
-          # placeholder: "Message #{@chatroom.name}",
-          wrapper_html: {class: "flex-grow-1"}
-        %>
-        <%= f.submit "Send", class: "btn btn-primary m-3" %>
-      <% end %>
-    </div>
-      <%#= link_to "Your profile", profile_path do %>
-        <%# <i class="fa-solid fa-arrow-rotate-left"></i> Back %>
-      <%# end %>
   </div>
 </div>

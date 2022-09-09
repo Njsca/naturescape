@@ -1,9 +1,12 @@
 <div class="banner">
+  <div class="home-logo-container">
+    <%= image_tag "naturEscape white.png", class: "home-logo" %>
+  </div>
   <div class="banner-content">
-    <h1>Your next adventure awaits</h1>
+    <h1 class="home-h1">Your next adventure awaits</h1>
     <p>Join a hiking trip with new buddies and make forever lasting memories</p>
-    <%= link_to "Find a hike to join", hikes_path, class: "show-button mt-4", style: "height: 50px;" %>
-
+    <%= link_to "Find a hike", hikes_path, class: "show-button-home mt-4", style: "height: 50px;" %>
+    <h6> psst, follow the steps...</h6>
 
     <%# <%= render "shared/search-bar" %>
     <%# <div id="geocoder" class="geocoder"></div> %>
@@ -17,51 +20,85 @@
 </div>
 
 
+<svg id="svg-sprite">
+	<symbol id="paw" viewBox="0 0 249 209.32">
+	<image xlink:href="https://res.cloudinary.com/anjaky/image/upload/v1662546364/naturEscape_olvrvb.png" x="0" y="0" height="100px" width="100px"/>
+	</symbol>
+</svg>
+
+<div class="ajax-loader">
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+
+  <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+</div>
+
+
+
 <div class="home-container">
   <%= image_tag "homepage_intro.png", class: "hp-intro" %>
 </div>
 
 <div class="d-flex justify-content-center" style="background-color: rgb(21, 21, 21); padding-bottom: 60px;">
   <div class="cards-home">
-    <div class="item-card-home mt-4">
-      <%= image_tag "vdj.jpg", class: "card-img-top" %>
-      <div class="item-details">
-        <h2><%= link_to @hike1.title, hike_path(@hike1) %></h2>
-        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike1.location %></p>
-        <h3>22km/day  |  intermediate</h3>
-
-        <div class="hike-icons">
-          <i class="fa-solid fa-mountain" title="moutains"></i>
-          <i class="fa-solid fa-paw" title="dog friendly"></i>
-        </div>
-      </div>
-    </div>
+    <%= link_to hike_path(@hike1) do %>
       <div class="item-card-home mt-4">
-      <%= image_tag "vdj.jpg", class: "card-img-top" %>
-      <div class="item-details">
-        <h2><%= link_to @hike2.title, hike_path(@hike2) %></h2>
-        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike2.location %></p>
-        <h3>22km/day  |  intermediate</h3>
+        <%= image_tag "vdj.jpg", class: "card-img-top" %>
+        <div class="item-details">
+            <h2> <%= @hike1.title %> </h2>
+          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike1.location %></p>
+          <h3> <%= @hike1.length %> km/day | <%= @hike1.level %> </h3>
 
-        <div class="hike-icons">
-          <i class="fa-solid fa-mountain" title="moutains"></i>
-          <i class="fa-solid fa-paw" title="dog friendly"></i>
+          <div class="hike-icons">
+            <i class="fa-solid fa-mountain" title="moutains"></i>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
+    <%= link_to hike_path(@hike2) do %>
       <div class="item-card-home mt-4">
-      <%= image_tag "vdj.jpg", class: "card-img-top" %>
-      <div class="item-details">
-        <h2><%= link_to @hike3.title, hike_path(@hike3) %></h2>
-        <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike3.location %></p>
-        <h3>22km/day  |  intermediate</h3>
 
-        <div class="hike-icons">
-          <i class="fa-solid fa-mountain" title="moutains"></i>
-          <i class="fa-solid fa-paw" title="dog friendly"></i>
+        <%= image_tag "jo-l-helvete-9KV0dlW2qC0-unsplash.jpg", class: "card-img-top" %>
+        <div class="item-details">
+            <h2> <%= @hike2.title %> </h2>
+          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike2.location %></p>
+          <h3> <%= @hike2.length %> km/day | <%= @hike2.level %> </h3>
+
+          <div class="hike-icons">
+            <i class="fa-solid fa-mountain" title="moutains"></i>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          </div>
+
         </div>
       </div>
-    </div>
+    <% end %>
+
+    <%= link_to hike_path(@hike3) do %>
+      <div class="item-card-home mt-4">
+
+        <%= image_tag "sylvain-muggli-W6A_qprTjEU-unsplash.jpg", class: "card-img-top" %>
+        <div class="item-details">
+            <h2> <%= @hike3.title %> </h2>
+          <p><i class="fa-solid fa-location-dot mr-5"></i> <%= @hike3.location %></p>
+          <h3> <%= @hike3.length %> km/day | <%= @hike3.level %> </h3>
+
+          <div class="hike-icons">
+            <i class="fa-solid fa-mountain" title="moutains"></i>
+            <i class="fa-solid fa-paw" title="dog friendly"></i>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

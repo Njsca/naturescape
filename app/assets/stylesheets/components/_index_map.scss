@@ -1,4 +1,23 @@
+.forest {
+  background-image: url("longforest.png");
+  position: fixed;
+  background-size: cover;
+  background-color: none;
+  background-position: bottom;
+  bottom: 0px;
+  /* padding-top: 150px; */
+}
+
+.background-prop {
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
 .map-wrapper{
+  position: relative;
   display: grid;
   height: 80vh;
   grid-template-columns: 30% 70%;
@@ -9,11 +28,12 @@
   margin-right: 10rem;
   margin-top: 5rem;
   margin-bottom: 3rem;
+  z-index: 100;
 }
 
 .map-filters{
   padding: 1rem;
-  background-color: white;
+  background-color: rgba(254, 254, 254, 0.8);
   border-radius: 20px 0px 0px 20px;
 }
 
@@ -54,6 +74,10 @@
   margin-top: 20px;
 }
 
-.mapboxgl-canvas, #map {
-  border-radius: 0px 20px 20px 0px
+#map .mapboxgl-canvas {
+  border-radius: 0px 20px 20px 0px ;
+}
+
+#map{
+  border-radius: 0px 20px 20px 0px ;
 }

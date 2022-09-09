@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container show-container">
   <div class="show-info">
     <div class="show-left">
 
@@ -58,32 +58,100 @@
 
       <div class="show-description">
         <%= @hike.description %></p>
+
+        <% if @hike.user.photo.present? %>
+          <p><%= cl_image_tag @hike.user.photo.key, class: "avatar-profile", crop: :fill %> Organizer: <%= @hike.user.nickname %></p>
+        <% else %>
+          <p><img class="avatar-request h-25" alt="avatar" src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=6&m=1223671392&s=170667a&w=0&h=zP3l7WJinOFaGb2i1F4g8IS2ylw0FlIaa6x3tP9sebU=" /> Organizer: <%= @hike.user.nickname %></p>
+        <% end %>
       </div>
 
       <div class="show-button-container">
-        <%= link_to "Request to join", new_hike_booking_path(@hike), class: "show-button" %>
-        <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "show-button" %>
+      <% if @hike.user_id != current_user.id %>
+          <%= link_to "Request to join", new_hike_booking_path(@hike), class: "btn", style: "font-weight: bold; margin: 8px;" %>
+      <% end %>
+      <%# @my_bookings.each do |booking| %>
+      <%# if booking.where(:status == "accepted") %>
+        <%= link_to "Enter event chat", hike_chatroom_path(@hike, @chatroom), class: "btn2 mx-2", style: "height: 25%; padding-top: 6px;" %>
+      <%# end %>
       </div>
 
       <div class="d-flex justify-content-center">
       <%= link_to hikes_path do %>
-        <p><i class="fa-solid fa-arrow-rotate-left" style="font-size: 20px;"></i> Back</p>
+        <p><i class="fa-solid fa-arrow-left" style="font-size: 20px;"></i> Back</p>
       <% end %>
       </div>
 
+      <% if @hike.user_id == current_user.id %>
+
+        <hr>
+
+          <%# Pending events %>
+        <div class="hike-name my-2">
+          <h2 class="text-center mb-5">Requests</h2>
+        </div>
+        <%# <ul> %>
+          <% @bookings.where(:status == "pending" || :status == "accepted").each do |booking| %>
+            <%# <li> %>
+            <% if booking.hike.user_id == current_user.id %>
+
+            <p class="mx-4"><img class="avatar-request" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= booking.user.nickname %>
+            <% if booking.status == "pending" %>
+              <%= link_to "Accept request", hike_booking_path(booking.hike.id, booking, {status: "accepted"}),
+                  class: "delete-btn", data: {turbo_method: :patch} %>
+              <%= link_to "Decline request", hike_booking_path(booking.hike.id, booking, {status: "rejected"}),
+                  class: "delete-btn", data: {turbo_method: :patch} %>
+              <% else %>
+                is joining the hike!! 🥳</p>
+              <% end %>
+            <% end %>
+            <%# </li> %>
+          <% end %>
+        <%# </ul> %>
+      <% end %>
     </div>
 
     <!-- Map info goes below -->
 
-    <div class="show-right">
-      <div class="show-map"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="show-right">
+        <div id="map" class="show-map"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+
+        <!-- image files go below -->
+    <% if @hike.photos.present? %>
+      <div id="carouselExampleIndicators" class="carousel slide w-auto h-100 col-12 col-lg-6" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <% (@hike.photos.count - 1).times do |n| %>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= n + 1 %>" aria-label="Slide 2"></button>
+            <% end %>
+          </div>
+        <div class="carousel-inner rounded-4 carousel-shadow">
+          <div class="carousel-item active">
+            <%= cl_image_tag @hike.photos.first.key, class: "d-block w-100" %>
+          </div>
+          <% @hike.photos.drop(1).each do |photo| %>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            </div>
+          <% end %>
+        </div>
+
+        <button class="carousel-control-prev" class="carousel-btn" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" class="carousel-btn" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <!-- image files go below -->
-      <div class="show-images">
-      </div>
-    </div>
+    <% else %>
+      <div class="show-images"></div>
+    <% end %>
   </div>
 </div>

@@ -1,7 +1,11 @@
+.filters-h4{
+  color: $dark-green;
+}
+
 .filter-category{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 // duration filters (one day/multiple days)
@@ -45,17 +49,17 @@
 
 // Extra buddies filters
 
-.extra-buddies-checkbox{
-  appearance: none;
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  border-radius: 5px;
-  border: 1px solid $magenta;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.extra-buddies-checkbox, .form-check-input{
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  height: 20px !important;
+  width: 20px !important;
+  border-radius: 5px !important;
+  border: 1px solid $magenta !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .extra-buddies-checkbox + label {
@@ -65,7 +69,7 @@
 .dog-friendly-wrapper{
   height: 50px;
   width: 100px;
-  margin: auto;
+
   top: 0;
   bottom: 0;
   left: 0;
@@ -77,7 +81,7 @@
 .kid-friendly-wrapper{
   height: 50px;
   width: 100px;
-  margin: auto;
+
   top: 0;
   bottom: 0;
   left: 0;
@@ -86,17 +90,54 @@
   align-items: center;
   justify-content: space-around;
 }
-.extra-buddies-checkbox:after{
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f00c";
-  font-size: 20px;
-  color: $magenta;
-  display: none;
+// .extra-buddies-checkbox:after, .form-check-input:after{
+//   font-family: "Font Awesome 6 Free" !important;
+//   font-weight: 900 !important;
+//   content: "\f00c" !important;
+//   font-size: 20px !important;
+//   color: $magenta !important;
+//   display: none !important;
+// }
+// .extra-buddies-checkbox:checked, .form-check-input:checked{
+//   background-color: transparent !important;
+//   border-color: $magenta !important;
+// }
+// input[type="checkbox"]:checked:after{
+//   font-family: "Font Awesome 6 Free" !important;
+//   font-weight: 900 !important;
+//   content: "\f00c" !important;
+//   font-size: 20px !important;
+//   color: $magenta !important;
+//   display: none !important;
+// }
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 5px;
+  border: 1px solid $magenta !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white !important;
+
+  &:after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      content: "\f00c";
+      font-size: 20px;
+      color: $magenta;
+      display: none;
+  }
 }
-.extra-buddies-checkbox:checked:after{
+
+.custom-checkbox:checked::after{
   display: block;
 }
+
 
 // Difficulty filters
 .difficulty-radio-btn{
@@ -133,7 +174,14 @@
   border-radius: 6px;
   padding: 3px;
   border: 1px solid $magenta;
-  font-size: 40px;
+}
+
+.terrain-type-font{
+  font-size: 25px;
+}
+
+.smaller-font-terrain-btn{
+  font-size: 16px !important;
 }
 
 .terrain-radio-btn:checked + label{
