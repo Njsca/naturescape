@@ -2,6 +2,7 @@
 
 puts "Destroying seeds"
 User.destroy_all
+Chatroom.destroy_all
 Hike.destroy_all
 
 puts "creating users..."
