@@ -64,6 +64,8 @@ class HikesController < ApplicationController
 
   def destroy
     set_hike
+    @chatrooms = Chatroom.where(hike: @hike)
+    @chatrooms.destroy_all
     @hike.destroy
     redirect_to profile_path, status: :see_other
   end

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index, :uikit]
+
+  skip_before_action :authenticate_user!, only: [ :home, :index, :team ]
 
   def home
     @hike1 = Hike.first
@@ -7,7 +8,7 @@ class PagesController < ApplicationController
     @hike3 = Hike.order(Arel.sql('RANDOM()')).first
   end
 
-  def uikit
+  def team
   end
 
   def profile

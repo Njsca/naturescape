@@ -13,12 +13,22 @@
 //   padding: 300px;
 // }
 
+
 .team-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   z-index: 100;
+  margin: 0 100px;
+  // border: 1px solid lightgray;
+  background-color: transparent;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  z-index: 100;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding-top: 20px;
 }
 
 
@@ -27,9 +37,14 @@
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 996px;
+  height: 1200px;
   padding: 30px;
-  margin: -31px 89px 10px 136px;
-  opacity: 50%;
+  margin: -100px 89px 6px 136px;
   padding: 100px;
+}
+
+.all-container p {
+  color: black;
+  opacity: 70%;
+  padding: 10px;
 }
