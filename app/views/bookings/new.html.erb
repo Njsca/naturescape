@@ -29,8 +29,9 @@
         <p class="show-title">Request to join</p>
 
         <%= simple_form_for [@hike, @booking], class: "chat-form-style", style: "" do |f| %>
-          <%= f.input :message, as: :text, label: "Tell @hike.user.first_name.capitalize a little about yourself. Why would you like to join this event?",
-          input_html: {:size => 500} %>
+          <%= f.input :message, as: :text, label: "Tell #{@hike.user.first_name.capitalize} a little about yourself. Why would you like to join this event?",
+           input_html: {:size => 500} %>
+
 
           <%#= f.simple_fields_for :message do |message_subform| %>
             <%#= message_subform.text_field :content %>
@@ -47,7 +48,8 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span><strong>Wowza! 😎 </strong> Your request to join this hike has been sent and can be found in your profile. <%=  @hike.user.first_name.capitalize %> will reach out to you soon. </span>
+                    <span><strong>Wowza! 😎 </strong> Your request to join this hike has been sent and can be found in your profile. <%= @hike.user.first_name.capitalize %> will reach out to you soon. </span>
+
                     <a data-bs-dismiss="alert" aria-label="Close">
                     </a>
                 </div>
