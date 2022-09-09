@@ -29,7 +29,7 @@
         <p class="show-title">Request to join</p>
 
         <%= simple_form_for [@hike, @booking], class: "chat-form-style", style: "" do |f| %>
-          <%= f.input :message, as: :text, label: "Tell @hike.user.first_name.capitalize a little about yourself. Why would you like to join this event?",
+          <%= f.input :message, as: :text, label: "Tell #{@hike.user.first_name.capitalize} a little about yourself. Why would you like to join this event?",
            input_html: {:size => 500} %>
 
           <%#= f.simple_fields_for :message do |message_subform| %>
